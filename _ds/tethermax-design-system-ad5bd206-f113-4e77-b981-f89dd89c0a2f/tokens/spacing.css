@@ -1,0 +1,50 @@
+/* ============================================================
+   TetherMax — Spacing, radii, elevation
+   8pt base grid (4px half-step). MUI elevation shadows.
+   ============================================================ */
+
+:root {
+  /* Spacing scale (8pt grid, 4px half-steps) */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Corner radii */
+  --radius-xs:   4px;
+  --radius-sm:   8px;
+  --radius-md:   12px;  /* default card / button */
+  --radius-lg:   16px;  /* hero cards, sheets */
+  --radius-xl:   24px;  /* bottom sheets, large modals */
+  --radius-pill: 999px; /* chips, segmented controls */
+  --radius-circle: 50%;
+
+  /* Elevation (MUI-derived) */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.10), 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06);
+  --shadow-xl: 0 16px 40px rgba(0,0,0,0.16);
+  --shadow-card: 0 2px 12px rgba(93,96,103,0.10);
+  --shadow-nav:  0 -2px 12px rgba(0,0,0,0.06);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --ease-decel:    cubic-bezier(0, 0, 0.2, 1); /* @kind other */
+  --ease-accel:    cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   200ms; /* @kind other */
+  --dur-slow:   320ms; /* @kind other */
+
+  /* App layout */
+  --app-width: 375px; /* @kind spacing */
+  --nav-height: 56px; /* @kind spacing */
+  --header-height: 52px; /* @kind spacing */
+}

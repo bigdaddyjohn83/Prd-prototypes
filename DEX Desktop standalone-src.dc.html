@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="https://unpkg.com/react@18.3.1/umd/react.production.min.js" data-resource-id="https://unpkg.com/react@18.3.1/umd/react.production.min.js">
+<meta name="ext-resource-dependency" content="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" data-resource-id="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js">
+<template id="__bundler_thumbnail" data-bg-color="#0031C6">
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="800" fill="#0031C6"/>
+<g fill="none" stroke="#ffffff" stroke-width="54" stroke-linecap="round">
+<circle cx="480" cy="400" r="130"/>
+<circle cx="740" cy="400" r="130"/>
+</g>
+</svg>
+</template>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="assets/ds-standalone.css">
+<script src="_ds/tethermax-design-system-ad5bd206-f113-4e77-b981-f89dd89c0a2f/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:var(--surface-canvas);font-family:var(--font-body);color:var(--text-primary)}
+a{color:var(--color-primary);text-decoration:none}
+a:hover{color:var(--color-primary-hover)}
+::selection{background:rgba(0,103,255,.18)}
+</style>
+</helmet>
+
+<div style="min-height:100vh;background:var(--surface-canvas)">
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border-subtle)">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px;height:64px;display:flex;align-items:center;gap:28px">
+<div onClick="{{ goHub }}" style="display:flex;align-items:center;cursor:pointer">
+<img src="assets/tethermax-logo-transparent.png" alt="TetherMax" style="height:38px;width:auto;display:block">
+</div>
+<nav style="display:flex;align-items:center;gap:20px;font:500 14px/1 var(--font-body);color:var(--text-secondary);min-width:0;overflow:hidden">
+<span data-i18n="nav.cashback" style="cursor:pointer;white-space:nowrap" style-hover="color:var(--text-primary)"><b>Cashback&nbsp;<span style="color: rgb(55, 55, 66);">⌄</span></b></span>
+<span data-i18n="nav.rewards" style="cursor:pointer;white-space:nowrap" style-hover="color:var(--text-primary)">Rewards Hub&nbsp;<span style="color: rgb(55, 55, 66); font-weight: 600;">⌄</span></span>
+<span onClick="{{ goHub }}" data-i18n="nav.discover" style="cursor:pointer;color:var(--color-primary);font-weight:600;display:inline-flex;align-items:center;gap:4px;white-space:nowrap">Discover ⌄</span>
+</nav>
+<div style="flex:1;min-width:12px"></div>
+<div style="display:flex;align-items:center;gap:10px;flex:0 0 auto">
+<div style="display:flex;align-items:center;gap:2px;border:1px solid var(--border-subtle);border-radius:999px;padding:3px">
+<span onClick="{{ setEn }}" style="{{ enPillStyle }}">EN</span>
+<span onClick="{{ setKo }}" style="{{ koPillStyle }}">한국어</span>
+</div>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" variant="text" size="small" hint-size="auto,32px"><span data-i18n="nav.login">Login</span></x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" size="small" hint-size="auto,32px"><span data-i18n="nav.signup">Sign up</span></x-import>
+</div>
+</div>
+</header>
+
+<sc-if value="{{ pageHub }}" hint-placeholder-val="{{ true }}">
+<main>
+
+<section id="dx-hero" style="padding:64px 0 52px">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:64px;align-items:start">
+<div>
+<p data-i18n="hub.eyebrow" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin:0 0 18px">Partner DEX Venues</p>
+<h1 data-i18n="hub.h1" style="font:700 56px/1.08 var(--font-display);letter-spacing:-.03em;margin:0 0 20px;max-width:15ch;text-wrap:pretty">Trade perps onchain, keep earning cashback</h1>
+<p data-i18n="hub.lede" style="font:400 18px/1.62 var(--font-body);color:var(--text-secondary);margin:0 0 28px;max-width:62ch;text-wrap:pretty">You already know perpetual futures. Learn what changes when the DEX Venue is decentralised, compare Aster, Hyperliquid and Lighter side by side, then choose the route that fits how you trade.</p>
+<div style="display:flex;gap:12px;margin-bottom:26px">
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" size="large" onClick="{{ goLearn }}" hint-size="auto,48px"><span data-i18n="cta.learn">Learn the Basics</span></x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" size="large" variant="outlined" onClick="{{ goCompare }}" hint-size="auto,48px"><span data-i18n="cta.compare">Compare DEX Venues</span></x-import>
+</div>
+<div style="display:flex;gap:12px;padding:16px 18px;border-radius:12px;background:#FFF4E5;border:1px solid rgba(239,108,0,.22);max-width:70ch">
+<span style="font-size:18px;line-height:1.2;color:var(--tm-warning)">▲</span>
+<p data-i18n="hub.risk" style="margin:0;font:500 13.5px/1.6 var(--font-body);color:#8A4A00">Leveraged perpetual trading carries a high risk of rapid loss. On a decentralised DEX Venue you also hold your own keys, so there is no account recovery and no support desk that can reverse a transaction.</p>
+</div>
+</div>
+<div style="background:radial-gradient(120% 100% at 78% 8%, #14224A 0%, #0A0E1A 58%, #06080F 100%);border-radius:20px;padding:32px;color:#fff;position:relative;overflow:hidden">
+<div style="position:absolute;inset:auto -60px -70px auto;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(0,103,255,.45),transparent 65%)"></div>
+<p data-i18n="hub.panel.label" style="position:relative;font:700 10.5px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 22px">Three DEX Venues, live</p>
+<div style="position:relative;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:14px;padding:16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09)">
+<span style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0067FF,#0031C6);display:grid;place-items:center;font:700 15px var(--font-display)">A</span>
+<div style="flex:1;min-width:0"><div style="font:600 15px/1.2 var(--font-body)">Aster</div><div data-i18n="hub.panel.aster" style="font:400 12px/1.4 var(--font-body);color:rgba(255,255,255,.55);margin-top:3px">Widest surface area</div></div>
+<div style="text-align:right"><div style="font:700 20px/1 var(--font-display)">30%</div><div data-i18n="hub.panel.rebate" style="font:400 10.5px/1 var(--font-body);color:rgba(255,255,255,.5);margin-top:5px">Cashback</div></div>
+</div>
+<div style="display:flex;align-items:center;gap:14px;padding:16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09)">
+<span style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#22D3A6,#0E9E7C);display:grid;place-items:center;font:700 15px var(--font-display)">H</span>
+<div style="flex:1;min-width:0"><div style="font:600 15px/1.2 var(--font-body)">Hyperliquid</div><div data-i18n="hub.panel.hyper" style="font:400 12px/1.4 var(--font-body);color:rgba(255,255,255,.55);margin-top:3px">Deepest liquidity</div></div>
+<div style="text-align:right"><div style="font:700 20px/1 var(--font-display)">20%</div><div data-i18n="hub.panel.rebate2" style="font:400 10.5px/1 var(--font-body);color:rgba(255,255,255,.5);margin-top:5px">Cashback</div></div>
+</div>
+<div style="display:flex;align-items:center;gap:14px;padding:16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09)">
+<span style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#8B5CF6,#5B21B6);display:grid;place-items:center;font:700 15px var(--font-display)">L</span>
+<div style="flex:1;min-width:0"><div style="font:600 15px/1.2 var(--font-body)">Lighter</div><div data-i18n="hub.panel.lighter" style="font:400 12px/1.4 var(--font-body);color:rgba(255,255,255,.55);margin-top:3px">Zero fee standard tier</div></div>
+<div style="text-align:right"><div style="font:700 20px/1 var(--font-display)">20%</div><div data-i18n="hub.panel.rebate3" style="font:400 10.5px/1 var(--font-body);color:rgba(255,255,255,.5);margin-top:5px">Cashback</div></div>
+</div>
+</div>
+<p data-i18n="hub.panel.foot" style="position:relative;margin:20px 0 0;font:400 11px/1.5 var(--font-body);color:rgba(255,255,255,.42)">Indicative rebate rates. Subject to the current agreement between TetherMax and the DEX Venue.</p>
+</div>
+</div>
+</section>
+
+<div style="position:sticky;top:64px;z-index:50;background:rgba(248,250,252,.94);backdrop-filter:blur(8px);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px;display:flex;gap:4px;overflow-x:auto">
+<sc-for list="{{ anchors }}" as="a" hint-placeholder-count="4">
+<span onClick="{{ a.go }}" style="{{ a.style }}">{{ a.label }}</span>
+</sc-for>
+</div>
+</div>
+
+<section id="dx-changes" style="padding:88px 0">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px">
+<p data-i18n="ey.changes" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin:0 0 16px">THE DIFFERENCE</p>
+<h2 data-i18n="changes.h2" style="font:700 40px/1.14 var(--font-display);letter-spacing:-.025em;margin:0 0 16px;max-width:22ch">You know the trade. <br>The DEX Venue is what changed.</h2>
+<p data-i18n="changes.lede" style="font:400 17px/1.62 var(--font-body);color:var(--text-secondary);margin:0 0 44px;max-width:82ch;text-wrap:pretty">Funding rates, liquidation and leverage tiers work the way you already expect. What is different is who holds your collateral, where the order book actually lives, what happens when the operator goes down, and whether anyone can prove the fill you got was fair.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:28px">
+<span style="display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--tm-blue-50, #E8F1FF);color:var(--color-primary);font-size:20px;margin-bottom:18px">🔑</span>
+<h3 data-i18n="changes.c1.t" style="font:700 19px/1.3 var(--font-display);margin:0 0 10px">You hold the keys</h3>
+<p data-i18n="changes.c1.b" style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">Collateral sits in a wallet or contract you control. Nobody can freeze it, and nobody can restore it for you either.</p>
+</div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:28px">
+<span style="display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--tm-blue-50, #E8F1FF);color:var(--color-primary);font-size:20px;margin-bottom:18px">⛓</span>
+<h3 data-i18n="changes.c2.t" style="font:700 19px/1.3 var(--font-display);margin:0 0 10px">The order book has an address</h3>
+<p data-i18n="changes.c2.b" style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">Matching runs on a chain, a rollup or a sequencer. Where it runs decides what can be proven and what has to be trusted.</p>
+</div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:28px">
+<span style="display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:var(--tm-blue-50, #E8F1FF);color:var(--color-primary);font-size:20px;margin-bottom:18px">≈</span>
+<h3 data-i18n="changes.c3.t" style="font:700 19px/1.3 var(--font-display);margin:0 0 10px">Fees look lower, cost is not always lower</h3>
+<p data-i18n="changes.c3.b" style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">A zero fee headline can still cost more once depth, slippage, funding and gas are counted into the round trip.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="dx-how" style="padding:88px 0;background:#fff;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px">
+<p data-i18n="ey.how" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin:0 0 16px">How It Works</p>
+<h2 data-i18n="how.h2" style="font:700 40px/1.14 var(--font-display);letter-spacing:-.025em;margin:0 0 16px">3 DEX Venues, 3 distinct edges</h2>
+<p data-i18n="how.lede" style="font:400 17px/1.62 var(--font-body);color:var(--text-secondary);margin:0 0 44px;max-width:78ch">Aster, Hyperliquid and Lighter solve the same problem in three genuinely different ways. Understanding which trade off each one made is most of the decision.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
+<sc-for list="{{ venues }}" as="v" hint-placeholder-count="3">
+<div style="border:1px solid var(--border-subtle);border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:16px;background:var(--surface-canvas)">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="{{ v.markStyle }}">{{ v.initial }}</span>
+<h3 style="font:700 22px/1.2 var(--font-display);margin:0">{{ v.name }}</h3>
+</div>
+<p style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary);flex:1">{{ v.blurb }}</p>
+<div>
+
+</div>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ v.status }}" size="small" variant="outlined" color="{{ v.statusColor }}" hint-size="auto,24px"></x-import><span onClick="{{ v.go }}" data-i18n="cta.details" style="font:600 14px/1 var(--font-body);color:var(--color-primary);cursor:pointer">View details →</span>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="dx-funding" style="padding:88px 0">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px">
+<p data-i18n="ey.funding" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin:0 0 16px">Funding Path</p>
+<h2 data-i18n="funding.h2" style="font:700 40px/1.14 var(--font-display);letter-spacing:-.025em;margin:0 0 16px">Getting funds from an exchange to a DEX</h2>
+<p data-i18n="funding.lede" style="font:400 17px/1.62 var(--font-body);color:var(--text-secondary);margin:0 0 44px;max-width:78ch">None of these DEX Venues accept fiat, in any currency. The route runs through a licensed exchange in your own market, and the withdrawal step is the part that catches people out.</p>
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:22px;align-items:start;background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px 26px">
+<span style="display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--color-primary);color:#fff;font:700 22px/1 var(--font-display)">1</span>
+<div><h3 data-i18n="fund.s1.t" style="font:700 18px/1.35 var(--font-display);margin:0 0 8px">Buy or hold stablecoins on a licensed exchange</h3><p data-i18n="fund.s1.b" style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">Any licensed exchange that supports a bank account in your currency. Your funds start here, not in a wallet.</p></div>
+</div>
+<div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:22px;align-items:start;background:#fff;border:1px solid rgba(239,108,0,.3);border-radius:14px;padding:24px 26px">
+<span style="display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--color-primary);color:#fff;font:700 22px/1 var(--font-display)">2</span>
+<div>
+<h3 data-i18n="fund.s2.t" style="font:700 18px/1.35 var(--font-display);margin:0 0 10px">Withdraw to a wallet you control</h3>
+<div style="display:flex;gap:10px;padding:13px 15px;border-radius:10px;background:#FFF4E5">
+<span style="font-size:15px;color:var(--tm-warning);line-height:1.4">▲</span>
+<p data-i18n="fund.s2.b" style="margin:0;font:500 14px/1.6 var(--font-body);color:#8A4A00"><strong>Travel Rule applies here.</strong> Destination wallet verification required. Expect delay or rejection if unverified.</p>
+</div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:22px;align-items:start;background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px 26px">
+<span style="display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--color-primary);color:#fff;font:700 22px/1 var(--font-display)">3</span>
+<div><h3 data-i18n="fund.s3.t" style="font:700 18px/1.35 var(--font-display);margin:0 0 8px">Bridge to the network the DEX Venue accepts</h3><p data-i18n="fund.s3.b" style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">Aster: BNB Chain, Arbitrum, Ethereum, Solana, Robinhood. <br>Hyperliquid: USDC on Arbitrum, HyperEVM<br>Lighter: Ethereum, Arbitrum, BNB Chain, Base, Solana, Polygon, HyperEVM, Optimism, Monad</p></div>
+</div>
+<div style="display:grid;grid-template-columns:56px minmax(0,1fr);gap:22px;align-items:start;background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px 26px">
+<span style="display:grid;place-items:center;width:56px;height:56px;border-radius:14px;background:var(--color-primary);color:#fff;font:700 22px/1 var(--font-display)">4</span>
+<div><h3 data-i18n="fund.s4.t" style="font:700 18px/1.35 var(--font-display);margin:0 0 8px">Deposit and confirm the referral code</h3><p data-i18n="fund.s4.b" style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">Check the DEX Venue referral section shows the TetherMax code before your first trade.</p></div>
+</div>
+</div>
+<p data-i18n="fund.reg" style="margin:24px 0 0;font:400 12.5px/1.65 var(--font-body);color:var(--text-secondary);max-width:96ch">Regulatory position for your jurisdiction, as at 10 Sep 2026: routing to these DEX Venues is permitted for residents of your detected jurisdiction, with no local override in force. Resolved against the reader detected jurisdiction. Local tax treatment of trading gains varies by jurisdiction and is not covered here.</p>
+</div>
+</section>
+
+<section style="padding:88px 0;background:#0A0E1A;color:#fff">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px">
+<p data-i18n="ey.risks" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:#6EA8FF;margin:0 0 16px">Understand The Risks</p>
+<h2 data-i18n="risks.h2" style="font:700 40px/1.14 var(--font-display);letter-spacing:-.025em;margin:0 0 40px">Decentralised does not mean safer</h2>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ risks }}" as="r" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;padding:26px 0;border-top:1px solid rgba(255,255,255,.12)">
+<h3 style="font:700 18px/1.35 var(--font-display);margin:0">{{ r.t }}</h3>
+<p style="margin:0;font:400 15px/1.65 var(--font-body);color:rgba(255,255,255,.66)">{{ r.b }}</p>
+</div>
+</sc-for>
+<div style="border-top:1px solid rgba(255,255,255,.12)"></div>
+</div>
+<p data-i18n="risks.foot" style="margin:26px 0 0;font:400 12.5px/1.65 var(--font-body);color:rgba(255,255,255,.42);max-width:92ch">This page is provided for general educational purposes only and does not constitute investment advice. Review each DEX Venue own risk disclosures before depositing.</p>
+</div>
+</section>
+
+<section style="padding:88px 0;background:#fff;border-bottom:1px solid var(--border-subtle)">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px">
+<p data-i18n="ey.begin" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin:0 0 16px">How To Begin</p>
+<h2 data-i18n="begin.h2" style="font:700 40px/1.14 var(--font-display);letter-spacing:-.025em;margin:0 0 44px">A simple 4 step path</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px">
+<div onClick="{{ goLearn }}" style="border:1px solid var(--border-subtle);border-radius:14px;padding:26px;cursor:pointer;background:var(--surface-canvas)" style-hover="border-color:var(--color-primary)">
+<div data-i18n="begin.s1" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px">Step 1</div>
+<h3 data-i18n="begin.s1.t" style="font:700 20px/1.3 var(--font-display);margin:0">Learn what changes</h3>
+</div>
+<div onClick="{{ goCompare }}" style="border:1px solid var(--border-subtle);border-radius:14px;padding:26px;cursor:pointer;background:var(--surface-canvas)" style-hover="border-color:var(--color-primary)">
+<div data-i18n="begin.s2" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px">Step 2</div>
+<h3 data-i18n="begin.s2.t" style="font:700 20px/1.3 var(--font-display);margin:0">Compare the three DEX Venues</h3>
+</div>
+<div style="border:1px solid var(--border-subtle);border-radius:14px;padding:26px;background:var(--surface-canvas)">
+<div data-i18n="begin.s3" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px">Step 3</div>
+<h3 data-i18n="begin.s3.t" style="font:700 20px/1.3 var(--font-display);margin:0">Open through the TetherMax route</h3>
+</div>
+<div style="border:1px solid var(--border-subtle);border-radius:14px;padding:26px;background:var(--surface-canvas)">
+<div data-i18n="begin.s4" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:16px">Step 4</div>
+<h3 data-i18n="begin.s4.t" style="font:700 20px/1.3 var(--font-display);margin:0">Fund and confirm the referral code</h3>
+</div>
+</div>
+</div>
+</section>
+
+<section style="padding:88px 0">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:48px;align-items:start">
+<div>
+<h2 data-i18n="faq.h2" style="font:700 40px/1.14 var(--font-display);letter-spacing:-.025em;margin:0 0 14px">FAQs</h2>
+<p data-i18n="faq.lede" style="margin:0;font:400 15px/1.6 var(--font-body);color:var(--text-secondary)">Six questions traders ask before their first onchain perp.</p>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
+<div style="border-top:1px solid var(--border-subtle)">
+<div onClick="{{ f.toggle }}" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0;cursor:pointer">
+<h3 style="font:600 17px/1.4 var(--font-body);margin:0">{{ f.q }}</h3>
+<span style="font:400 20px/1 var(--font-body);color:var(--color-primary)">{{ f.sign }}</span>
+</div>
+<div style="{{ f.bodyStyle }}"><p style="margin:0 0 22px;font:400 15px/1.7 var(--font-body);color:var(--text-secondary);max-width:80ch">{{ f.a }}</p></div>
+</div>
+</sc-for>
+<div style="border-top:1px solid var(--border-subtle)"></div>
+</div>
+</div>
+</section>
+
+</main>
+</sc-if>
+
+<sc-if value="{{ pageLearn }}" hint-placeholder-val="{{ false }}">
+<main style="padding:44px 0 96px">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px">
+<p style="font:500 13px/1 var(--font-body);color:var(--text-secondary);margin:0 0 34px"><span onClick="{{ goHub }}" data-i18n="bc.dex" style="cursor:pointer;color:var(--color-primary)">DEX Trading</span> / <span data-i18n="bc.learn">Learn</span></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:56px;align-items:start">
+<div>
+<h1 data-i18n="learn.h1" style="font:700 48px/1.1 var(--font-display);letter-spacing:-.03em;margin:0 0 18px">The DEX Learn Track</h1>
+<p data-i18n="learn.lede" style="font:400 17px/1.62 var(--font-body);color:var(--text-secondary);margin:0 0 40px;max-width:74ch;text-wrap:pretty">Eight modules for traders who already know perpetual futures. Nothing here re explains what a perp is. Every module answers one question: what is different when the DEX Venue is decentralised.</p>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ modules }}" as="m" hint-placeholder-count="8">
+<div onClick="{{ m.open }}" style="{{ m.rowStyle }}">
+<span style="{{ m.numStyle }}">{{ m.num }}</span>
+<h3 style="{{ m.titleStyle }}">{{ m.title }}</h3>
+<span style="{{ m.metaStyle }}">{{ m.meta }}</span>
+</div>
+</sc-for>
+<div style="border-top:1px solid var(--border-subtle)"></div>
+</div>
+</div>
+<aside style="position:sticky;top:96px;background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:26px">
+<p data-i18n="learn.progress" style="font:700 11px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin:0 0 14px">Your progress</p>
+<div style="font:700 34px/1 var(--font-display);margin-bottom:14px">{{ progressLabel }}</div>
+<div style="height:8px;border-radius:999px;background:var(--surface-sunken,#EEF1F5);overflow:hidden;margin-bottom:18px"><div style="{{ progressBarStyle }}"></div></div>
+<p data-i18n="learn.persist" style="margin:0 0 20px;font:400 13px/1.6 var(--font-body);color:var(--text-secondary)">Progress is saved to this browser while you are signed out, and to your account once you sign in.</p>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" fullWidth="{{ true }}" onClick="{{ goArticle }}" hint-size="100%,40px"><span>{{ continueLabel }}</span></x-import>
+</aside>
+</div>
+</div>
+</main>
+</sc-if>
+
+<sc-if value="{{ pageArticle }}" hint-placeholder-val="{{ false }}">
+<main style="padding:44px 0 96px">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px">
+<p style="font:500 13px/1 var(--font-body);color:var(--text-secondary);margin:0 0 34px"><span onClick="{{ goHub }}" data-i18n="bc.dex" style="cursor:pointer;color:var(--color-primary)">DEX Trading</span> / <span onClick="{{ goLearn }}" data-i18n="bc.learn" style="cursor:pointer;color:var(--color-primary)">Learn</span> / <span>{{ artCrumb }}</span></p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:56px;align-items:start">
+<article style="max-width:78ch">
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ artChip }}" size="small" hint-size="auto,24px"></x-import>
+<span style="font:500 13px/1 var(--font-body);color:var(--text-secondary)">{{ artRead }}</span>
+</div>
+<h1 style="font:700 46px/1.12 var(--font-display);letter-spacing:-.03em;margin:0 0 34px">{{ artTitle }}</h1>
+
+<sc-for list="{{ sections }}" as="sec" hint-placeholder-count="4">
+<h2 id="{{ sec.id }}" style="{{ sec.hStyle }}">{{ sec.h }}</h2>
+<p style="font:400 16.5px/1.75 var(--font-body);color:var(--text-secondary);margin:0 0 18px">{{ sec.b }}</p>
+</sc-for>
+
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:28px;margin:38px 0">
+<p data-i18n="art.req1" style="font:700 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--color-primary);margin:0 0 18px">THREE DEX VENUE COMPARISON</p>
+<h2 id="a5" data-i18n="art.s5" style="font:700 24px/1.3 var(--font-display);margin:0 0 20px">How the three DEX Venues compare</h2>
+<div style="display:flex;flex-direction:column;gap:14px">
+<sc-for list="{{ artCmp }}" as="c" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;padding-top:14px;border-top:1px solid var(--border-subtle)"><strong style="font:700 15px/1.5 var(--font-body)">{{ c.name }}</strong><span style="font:400 15px/1.6 var(--font-body);color:var(--text-secondary)">{{ c.v }}</span></div>
+</sc-for>
+</div>
+</div>
+
+<div style="background:var(--tm-blue-50,#E8F1FF);border-radius:16px;padding:28px;margin:0 0 38px">
+<h2 id="a6" data-i18n="art.s6" style="font:700 22px/1.3 var(--font-display);margin:0 0 12px">Regional note</h2>
+<p style="margin:0;font:400 15.5px/1.7 var(--font-body);color:var(--text-primary)">{{ artRegional }}</p>
+</div>
+
+<h2 id="a7" style="font:700 26px/1.3 var(--font-display);margin:0 0 14px">{{ artCloseH }}</h2>
+<p style="font:400 16.5px/1.75 var(--font-body);color:var(--text-secondary);margin:0 0 34px">{{ artCloseB }}</p>
+
+<div style="display:flex;align-items:center;gap:16px;padding:22px 0;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)">
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" variant="outlined" onClick="{{ toggleDone }}" hint-size="auto,40px"><span>{{ doneLabel }}</span></x-import>
+<span style="flex:1"></span>
+<span data-i18n="art.share" style="font:500 13px/1 var(--font-body);color:var(--text-secondary)">Share:</span>
+<span style="font:600 13px/1 var(--font-body);color:var(--color-primary);cursor:pointer">X</span>
+<span style="font:600 13px/1 var(--font-body);color:var(--color-primary);cursor:pointer">Telegram</span>
+<span data-i18n="art.copy" style="font:600 13px/1 var(--font-body);color:var(--color-primary);cursor:pointer">Copy link</span>
+</div>
+<div style="display:flex;justify-content:space-between;gap:24px;padding:22px 0 34px">
+<span onClick="{{ goPrev }}" style="{{ prevStyle }}">{{ prevLabel }}</span>
+<span onClick="{{ goNext }}" style="{{ nextStyle }}">{{ nextLabel }}</span>
+</div>
+<div style="background:linear-gradient(135deg,#0067FF,#0031C6);border-radius:18px;padding:32px 36px;display:flex;align-items:center;gap:28px;color:#fff">
+<div style="flex:1">
+<h3 data-i18n="art.cta.t" style="font:700 24px/1.25 var(--font-display);margin:0 0 8px">Sign Up and Earn Cashback</h3>
+<p data-i18n="art.cta.b" style="margin:0;font:400 14.5px/1.6 var(--font-body);color:rgba(255,255,255,.78)">Route your DEX account through TetherMax and your rebate is attributed from the first trade.</p>
+</div>
+<button type="button" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border:1px solid transparent;border-radius:10px;background:#fff;color:#0B1220;font:600 16px/1 var(--font-body);letter-spacing:.01em;cursor:pointer;white-space:nowrap" style-hover="background:#EEF2F7"><span data-i18n="cta.signup">Sign up free</span></button>
+</div>
+</article>
+<aside style="position:sticky;top:96px">
+<p data-i18n="art.toc" style="font:700 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin:0 0 16px">On this page</p>
+<div style="display:flex;flex-direction:column;gap:2px;border-left:2px solid var(--border-subtle)">
+<sc-for list="{{ toc }}" as="t" hint-placeholder-count="7">
+<span onClick="{{ t.go }}" style="{{ t.style }}">{{ t.label }}</span>
+</sc-for>
+</div>
+</aside>
+</div>
+</div>
+</main>
+</sc-if>
+
+<sc-if value="{{ pageCompare }}" hint-placeholder-val="{{ false }}">
+<main style="padding:44px 0 96px">
+<div style="max-width:1560px;margin:0 auto;padding:0 48px">
+<p style="font:500 13px/1 var(--font-body);color:var(--text-secondary);margin:0 0 28px"><span onClick="{{ goHub }}" data-i18n="bc.dex" style="cursor:pointer;color:var(--color-primary)">DEX Trading</span> / <span data-i18n="bc.compare">Compare DEX Venues</span></p>
+<p data-i18n="cmp.eyebrow" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin:0 0 16px">Partner DEX Venue Comparison</p>
+<h1 data-i18n="cmp.h1" style="font:700 48px/1.1 var(--font-display);letter-spacing:-.03em;margin:0 0 16px">Compare Aster, Hyperliquid and Lighter</h1>
+<p data-i18n="cmp.lede" style="font:400 17px/1.62 var(--font-body);color:var(--text-secondary);margin:0 0 40px;max-width:92ch;text-wrap:pretty">Thirty traits across five areas, including the trust and verifiability traits that have no equivalent in centralised exchange comparisons. Every figure is dated and sourced.</p>
+</div>
+
+<div style="position:sticky;top:64px;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);padding:12px 0">
+<div style="max-width:1560px;margin:0 auto;padding:0 48px;overflow-x:auto"><div style="min-width:1080px;display:grid;grid-template-columns:260px repeat(3,minmax(0,1fr));gap:20px;align-items:center">
+<span></span>
+<sc-for list="{{ venueBar }}" as="v" hint-placeholder-count="3">
+<div style="display:flex;align-items:center;gap:10px">
+<span style="{{ v.markStyle }}">{{ v.initial }}</span>
+<strong style="font:700 14px/1 var(--font-body);flex:1">{{ v.name }}</strong>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" size="small" hint-size="auto,32px">{{ v.signup }}</x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" size="small" variant="text" onClick="{{ v.go }}" hint-size="auto,32px">{{ v.details }}</x-import>
+</div>
+</sc-for>
+</div></div>
+</div>
+
+<div style="max-width:1560px;margin:0 auto;padding:32px 48px 0;overflow-x:auto">
+<div style="min-width:1080px">
+<div style="display:grid;grid-template-columns:260px repeat(3,minmax(0,1fr));gap:20px;margin-bottom:34px">
+<div></div>
+<sc-for list="{{ venueCards }}" as="v" hint-placeholder-count="3">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;align-items:center;gap:12px">
+<span style="{{ v.markStyle }}">{{ v.initial }}</span>
+<h3 style="font:700 21px/1.2 var(--font-display);margin:0">{{ v.name }}</h3>
+</div>
+<div><x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ v.status }}" size="small" variant="outlined" color="{{ v.statusColor }}" hint-size="auto,24px"></x-import></div>
+<div style="display:flex;gap:10px">
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" size="small" hint-size="auto,32px">{{ v.signup }}</x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Button" size="small" variant="outlined" onClick="{{ v.go }}" hint-size="auto,32px">{{ v.details }}</x-import>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:16px">
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="5">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden">
+<div onClick="{{ g.toggle }}" style="display:grid;grid-template-columns:260px minmax(0,1fr) 40px;gap:20px;align-items:center;padding:20px 24px;cursor:pointer">
+<div>
+<div style="font:700 12px/1.3 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-primary)">{{ g.name }}</div>
+<div style="font:500 11.5px/1.3 var(--font-body);color:var(--text-secondary);margin-top:5px">{{ g.count }}</div>
+</div>
+<div style="font:400 14px/1.5 var(--font-body);color:var(--text-secondary)">{{ g.desc }}</div>
+<span style="font:400 20px/1 var(--font-body);color:var(--color-primary);text-align:right">{{ g.sign }}</span>
+</div>
+<div style="{{ g.bodyStyle }}">
+<sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="6">
+<div style="display:grid;grid-template-columns:260px repeat(3,minmax(0,1fr));gap:20px;padding:18px 24px;border-top:1px solid var(--border-subtle)">
+<div style="font:600 13.5px/1.5 var(--font-body);color:var(--text-primary)">{{ r.label }}</div>
+<div style="font:400 13.5px/1.6 var(--font-body);color:var(--text-secondary)">{{ r.a }}</div>
+<div style="font:400 13.5px/1.6 var(--font-body);color:var(--text-secondary)">{{ r.h }}</div>
+<div style="font:400 13.5px/1.6 var(--font-body);color:var(--text-secondary)">{{ r.l }}</div>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="margin:30px 0 0;display:flex;flex-direction:column;gap:8px;max-width:120ch">
+<p data-i18n="cmp.f0" style="margin:0;font:500 12.5px/1.6 var(--font-body);color:var(--text-primary)">Figures as at 12 Feb 2026. Source links held on each DEX Venue record.</p>
+<p data-i18n="cmp.f1" style="margin:0;font:400 12.5px/1.6 var(--font-body);color:var(--text-secondary)"><strong>#</strong>  Indicative DEX Venue conditions. Trading conditions, fees, leverage limits, market availability and regional access may change without notice and may differ by account tier and product mode. Confirm on the DEX Venue own site before depositing.</p>
+<p data-i18n="cmp.f2" style="margin:0;font:400 12.5px/1.6 var(--font-body);color:var(--text-secondary)"><strong>*</strong>  Rebate terms. Rates are subject to the current agreement between TetherMax and the DEX Venue and may vary. Registration must run through the TetherMax route or the rebate is not attributed.</p>
+<p data-i18n="cmp.f3" style="margin:0;font:400 12.5px/1.6 var(--font-body);color:var(--text-secondary)"><strong>^</strong>  Processing and payout timing.</p>
+</div>
+
+<div style="margin-top:64px">
+<p data-i18n="cmp.proceed" style="font:700 11px/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--color-primary);margin:0 0 16px">How To Proceed</p>
+<h2 data-i18n="cmp.next.h2" style="font:700 36px/1.15 var(--font-display);letter-spacing:-.025em;margin:0 0 32px">Your next steps</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-bottom:40px">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><div data-i18n="begin.s1" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:14px">Step 1</div><h3 data-i18n="cmp.n1" style="font:700 18px/1.3 var(--font-display);margin:0">Shortlist to one DEX Venue</h3></div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><div data-i18n="begin.s2" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:14px">Step 2</div><h3 data-i18n="cmp.n2" style="font:700 18px/1.3 var(--font-display);margin:0">Open through the TetherMax route</h3></div>
+<div onClick="{{ goFunding }}" style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px;cursor:pointer"><div data-i18n="begin.s3" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:14px">Step 3</div><h3 data-i18n="cmp.n3" style="font:700 18px/1.3 var(--font-display);margin:0 0 8px">Fund from your exchange</h3><span data-i18n="cmp.n3.l" style="font:600 13px/1 var(--font-body);color:var(--color-primary)">/en/dex#funding →</span></div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><div data-i18n="begin.s4" style="font:700 11px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:14px">Step 4</div><h3 data-i18n="cmp.n4" style="font:700 18px/1.3 var(--font-display);margin:0">Confirm the referral code on the DEX Venue</h3></div>
+</div>
+<div style="background:#0A0E1A;border-radius:18px;padding:34px 38px;display:flex;align-items:center;gap:28px;color:#fff">
+<div style="flex:1">
+<h3 data-i18n="cmp.still.t" style="font:700 24px/1.25 var(--font-display);margin:0 0 8px">Still deciding? Start with what changes</h3>
+<p data-i18n="cmp.still.b" style="margin:0;font:400 14.5px/1.6 var(--font-body);color:rgba(255,255,255,.66)">If any row in that table needed explaining, the Learn track covers it in eight modules written for traders who already know perps.</p>
+</div>
+<button type="button" onClick="{{ goLearn }}" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border:1px solid transparent;border-radius:10px;background:#fff;color:#0B1220;font:600 16px/1 var(--font-body);letter-spacing:.01em;cursor:pointer;white-space:nowrap" style-hover="background:#EEF2F7"><span data-i18n="cta.learn">Learn the Basics</span></button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</sc-if>
+
+<sc-if value="{{ pageDetail }}" hint-placeholder-val="{{ false }}">
+<main style="padding:0 0 96px">
+<sc-if value="{{ showNotice }}" hint-placeholder-val="{{ true }}">
+<div style="background:#FFF4E5;border-bottom:1px solid rgba(239,108,0,.22)">
+<div style="max-width:1360px;margin:0 auto;padding:14px 48px;display:flex;align-items:center;gap:12px">
+<span style="color:var(--tm-warning);font-size:15px">▲</span>
+<p style="margin:0;font:500 13px/1.5 var(--font-body);color:#8A4A00;flex:1">{{ dNotice }}</p>
+<span data-i18n="det.asat" style="font:500 12px/1 var(--font-body);color:#8A4A00;opacity:.75">as at 12 Feb 2026</span>
+</div>
+</div>
+</sc-if>
+<div style="max-width:1360px;margin:0 auto;padding:36px 48px 0">
+<p style="font:500 13px/1 var(--font-body);color:var(--text-secondary);margin:0 0 30px"><span onClick="{{ goHub }}" data-i18n="bc.dex" style="cursor:pointer;color:var(--color-primary)">DEX Trading</span> / <span>{{ dName }}</span></p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:48px;align-items:start;margin-bottom:44px">
+<div>
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:18px">
+<span style="{{ dMarkStyle }}">{{ dInitial }}</span>
+<div>
+<h1 style="font:700 44px/1.05 var(--font-display);letter-spacing:-.03em;margin:0">{{ dName }}</h1>
+<p data-i18n="det.sub" style="margin:6px 0 0;font:500 15px/1 var(--font-body);color:var(--text-secondary)">Decentralised perpetual exchange</p>
+</div>
+</div>
+<div style="display:flex;gap:8px;margin-bottom:30px">
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ tagCustody }}" size="small" variant="outlined" hint-size="auto,24px"></x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ tagKyc }}" size="small" variant="outlined" hint-size="auto,24px"></x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ tagBook }}" size="small" variant="outlined" hint-size="auto,24px"></x-import>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px">
+<sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:20px"><div style="font:700 22px/1.15 var(--font-display);margin-bottom:8px">{{ k.v }} <sup style="font-size:11px;color:var(--text-secondary)">#</sup></div><div style="font:500 12px/1.4 var(--font-body);color:var(--text-secondary)">{{ k.k }}</div></div>
+</sc-for>
+</div>
+</div>
+<div style="background:linear-gradient(135deg,#0067FF 0%,#0031C6 100%);border-radius:20px;padding:34px;color:#fff">
+<p data-i18n="det.rebate.label" style="font:700 10.5px/1.4 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7);margin:0 0 22px">TetherMax referral rebate rate</p>
+<div data-i18n="det.upto" style="font:600 12px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-bottom:10px">Up to</div>
+<div style="font:700 72px/1 var(--font-display);letter-spacing:-.04em">{{ dRebate }}<sup style="font-size: 22px; vertical-align: super;">*</sup></div>
+<p data-i18n="det.rebate.b" style="margin:12px 0 26px;font:500 15px/1.5 var(--font-body);color:rgba(255,255,255,.82)">of trading fees returned</p>
+<div style="display:flex;gap:12px">
+<button type="button" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border:1px solid transparent;border-radius:10px;background:#fff;color:#0B1220;font:600 16px/1 var(--font-body);letter-spacing:.01em;cursor:pointer;white-space:nowrap" style-hover="background:#EEF2F7"><span data-i18n="cta.signupShort">Sign Up</span></button>
+<button type="button" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border:1px solid rgba(255,255,255,.42);border-radius:10px;background:rgba(255,255,255,.14);color:#fff;font:600 16px/1 var(--font-body);letter-spacing:.01em;cursor:pointer;white-space:nowrap;backdrop-filter:blur(6px)" style-hover="background:rgba(255,255,255,.24)"><span data-i18n="det.howrebates">How Rebates Work</span></button>
+</div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(430px,1fr));gap:48px;align-items:start;padding:44px 0;border-top:1px solid var(--border-subtle)">
+<div>
+<h2 style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 18px">{{ dAboutTitle }}</h2>
+<p style="margin:0 0 22px;font:400 16px/1.75 var(--font-body);color:var(--text-secondary)">{{ dAbout }}</p>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ tagDepth }}" size="small" color="primary" variant="outlined" hint-size="auto,24px"></x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ tagClob }}" size="small" color="primary" variant="outlined" hint-size="auto,24px"></x-import>
+<x-import component-from-global-scope="TetherMaxDesignSystem_ad5bd2.Chip" label="{{ tagPerm }}" size="small" color="primary" variant="outlined" hint-size="auto,24px"></x-import>
+</div>
+</div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:26px">
+<p data-i18n="det.profile" style="font:700 10.5px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin:0 0 6px">Company profile</p>
+<sc-for list="{{ profile }}" as="p" hint-placeholder-count="6">
+<div style="display:grid;grid-template-columns:132px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--border-subtle)">
+<span style="font:500 13px/1.5 var(--font-body);color:var(--text-secondary)">{{ p.k }}</span>
+<span style="font:600 13px/1.5 var(--font-body)">{{ p.v }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 8px">{{ dFeaturesTitle }}</h2>
+<p style="margin:0 0 28px;font:400 15.5px/1.6 var(--font-body);color:var(--text-secondary);max-width:88ch">{{ dFeaturesLede }}</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<sc-for list="{{ features }}" as="f" hint-placeholder-count="6">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px">
+<h3 style="font:700 17px/1.3 var(--font-display);margin:0 0 10px">{{ f.k }}</h3>
+<p style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">{{ f.v }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ hasVip }}" hint-placeholder-val="{{ false }}">
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 8px">{{ dVipTitle }}</h2>
+<p style="margin:0 0 28px;font:400 15.5px/1.6 var(--font-body);color:var(--text-secondary);max-width:92ch">{{ dVipLede }}</p>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden;margin-bottom:26px">
+<div style="display:grid;grid-template-columns:110px repeat(4,minmax(0,1fr));gap:20px;padding:18px 26px;background:var(--surface-canvas);border-bottom:1px solid var(--border-subtle)">
+<sc-for list="{{ vipHead }}" as="h" hint-placeholder-count="5">
+<span style="font:700 11px/1.3 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)">{{ h.v }}</span>
+</sc-for>
+</div>
+<sc-for list="{{ vipRows }}" as="r" hint-placeholder-count="6">
+<div style="{{ r.rowStyle }}">
+<span style="{{ r.tierStyle }}">{{ r.tier }}</span>
+<span style="font:500 13.5px/1.5 var(--font-body);color:var(--text-secondary)">{{ r.vol }}</span>
+<span style="font:500 13.5px/1.5 var(--font-body);color:var(--text-secondary)">{{ r.hold }}</span>
+<span style="font:600 13.5px/1.5 var(--font-body)">{{ r.maker }}</span>
+<span style="font:600 13.5px/1.5 var(--font-body)">{{ r.taker }}</span>
+</div>
+</sc-for>
+</div>
+<h3 style="font:700 20px/1.25 var(--font-display);margin:0 0 6px">{{ dVipCatsTitle }}</h3>
+<p style="margin:0 0 18px;font:400 14.5px/1.6 var(--font-body);color:var(--text-secondary);max-width:88ch">{{ dVipCatsLede }}</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:30px">
+<sc-for list="{{ vipCats }}" as="c" hint-placeholder-count="3">
+<div style="background:var(--tm-blue-50,#E8F1FF);border-radius:14px;padding:22px">
+<h4 style="font:700 15px/1.3 var(--font-display);margin:0 0 8px">{{ c.k }}</h4>
+<p style="margin:0;font:400 14px/1.6 var(--font-body);color:var(--text-primary)">{{ c.v }}</p>
+</div>
+</sc-for>
+</div>
+<h3 style="font:700 20px/1.25 var(--font-display);margin:0 0 18px">{{ dVipHowTitle }}</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+<sc-for list="{{ vipNotes }}" as="n" hint-placeholder-count="4">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px">
+<h3 style="font:700 17px/1.3 var(--font-display);margin:0 0 10px">{{ n.k }}</h3>
+<p style="margin:0;font:400 14.5px/1.65 var(--font-body);color:var(--text-secondary)">{{ n.v }}</p>
+</div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 8px">{{ dAffTitle }}</h2>
+<p style="margin:0 0 28px;font:400 15.5px/1.6 var(--font-body);color:var(--text-secondary);max-width:88ch">{{ dAffLede }}</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;align-items:start">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:8px 26px">
+<sc-for list="{{ affiliate }}" as="r" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:20px;padding:16px 0;border-bottom:1px solid var(--border-subtle)">
+<span style="font:500 13.5px/1.5 var(--font-body);color:var(--text-secondary)">{{ r.k }}</span>
+<span style="font:600 13.5px/1.55 var(--font-body)">{{ r.v }}</span>
+</div>
+</sc-for>
+</div>
+<div style="background:var(--tm-blue-50,#E8F1FF);border-radius:16px;padding:26px">
+<h3 style="font:700 18px/1.3 var(--font-display);margin:0 0 12px">{{ dAffNoteTitle }}</h3>
+<p style="margin:0 0 18px;font:400 14.5px/1.7 var(--font-body);color:var(--text-primary)">{{ dAffNote }}</p>
+<span onClick="{{ goCompare }}" data-i18n="det.afflink" style="font:600 14px/1 var(--font-body);color:var(--color-primary);cursor:pointer">Compare rebate routes →</span>
+</div>
+</div>
+</div>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 data-i18n="det.fees" style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 8px">Fees and cashback</h2>
+<p style="margin:0 0 28px;font:400 15.5px/1.6 var(--font-body);color:var(--text-secondary);max-width:92ch">{{ dFeesLede }}</p>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;overflow:hidden">
+<div style="display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:24px;padding:18px 26px;background:var(--surface-canvas);border-bottom:1px solid var(--border-subtle)">
+<span style="font:700 11px/1.3 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)">{{ feeColAttr }}</span>
+<span style="font:700 11px/1.3 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)">{{ feeColDirect }}</span>
+<span style="font:700 11px/1.3 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary)">{{ feeColTm }}</span>
+</div>
+<sc-for list="{{ feeRows }}" as="r" hint-placeholder-count="9">
+<div style="{{ r.rowStyle }}">
+<span style="font:500 13.5px/1.55 var(--font-body);color:var(--text-secondary)">{{ r.k }}</span>
+<span style="font:600 13.5px/1.55 var(--font-body)">{{ r.direct }}</span>
+<span style="{{ r.tmStyle }}">{{ r.tm }}</span>
+</div>
+</sc-for>
+</div>
+<div style="background:#FFF4E5;border-radius:12px;padding:16px 20px;margin-top:16px;max-width:110ch">
+<p style="margin:0;font:500 13.5px/1.65 var(--font-body);color:#8A4A00">{{ feeNote }}</p>
+</div>
+</div>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 data-i18n="det.setup" style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 8px">Get set up and attributed</h2>
+<p data-i18n="det.setup.b" style="margin:0 0 26px;font:400 15.5px/1.6 var(--font-body);color:var(--text-secondary)">A 4 step path from wallet to first attributed trade <sup>^</sup></p>
+<div style="display:flex;gap:10px;margin-bottom:22px">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+<span onClick="{{ s.go }}" role="button" aria-label="{{ s.aria }}" tabIndex="{{ 0 }}" style="{{ s.style }}">{{ s.n }}</span>
+</sc-for>
+</div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:30px;min-height:150px">
+<h3 style="font:700 21px/1.3 var(--font-display);margin:0 0 12px">{{ stepTitle }}</h3>
+<p style="margin:0 0 20px;font:400 15.5px/1.7 var(--font-body);color:var(--text-secondary);max-width:88ch">{{ stepBody }}</p>
+<div style="display:inline-flex;align-items:center;gap:10px;background:var(--surface-canvas);border:1px solid var(--border-subtle);border-radius:10px;padding:12px 16px;font:500 13px/1 var(--font-body);color:var(--text-secondary)">{{ stepAside }}</div>
+</div>
+</div>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle);display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:40px">
+<div>
+<h2 data-i18n="det.costs" style="font:700 26px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 18px">Typical costs <sup style="font-size:12px;color:var(--text-secondary)">#</sup></h2>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:8px 24px">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-subtle)"><span data-i18n="det.market" style="font:700 11px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary)">Market</span><span data-i18n="det.roundtrip" style="font:700 11px/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);text-align:right">Round trip cost</span></div>
+<sc-for list="{{ costs }}" as="c" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 130px;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-subtle)"><span style="font:500 14px/1.4 var(--font-body)">{{ c.k }}</span><span style="font:600 14px/1.4 var(--font-body);text-align:right">{{ c.v }}</span></div>
+</sc-for>
+</div>
+</div>
+<div>
+<h2 data-i18n="det.conditions" style="font:700 26px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 18px">Trading conditions</h2>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:8px 24px">
+<sc-for list="{{ conditions }}" as="c" hint-placeholder-count="5">
+<div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--border-subtle)"><span style="font:500 13.5px/1.5 var(--font-body);color:var(--text-secondary)">{{ c.k }}</span><span style="font:600 13.5px/1.5 var(--font-body)">{{ c.v }}</span></div>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 data-i18n="det.trust" style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 26px">What you are trusting</h2>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:8px 26px">
+<sc-for list="{{ trust }}" as="t" hint-placeholder-count="4">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;padding:20px 0;border-bottom:1px solid var(--border-subtle)">
+<span style="font:600 15px/1.5 var(--font-body)">{{ t.k }}</span><span style="font:400 15px/1.65 var(--font-body);color:var(--text-secondary)">{{ t.v }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 data-i18n="det.incidents" style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 26px">Incident history</h2>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:16px;padding:8px 26px">
+<sc-for list="{{ incidents }}" as="i" hint-placeholder-count="3">
+<div style="display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;padding:20px 0;border-bottom:1px solid var(--border-subtle)">
+<span style="font:600 14px/1.5 var(--font-body);color:var(--text-secondary)">{{ i.k }}</span><span style="font:400 15px/1.65 var(--font-body)">{{ i.v }}</span>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="padding:44px 0;border-top:1px solid var(--border-subtle)">
+<h2 data-i18n="det.regional" style="font:700 30px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 26px">Regional access note</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:22px">
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><h3 data-i18n="det.r1" style="font:700 16px/1.3 var(--font-display);margin:0 0 8px">Restricted list</h3><p style="margin:0;font:400 14px/1.6 var(--font-body);color:var(--text-secondary)">{{ dR1 }}</p></div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><h3 data-i18n="det.r2" style="font:700 16px/1.3 var(--font-display);margin:0 0 8px">Deposit route</h3><p style="margin:0;font:400 14px/1.6 var(--font-body);color:var(--text-secondary)">{{ dR2 }}</p></div>
+<div style="background:#fff;border:1px solid var(--border-subtle);border-radius:14px;padding:24px"><h3 data-i18n="det.r3" style="font:700 16px/1.3 var(--font-display);margin:0 0 8px">Equity and RWA</h3><p style="margin:0;font:400 14px/1.6 var(--font-body);color:var(--text-secondary)">{{ dR3 }}</p></div>
+</div>
+<span onClick="{{ goFunding }}" data-i18n="det.fundlink" style="font:600 14px/1 var(--font-body);color:var(--color-primary);cursor:pointer">How to fund from your exchange →</span>
+</div>
+
+<div style="padding:34px 0;border-top:1px solid var(--border-subtle);display:flex;flex-direction:column;gap:8px;max-width:120ch">
+<p data-i18n="det.f1" style="margin:0;font:400 12.5px/1.6 var(--font-body);color:var(--text-secondary)"><strong>#</strong>  All DEX Venue information shown is indicative only. Trading conditions, fees, leverage limits and regulatory status may change. Confirm current details directly with the DEX Venue before opening an account.</p>
+<p data-i18n="det.f2" style="margin:0;font:400 12.5px/1.6 var(--font-body);color:var(--text-secondary)"><strong>*</strong>  Rebate rates displayed are indicative and subject to the current agreement between TetherMax and the DEX Venue. You must register through the TetherMax route to activate your rebate. Registrations made directly with the DEX Venue will not be attributed.</p>
+<p data-i18n="det.f3" style="margin:0;font:400 12.5px/1.6 var(--font-body);color:var(--text-secondary)"><strong>^</strong>  Retail traders confirm attribution in the DEX Venue own referral section, which lists the code you signed up under. This is not the builder attribution screen. If the code is missing or wrong, contact TetherMax Live Chat before you size up. <span style="opacity:.7">as at 12 Feb 2026</span></p>
+</div>
+
+<div style="background:linear-gradient(135deg,#0067FF,#0031C6);border-radius:20px;padding:40px;display:flex;align-items:center;gap:32px;color:#fff">
+<div style="flex:1">
+<h3 style="font:700 28px/1.2 var(--font-display);letter-spacing:-.02em;margin:0 0 8px">{{ dCtaTitle }}</h3>
+<p data-i18n="det.cta.b" style="margin:0;font:400 15px/1.6 var(--font-body);color:rgba(255,255,255,.8)">Route your account through TetherMax and your rebate is attributed from your first trade.</p>
+</div>
+<button type="button" onClick="{{ goCompare }}" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border:1px solid rgba(255,255,255,.42);border-radius:10px;background:rgba(255,255,255,.14);color:#fff;font:600 16px/1 var(--font-body);letter-spacing:.01em;cursor:pointer;white-space:nowrap;backdrop-filter:blur(6px)" style-hover="background:rgba(255,255,255,.24)"><span data-i18n="cta.compare">Compare DEX Venues</span></button>
+<button type="button" style="display:inline-flex;align-items:center;justify-content:center;height:48px;padding:0 22px;border:1px solid transparent;border-radius:10px;background:#fff;color:#0B1220;font:600 16px/1 var(--font-body);letter-spacing:.01em;cursor:pointer;white-space:nowrap" style-hover="background:#EEF2F7"><span data-i18n="cta.start">Get Started</span></button>
+</div>
+</div>
+</main>
+</sc-if>
+
+<footer style="background:#06080F;color:rgba(255,255,255,.6);padding:44px 0">
+<div style="max-width:1360px;margin:0 auto;padding:0 48px;display:flex;align-items:center;gap:26px;font:400 13px/1 var(--font-body);flex-wrap:wrap">
+<span data-i18n="foot.chat" style="cursor:pointer;color:#fff">Live Chat</span>
+<span>support@tethermax.io</span>
+<span data-i18n="foot.company" style="cursor:pointer">Company</span>
+<span data-i18n="foot.legal" style="cursor:pointer">Legal</span>
+<span data-i18n="foot.social" style="cursor:pointer">Socials</span>
+<span style="flex:1"></span>
+<span data-i18n="foot.line" style="color:rgba(255,255,255,.38);font-size:12px">TetherMax is a rebate service and does not provide investment advice.</span>
+</div>
+</footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;asterStatus&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Available&quot;,&quot;Watch&quot;,&quot;Restricted&quot;],&quot;default&quot;:&quot;Available&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Venue status&quot;},&quot;hyperliquidStatus&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Available&quot;,&quot;Watch&quot;,&quot;Restricted&quot;],&quot;default&quot;:&quot;Available&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Venue status&quot;},&quot;lighterStatus&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Available&quot;,&quot;Watch&quot;,&quot;Restricted&quot;],&quot;default&quot;:&quot;Available&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Venue status&quot;},&quot;showAccessNotice&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;startLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ko&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;expandAllTraits&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+const KO = {
+  'nav.cashback':'캐시백','nav.rewards':'리워드 허브','nav.discover':'디스커버 ⌄','nav.login':'로그인','nav.signup':'회원가입',
+  'cta.learn':'기초 배우기','cta.compare':'DEX 비교하기','cta.details':'자세히 보기 →','cta.signup':'가입하기','cta.start':'시작하기',
+  'hub.eyebrow':'파트너 DEX 거래소','hub.h1':'온체인에서 무기한 선물을 거래하고, 캐시백은 그대로','hub.lede':'무기한 선물은 이미 알고 계십니다. DEX가 탈중앙화되면 무엇이 달라지는지 배우고, Aster·Hyperliquid·Lighter를 나란히 비교한 뒤 본인의 거래 방식에 맞는 경로를 선택하세요.',
+  'hub.risk':'레버리지 무기한 선물 거래는 급격한 손실 위험이 매우 큽니다. 탈중앙화 DEX에서는 키를 직접 보관하므로 계정 복구가 불가능하며, 거래를 되돌려 줄 고객지원 창구도 없습니다.',
+  'hub.panel.label':'운영 중인 세 곳의 DEX','hub.panel.aster':'가장 넓은 상품 범위','hub.panel.hyper':'가장 깊은 유동성','hub.panel.lighter':'기본 등급 수수료 0%','hub.panel.rebate':'환급','hub.panel.rebate2':'환급','hub.panel.rebate3':'환급',
+  'hub.panel.foot':'표시된 환급률은 참고용이며 TetherMax와 각 DEX 간 현행 계약에 따라 달라질 수 있습니다.',
+  'ey.changes':'무엇이 달라지나','changes.h2':'거래는 그대로입니다. 달라진 것은 거래소입니다.','changes.lede':'펀딩비, 청산, 레버리지 구간은 기존과 동일하게 작동합니다. 달라지는 것은 담보를 누가 보관하는지, 오더북이 실제로 어디에 있는지, 운영자가 멈추면 무슨 일이 일어나는지, 그리고 체결이 공정했음을 누군가 증명할 수 있는지입니다.',
+  'changes.c1.t':'키를 직접 보관합니다','changes.c1.b':'담보는 본인이 통제하는 지갑 또는 컨트랙트에 있습니다. 아무도 동결할 수 없고, 아무도 복구해 줄 수 없습니다.',
+  'changes.c2.t':'오더북에 주소가 있습니다','changes.c2.b':'체결은 체인, 롤업 또는 시퀀서 위에서 실행됩니다. 어디서 실행되는지가 무엇을 증명할 수 있고 무엇을 신뢰해야 하는지를 결정합니다.',
+  'changes.c3.t':'수수료는 낮아 보여도 총비용은 다릅니다','changes.c3.b':'수수료 0% 표기여도 호가 깊이, 슬리피지, 펀딩비, 가스를 왕복 기준으로 합산하면 더 비쌀 수 있습니다.',
+  'ey.how':'작동 방식','how.h2':'세 곳의 DEX, 세 가지 다른 선택','how.lede':'Aster, Hyperliquid, Lighter는 같은 문제를 근본적으로 다른 세 가지 방식으로 풉니다. 각자 무엇을 포기했는지 이해하는 것이 선택의 대부분입니다.',
+  'ey.funding':'입금 경로','funding.h2':'거래소에서 DEX로 자금을 옮기는 방법','funding.lede':'이 DEX들은 어떤 통화의 법정화폐도 받지 않습니다. 경로는 본인 시장의 인가받은 거래소를 거치며, 출금 단계에서 대부분 문제가 발생합니다.',
+  'fund.s1.t':'인가받은 거래소에서 스테이블코인 보유','fund.s1.b':'본인 통화의 은행 계좌를 지원하는 인가 거래소면 됩니다. 자금의 출발점은 지갑이 아니라 여기입니다.',
+  'fund.s2.t':'본인이 통제하는 지갑으로 출금','fund.s2.b':'트래블룰이 적용되는 구간입니다. 수취 지갑 인증이 필요하며, 미인증 시 지연 또는 거절될 수 있습니다.',
+  'fund.s3.t':'해당 DEX가 지원하는 네트워크로 브릿지','fund.s3.b':'Aster: BNB Chain, Arbitrum, Ethereum, Solana. Hyperliquid: Arbitrum의 USDC. Lighter: Ethereum 정산.',
+  'fund.s4.t':'입금 후 레퍼럴 코드 확인','fund.s4.b':'첫 거래 전에 DEX의 레퍼럴 섹션에서 TetherMax 코드가 표시되는지 확인하세요.',
+  'fund.reg':'2026년 2월 12일 기준 해당 관할권의 규제 현황: 감지된 거주 관할권 기준으로 해당 DEX 이용이 허용되며, 별도 제한 조치는 없습니다. 거래 수익의 세무 처리는 관할권마다 다르며 본 페이지에서 다루지 않습니다.',
+  'ey.risks':'위험 요소','risks.h2':'탈중앙화가 곧 안전을 의미하지는 않습니다','risks.foot':'본 페이지는 일반적인 교육 목적으로만 제공되며 투자 자문에 해당하지 않습니다. 입금 전 각 DEX의 위험 고지를 직접 확인하세요.',
+  'ey.begin':'시작하는 방법','begin.h2':'4단계로 끝내는 시작 경로','begin.s1':'1단계','begin.s2':'2단계','begin.s3':'3단계','begin.s4':'4단계',
+  'begin.s1.t':'무엇이 달라지는지 배우기','begin.s2.t':'세 곳의 DEX 비교하기','begin.s3.t':'TetherMax 경로로 계정 개설','begin.s4.t':'입금 후 레퍼럴 코드 확인',
+  'faq.h2':'자주 묻는 질문','faq.lede':'첫 온체인 무기한 선물 거래 전 트레이더들이 묻는 여섯 가지.',
+  'cmp.f1':'#  참고용 DEX 조건입니다. 거래 조건, 수수료, 레버리지 한도, 마켓 제공 범위, 지역 접근성은 사전 통지 없이 변경될 수 있고 계정 등급과 상품 모드에 따라 다를 수 있습니다. 입금 전 해당 DEX 사이트에서 확인하세요.',
+  'cmp.f2':'*  환급 조건. 환급률은 TetherMax와 각 DEX 간 현행 계약에 따라 달라질 수 있습니다. 가입은 반드시 TetherMax 경로를 통해야 하며, 그렇지 않으면 환급이 귀속되지 않습니다.',
+  'cmp.f3':'^  처리 및 지급 시점.',
+  'det.f1':'#  표시된 모든 DEX 정보는 참고용입니다. 거래 조건, 수수료, 레버리지 한도, 규제 상태는 변경될 수 있습니다. 계정 개설 전 해당 DEX에서 현재 정보를 직접 확인하세요.',
+  'det.f2':'*  표시된 환급률은 참고용이며 TetherMax와 각 DEX 간 현행 계약에 따라 달라질 수 있습니다. 환급을 활성화하려면 TetherMax 경로로 가입해야 합니다. DEX에 직접 가입한 경우 귀속되지 않습니다.',
+  'det.f3':'^  리테일 트레이더는 DEX 자체 레퍼럴 섹션에서 귀속을 확인합니다. 가입 시 사용한 코드가 표시되며, 빌더 귀속 화면이 아닙니다. 코드가 없거나 다르면 규모를 늘리기 전에 TetherMax 실시간 채팅으로 문의하세요.',
+  'foot.chat':'실시간 채팅','foot.company':'회사 소개','foot.legal':'법적 고지','foot.social':'소셜','foot.line':'TetherMax는 수수료 환급 서비스이며 투자 자문을 제공하지 않습니다.'
+};
+
+Object.assign(KO, {
+  'bc.dex':'DEX 거래','bc.learn':'러닝','bc.mod2':'모듈 2','bc.compare':'DEX 비교',
+  'learn.h1':'DEX 러닝 트랙','learn.lede':'무기한 선물을 이미 아는 트레이더를 위한 8개 모듈. 무기한 선물이 무엇인지는 다시 설명하지 않습니다. 모든 모듈은 한 가지 질문에 답합니다. 거래소가 탈중앙화되면 무엇이 달라지는가.',
+  'learn.progress':'학습 진행률','learn.persist':'로그아웃 상태에서는 이 브라우저에, 로그인하면 계정에 진행률이 저장됩니다.','learn.continue':'이어서 학습',
+  'art.read':'6분 분량','art.h1':'오더북은 어디에 있는가','art.toc':'목차','art.share':'공유:','art.copy':'링크 복사','art.prev':'← 이전: 모듈 1','art.next':'다음: 모듈 3 →',
+  'art.s1':'이미 알고 계신 것','art.s1.b':'중앙화 거래소의 매칭 엔진은 신뢰에 기반한 블랙박스입니다. 운영자가 잃을 것이 있는 규제 대상 기업이기 때문입니다. 아래 내용은 지정가 주문, 메이커와 테이커, 호가가 채워지는 방식을 이미 이해하고 있다고 가정합니다. 이 모듈은 신뢰할 운영자가 없을 때 그 오더북이 실제로 어디서 돌아가는지만 다룹니다.',
+  'art.s2':'온체인 매칭','art.s2.b':'매칭이 합의 안에서 일어나면 모든 주문, 취소, 체결이 검증자 전체가 동의하는 트랜잭션이 됩니다. 오더북은 누구나 재현할 수 있는 공개 감사 대상이 됩니다. 대가는 처리량이며, 그래서 이런 목적의 체인은 범용 체인과 전혀 다르게 생겼습니다.',
+  'art.s3':'매칭을 증명하는 zk 롤업','art.s3.b':'zk 롤업은 매칭을 정산 체인 밖에서 처리하되, 매칭과 청산 로직이 올바르게 실행되었다는 증명을 게시합니다. 운영자가 정직하게 오더북을 운영했다고 신뢰할 필요가 없고, 증명을 계속 게시한다는 점만 신뢰하면 됩니다.',
+  'art.s4':'시퀀서와 소프트 파이널리티','art.s4.b':'대부분의 롤업은 단일 시퀀서가 정산 전에 주문을 확인해 줍니다. 이 확인이 소프트 파이널리티입니다. 빠르고 대개 정확하지만, 운영자에게 문제가 생기면 가장 먼저 작동을 멈추는 부분이기도 합니다.',
+'art.s5':'세 DEX는 어떻게 다른가','art.cmp.a':'자체 체인에서 매칭하며, 오프체인 시퀀싱 비중은 공개되지 않았습니다.','art.cmp.h':'모든 주문, 취소, 체결이 L1의 합의 트랜잭션입니다.','art.cmp.l':'매칭과 청산을 zk 증명으로 입증하고 이더리움에서 검증합니다.',
+'art.s6':'지역 안내','art.s6.b':'자금이 어디서 출발하는지가 추가 브릿지 없이 도달 가능한 정산 체인을 결정합니다. 국내 거래소에서 출금하는 독자는 Arbitrum과 Ethereum에 바로 도달하지만, 솔라나 전용 출금 경로는 브릿지 한 단계와 두 번째 실패 지점을 추가합니다.',
+  'art.s7':'DEX 선택에 주는 의미','art.s7.b':'내가 체결한 오더북을 재현할 수 있는지가 중요하다면, 온체인 매칭과 zk로 증명된 매칭은 서로 다른 두 가지 답이며, 둘 다 공개되지 않은 시퀀싱 모델과는 다릅니다. 실행 경로 중 어디까지를 약속이 아닌 증명으로 원하는지 정한 뒤 수수료 항목을 읽으세요.',
+  'art.cta.t':'가입하고 캐시백 받기','art.cta.b':'TetherMax 경로로 DEX 계정을 개설하면 첫 거래부터 환급이 귀속됩니다.',
+  'cmp.eyebrow':'파트너 DEX 비교','cmp.h1':'Aster, Hyperliquid, Lighter 비교','cmp.lede':'다섯 개 영역, 서른 개 항목. 중앙화 거래소 비교에는 존재하지 않는 신뢰성과 검증 가능성 항목을 포함합니다. 모든 수치에는 기준일과 출처가 있습니다.',
+'cmp.f0':'2026년 2월 12일 기준 수치. 출처 링크는 각 DEX 레코드에 보관됩니다.',
+  'cmp.proceed':'다음 단계','cmp.next.h2':'다음으로 할 일','cmp.n1':'DEX 한 곳으로 후보 좁히기','cmp.n2':'TetherMax 경로로 계정 개설','cmp.n3':'거래소에서 입금하기','cmp.n4':'DEX에서 레퍼럴 코드 확인',
+  'cmp.still.t':'아직 고민 중이신가요? 무엇이 달라지는지부터','cmp.still.b':'비교표에서 설명이 필요한 항목이 있었다면, 러닝 트랙의 8개 모듈이 무기한 선물을 아는 트레이더 기준으로 다룹니다.',
+  'det.notice':'접근 안내: Hyperliquid는 미국, 온타리오주 및 제재 대상 관할권 거주자를 받지 않습니다. 이 안내는 해당 관할권에 제한 조치가 있는 경우에만 표시됩니다.','det.asat':'2026년 2월 12일 기준',
+  'det.sub':'탈중앙화 무기한 선물 거래소','det.k1':'메이커 / 테이커, 기본 등급','det.k2':'최대 레버리지, BTC','det.k3':'정산','det.k4':'무기한 및 현물 마켓',
+  'det.rebate.label':'TetherMax 레퍼럴 환급률','det.upto':'최대','det.rebate.b':'거래 수수료 환급','det.howrebates':'환급 방식 보기','cta.signupShort':'가입하기',
+  'det.about':'Hyperliquid 소개','det.about.b':'Hyperliquid는 자체 레이어1 위에서 완전 온체인 중앙지정가호가(CLOB)를 운영합니다. 거래소 상태 머신인 HyperCore와 범용 컨트랙트를 위한 HyperEVM 두 실행 환경이 HyperBFT 합의 아래 결합되어 있습니다. 모든 주문, 취소, 체결이 합의 트랜잭션이므로 실행은 신뢰가 아니라 공개 감사의 대상입니다.',
+  'det.profile':'기업 프로필','det.fees':'수수료와 캐시백',
+  'det.tier1':'기본 등급','det.tier1.b':'스테이킹 없음, 거래량 등급 없음','det.tier2':'할인 등급','det.tier2.b':'HYPE 스테이킹과 14일 거래량 등급이 곱셈 방식으로 적용됩니다',
+  'det.tier2.cond':'조건: 할인율은 스테이킹한 HYPE와 14일 누적 거래량에 따라 달라집니다. TetherMax 환급 경로는 수수료 0% 등급을 포기하도록 요구하지 않습니다.',
+  'det.setup':'설정과 귀속 확인','det.setup.b':'지갑에서 첫 귀속 거래까지 4단계 경로','det.costs':'일반적인 비용','det.market':'마켓','det.roundtrip':'왕복 비용','det.conditions':'거래 조건',
+  'det.trust':'무엇을 신뢰하게 되는가','det.incidents':'사고 이력','det.regional':'지역 접근 안내',
+  'det.r1':'제한 국가 목록','det.r1.b':'감지된 관할권은 Hyperliquid 제한 목록에 포함되어 있지 않습니다.','det.r2':'입금 경로','det.r2.b':'Arbitrum의 USDC는 국내 인가 거래소 출금으로 바로 도달할 수 있습니다.','det.r3':'주식 및 RWA','det.r3.b':'비암호자산 무기한 마켓은 제공하지 않습니다.',
+  'det.afflink':'환급 경로 비교하기 →','det.fundlink':'거래소에서 입금하는 방법 →','det.cta.t':'Hyperliquid에서 캐시백 받기','det.cta.b':'TetherMax 경로로 계정을 연결하면 첫 거래부터 환급이 귀속됩니다.'
+});
+
+const MODULES = [
+  ['Custody, keys and what you actually own','보관, 키, 그리고 실제로 소유하는 것'],
+  ['Where the order book lives: onchain matching, zk rollups and sequencers','오더북은 어디에 있는가: 온체인 매칭, zk 롤업, 시퀀서'],
+  ['Oracles and mark price: how your liquidation level is decided','오라클과 마크 가격: 청산가는 어떻게 정해지는가'],
+  ['Funding rates onchain: intervals, clamps and peer to peer settlement','온체인 펀딩비: 주기, 상한, P2P 정산'],
+  ['Liquidation, insurance backstops and auto deleveraging','청산, 보험 기금, 자동 디레버리징'],
+  ['The true cost of a round trip: fees, depth, slippage, gas','왕복 거래의 실제 비용: 수수료, 호가 깊이, 슬리피지, 가스'],
+  ['Points, airdrops and why reported volume can mislead','포인트, 에어드랍, 그리고 보고된 거래량이 오해를 부르는 이유'],
+  ['Failure modes: sequencer halts, escape hatches, validator intervention, bridge risk','실패 시나리오: 시퀀서 중단, 탈출 경로, 검증자 개입, 브릿지 위험']
+];
+
+const MOD = {
+1:{ t:['Custody, keys and what you actually own','보관, 키, 그리고 실제로 소유하는 것'], read:['7 min read','7분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'On a centralised exchange your balance is a number in the operator database. It is an obligation the exchange owes you, and the exchange holds the actual coins. That arrangement is why password resets, account recovery and support tickets exist at all. This module covers what replaces it.',
+   '중앙화 거래소의 잔액은 운영자 데이터베이스의 숫자입니다. 거래소가 당신에게 지고 있는 채무이며, 실제 코인은 거래소가 보관합니다. 비밀번호 재설정, 계정 복구, 고객지원 티켓이 존재하는 이유가 바로 이 구조입니다. 이 모듈은 그것을 무엇이 대체하는지 다룹니다.'],
+  ['A wallet is not an account','지갑은 계정이 아닙니다',
+   'A wallet is a keypair. The private key is the only thing that authorises a transfer, and no party other than you has a copy. There is nothing to reset, because there was never a credential stored anywhere to reset. Losing the key and losing the funds are the same event.',
+   '지갑은 키페어입니다. 개인키만이 전송을 승인할 수 있으며, 당신 외에 그 사본을 가진 주체는 없습니다. 재설정할 것이 없습니다. 애초에 어딘가에 저장된 인증 정보가 없었기 때문입니다. 키를 잃는 것과 자금을 잃는 것은 동일한 사건입니다.'],
+  ['Approvals are the part people skim','승인 절차가 대부분 건너뛰는 부분입니다',
+   'Depositing to a DEX usually means signing an approval that lets a contract move a token on your behalf, then a second transaction that actually moves it. Read what the approval covers. An unlimited approval to a contract you did not verify is a standing permission, not a one time payment.',
+   'DEX 입금은 보통 컨트랙트가 당신을 대신해 토큰을 옮길 수 있도록 하는 승인에 서명하고, 그다음 실제로 옮기는 두 번째 트랜잭션을 보내는 절차입니다. 승인 범위를 반드시 읽으세요. 검증하지 않은 컨트랙트에 대한 무제한 승인은 일회성 결제가 아니라 상시 권한입니다.'],
+  ['Venue created wallets are a weaker position','거래소가 생성한 지갑은 취약한 위치입니다',
+   'Some DEX Venues offer email signup and generate a wallet for you behind the scenes. It feels like an account because it is closer to one: the venue participated in creating your key material. If self custody is the reason you are here, connect a wallet you generated yourself.',
+   '일부 DEX는 이메일 가입을 제공하며 내부적으로 지갑을 생성해 줍니다. 계정처럼 느껴지는 이유는 실제로 계정에 더 가깝기 때문입니다. 거래소가 키 생성에 관여했습니다. 자기 보관이 이곳에 온 이유라면, 직접 생성한 지갑을 연결하세요.']],
+  cmp:{ a:['Wallet or email login. Email generates a venue created wallet, a weaker custody position.','지갑 또는 이메일 로그인. 이메일은 거래소가 생성한 지갑을 만들며 보관 측면에서 취약합니다.'],
+        h:['Wallet only, self custodial throughout.','지갑만 지원하며 전 구간 자기 보관입니다.'],
+        l:['Wallet only. Assets are held in Ethereum contracts you can exit from.','지갑만 지원합니다. 자산은 직접 회수 가능한 이더리움 컨트랙트에 보관됩니다.'] },
+  reg:['The Travel Rule bites at the moment you take custody. Withdrawing from a licensed exchange to a wallet you control requires destination verification in most jurisdictions, so register the wallet address with your exchange before you need it, not on the day you want to trade.','트래블룰은 당신이 보관 주체가 되는 순간 적용됩니다. 인가 거래소에서 본인이 통제하는 지갑으로 출금할 때 대부분의 관할권에서 수취처 인증이 필요하므로, 거래하려는 날이 아니라 그 전에 미리 지갑 주소를 거래소에 등록해 두세요.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'If custody is the reason you are moving onchain, then a venue that offers email login has an option you should not take. Connect your own wallet everywhere, treat approvals as permissions you audit, and accept that the safety net you are used to does not exist here.',
+   '온체인으로 옮기는 이유가 보관 문제라면, 이메일 로그인을 제공하는 거래소에는 선택하지 말아야 할 옵션이 있는 것입니다. 어디서든 본인 지갑을 연결하고, 승인은 감사해야 할 권한으로 다루며, 익숙했던 안전망이 여기에는 없다는 점을 받아들이세요.'] },
+
+2:{ t:['Where the order book lives','오더북은 어디에 있는가'], read:['6 min read','6분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'On a centralised exchange the matching engine is a black box you trust because the operator is a regulated business with something to lose. Everything below assumes you already understand limit orders, maker and taker roles and how a book fills. This module only covers where that book actually runs when there is no operator to trust.',
+   '중앙화 거래소의 매칭 엔진은 신뢰에 기반한 블랙박스입니다. 운영자가 잃을 것이 있는 규제 대상 기업이기 때문입니다. 아래 내용은 지정가 주문, 메이커와 테이커, 호가가 채워지는 방식을 이미 이해하고 있다고 가정합니다. 이 모듈은 신뢰할 운영자가 없을 때 그 오더북이 실제로 어디서 돌아가는지만 다룹니다.'],
+  ['Onchain matching','온체인 매칭',
+   'When matching happens inside consensus, every order, cancel and fill is a transaction that the whole validator set agrees on. The book becomes publicly auditable: anyone can replay it. The cost is throughput, which is why a chain built for this looks nothing like a general purpose chain.',
+   '매칭이 합의 안에서 일어나면 모든 주문, 취소, 체결이 검증자 전체가 동의하는 트랜잭션이 됩니다. 오더북은 누구나 재현할 수 있는 공개 감사 대상이 됩니다. 대가는 처리량이며, 그래서 이런 목적의 체인은 범용 체인과 전혀 다르게 생겼습니다.'],
+  ['zk rollup with proven matching','매칭을 증명하는 zk 롤업',
+   'A zk rollup keeps matching off the settlement chain but publishes a proof that the matching and liquidation logic ran correctly. You are no longer trusting the operator to have run the book honestly, only to have kept publishing proofs.',
+   'zk 롤업은 매칭을 정산 체인 밖에서 처리하되, 매칭과 청산 로직이 올바르게 실행되었다는 증명을 게시합니다. 운영자가 정직하게 오더북을 운영했다고 신뢰할 필요가 없고, 증명을 계속 게시한다는 점만 신뢰하면 됩니다.'],
+  ['Sequencer and soft finality','시퀀서와 소프트 파이널리티',
+   'Most rollups run a single sequencer that acknowledges your order before it is settled. That acknowledgement is soft finality. It is fast, it is usually correct, and it is the thing that stops working first when the operator has a bad day.',
+   '대부분의 롤업은 단일 시퀀서가 정산 전에 주문을 확인해 줍니다. 이 확인이 소프트 파이널리티입니다. 빠르고 대개 정확하지만, 운영자에게 문제가 생기면 가장 먼저 작동을 멈추는 부분이기도 합니다.']],
+  cmp:{ a:['Matching on its own chain, degree of off chain sequencing not published.','자체 체인에서 매칭하며, 오프체인 시퀀싱 비중은 공개되지 않았습니다.'],
+        h:['Every order, cancel and fill is a consensus transaction on the L1.','모든 주문, 취소, 체결이 L1의 합의 트랜잭션입니다.'],
+        l:['Matching and liquidation proven with zk proofs, verified on Ethereum.','매칭과 청산을 zk 증명으로 입증하고 이더리움에서 검증합니다.'] },
+  reg:['Where your funds start decides which settlement chain you can reach without an extra bridge hop. Readers withdrawing from a Korean exchange reach Arbitrum and Ethereum directly; a Solana only withdrawal route adds a bridge and a second failure point.','자금이 어디서 출발하는지가 추가 브릿지 없이 도달 가능한 정산 체인을 결정합니다. 국내 거래소에서 출금하는 독자는 Arbitrum과 Ethereum에 바로 도달하지만, 솔라나 전용 출금 경로는 브릿지 한 단계와 두 번째 실패 지점을 추가합니다.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'If you care that the book you traded against can be replayed, onchain matching and zk proven matching are two different answers to that, and neither is the same as an unpublished sequencing model. Decide how much of the execution path you want proven rather than promised, then read the fee rows with that in mind.',
+   '내가 체결한 오더북을 재현할 수 있는지가 중요하다면, 온체인 매칭과 zk로 증명된 매칭은 서로 다른 두 가지 답이며, 둘 다 공개되지 않은 시퀀싱 모델과는 다릅니다. 실행 경로 중 어디까지를 약속이 아닌 증명으로 원하는지 정한 뒤 수수료 항목을 읽으세요.'] },
+
+3:{ t:['Oracles and mark price','오라클과 마크 가격'], read:['6 min read','6분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'You already know liquidation runs off mark price, not last traded price, and that mark is derived from an index of outside spot venues. The mechanic is identical onchain. What changes is who publishes that number and how quickly you can tell if it is wrong.',
+   '청산이 마지막 체결가가 아니라 마크 가격 기준으로 실행되며, 마크가 외부 현물 거래소 지수에서 산출된다는 점은 이미 알고 계실 것입니다. 온체인에서도 메커니즘은 동일합니다. 달라지는 것은 그 숫자를 누가 게시하는지, 그리고 잘못되었을 때 얼마나 빨리 알 수 있는지입니다.'],
+  ['Where the number comes from','숫자는 어디서 오는가',
+   'An onchain venue has no internal price authority, so it imports one. Usually that is a median or weighted average of several spot venues, published on a fixed cadence by validators or by an oracle contract. The publishing cadence is the resolution of your liquidation price.',
+   '온체인 거래소에는 내부 가격 권위가 없으므로 외부에서 들여옵니다. 보통 여러 현물 거래소의 중앙값이나 가중평균이며, 검증자 또는 오라클 컨트랙트가 정해진 주기로 게시합니다. 게시 주기가 곧 당신의 청산가 해상도입니다.'],
+  ['Latency is a risk, not a detail','지연은 사소한 문제가 아니라 위험입니다',
+   'Between two oracle updates the venue is working from a stale number. In a fast move that gap is where liquidations fire late, or fire on a price that no longer exists. Shorter cadence narrows the window but raises the cost of publishing it.',
+   '두 번의 오라클 갱신 사이에 거래소는 낡은 숫자로 작동합니다. 급격한 변동에서는 그 간극에서 청산이 늦게 발동하거나 이미 존재하지 않는 가격에 발동합니다. 주기를 줄이면 창이 좁아지지만 게시 비용이 올라갑니다.'],
+  ['Thin source venues move your liquidation price','얇은 소스 거래소가 청산가를 움직입니다',
+   'If one of the source venues is thin, a modest push there moves the index, and the index moves your liquidation level. This is the manipulation surface that does not exist when the exchange sets its own mark internally.',
+   '소스 거래소 중 하나가 얇으면 그곳에서의 적당한 매수·매도만으로 지수가 움직이고, 지수가 청산 수준을 움직입니다. 거래소가 내부적으로 마크를 정할 때는 존재하지 않는 조작 표면입니다.']],
+  cmp:{ a:['Oracle sources and update cadence are not fully published.','오라클 소스와 갱신 주기가 완전히 공개되지 않았습니다.'],
+        h:['Validators publish the oracle as part of consensus, so the feed is auditable onchain.','검증자가 합의의 일부로 오라클을 게시하므로 피드를 온체인에서 감사할 수 있습니다.'],
+        l:['Oracle inputs are consumed inside the proven matching and liquidation logic.','오라클 입력값이 증명된 매칭 및 청산 로직 내부에서 사용됩니다.'] },
+  reg:['Index composition matters more if you trade outside deep hours. A book that is thin during your local session gives the oracle thinner inputs at exactly the time you are placing orders, which is worth checking before you set a tight stop.','유동성이 깊은 시간대를 벗어나 거래한다면 지수 구성이 더 중요해집니다. 본인 세션 시간대에 얇은 오더북은 주문을 내는 바로 그 시점에 오라클에 더 얇은 입력값을 제공하므로, 타이트한 스탑을 걸기 전에 확인할 가치가 있습니다.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'Ask two questions of any venue: which venues feed the index, and how often is it published. A venue that answers both in public documentation is giving you something a venue with an unpublished oracle model cannot.',
+   '어떤 거래소든 두 가지를 확인하세요. 어떤 거래소가 지수를 구성하는지, 그리고 얼마나 자주 게시되는지입니다. 두 가지를 공개 문서로 답하는 거래소는 오라클 모델을 공개하지 않는 거래소가 줄 수 없는 것을 제공하고 있습니다.'] },
+
+4:{ t:['Funding rates onchain','온체인 펀딩비'], read:['5 min read','5분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'Funding is the payment between longs and shorts that keeps the perp tethered to spot. You already read it as a cost of carry. Onchain the formula is familiar; the interval, the cap and the settlement path are where the differences sit.',
+   '펀딩비는 무기한 선물을 현물에 묶어두기 위해 롱과 숏 사이에서 주고받는 지급액입니다. 이미 보유 비용으로 읽고 계실 것입니다. 온체인에서도 공식은 익숙하며, 차이는 주기, 상한, 정산 경로에 있습니다.'],
+  ['Interval changes the arithmetic','주기가 계산을 바꿉니다',
+   'An hourly interval and a four hourly interval are not the same cost even at the same annualised rate. Hourly funding compounds more often and gives you more exit points before the next payment. Four hourly funding means a position held briefly may pay nothing at all.',
+   '동일한 연환산 이율이라도 1시간 주기와 4시간 주기는 같은 비용이 아닙니다. 1시간 펀딩은 더 자주 복리되며 다음 지급 전에 빠져나갈 지점이 더 많습니다. 4시간 펀딩에서는 짧게 보유한 포지션이 아무것도 지불하지 않을 수 있습니다.'],
+  ['Clamps cut both ways','상한은 양방향으로 작용합니다',
+   'Most venues clamp the rate so a single interval cannot charge an extreme amount. That protects you from a violent squeeze, and it also caps what you can earn taking the other side of one. A clamped venue is a less interesting place to be the liquidity provider.',
+   '대부분의 거래소는 한 주기에 극단적인 금액이 청구되지 않도록 이율에 상한을 둡니다. 이는 격렬한 스퀴즈로부터 당신을 보호하지만, 반대편을 잡아 얻을 수 있는 수익도 동시에 제한합니다. 상한이 있는 거래소는 유동성 공급자 입장에서 덜 매력적인 곳입니다.'],
+  ['Funding is not a fee','펀딩비는 수수료가 아닙니다',
+   'This is the line traders miss when comparing venues on fees. Funding is paid to other traders, not to the venue, so no rebate programme touches it. A cheap venue with persistently adverse funding can cost more than an expensive one.',
+   '수수료로 거래소를 비교할 때 트레이더들이 놓치는 지점입니다. 펀딩비는 거래소가 아니라 다른 트레이더에게 지급되므로 어떤 환급 프로그램도 여기에 적용되지 않습니다. 수수료가 저렴하지만 펀딩이 지속적으로 불리한 거래소가 비싼 거래소보다 더 많은 비용이 들 수 있습니다.']],
+  cmp:{ a:['Every 4 hours, clamped.','4시간마다, 상한 적용.'],
+        h:['Hourly.','1시간.'],
+        l:['Hourly.','1시간.'] },
+  reg:['Funding accrues on a UTC schedule whatever your timezone. If your session sits across a funding stamp you will pay or receive inside it, so know where the stamps fall in your local day before you hold overnight.','펀딩비는 거주 시간대와 무관하게 UTC 기준으로 누적됩니다. 본인 거래 세션이 펀딩 시점을 걸치면 그 안에서 지급하거나 수령하게 되므로, 오버나이트로 보유하기 전에 현지 시간 기준으로 펀딩 시점이 언제인지 파악해 두세요.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'If you hold for hours, the fee row barely matters and the funding row decides the trade. Compare intervals and clamps before you compare maker fees, and never net funding into a rebate calculation, because the rebate does not reach it.',
+   '몇 시간 단위로 보유한다면 수수료 항목은 거의 무의미하고 펀딩 항목이 거래를 결정합니다. 메이커 수수료보다 주기와 상한을 먼저 비교하고, 환급 계산에 펀딩을 합산하지 마세요. 환급은 펀딩에 도달하지 않습니다.'] },
+
+5:{ t:['Liquidation, backstops and auto deleveraging','청산, 백스톱, 자동 디레버리징'], read:['7 min read','7분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'Maintenance margin, liquidation price, partial closes: all of it works the way you expect. The question this module answers is who stands behind your liquidation when there is no corporate balance sheet to absorb the shortfall.',
+   '유지 마진, 청산가, 부분 청산은 모두 예상하시는 대로 작동합니다. 이 모듈이 답하는 질문은, 부족분을 흡수할 기업 재무제표가 없을 때 누가 당신의 청산을 뒤에서 받아주는가입니다.'],
+  ['Someone has to take the other side','누군가는 반대편을 잡아야 합니다',
+   'When your position is liquidated it has to be absorbed. Onchain that is usually a vault or pool funded by other users, not by the operator. Those depositors are earning yield precisely for carrying that risk, and in a bad hour they carry it.',
+   '포지션이 청산되면 누군가 그것을 흡수해야 합니다. 온체인에서는 보통 운영자가 아니라 다른 사용자가 자금을 넣은 볼트나 풀입니다. 그 예치자들은 정확히 그 위험을 감수하는 대가로 수익을 얻으며, 나쁜 상황에서는 실제로 감수합니다.'],
+  ['Insurance funds you cannot size','규모를 알 수 없는 보험 기금',
+   'A published vault you can inspect onchain and an insurance fund of undisclosed size are different guarantees. If the size is not published you cannot form a view on whether it covers a bad day, which is itself information about the venue.',
+   '온체인에서 직접 확인할 수 있는 공개 볼트와 규모가 공개되지 않은 보험 기금은 서로 다른 보증입니다. 규모가 공개되지 않으면 나쁜 상황을 감당할 수 있는지 판단할 수 없으며, 그 사실 자체가 거래소에 대한 정보입니다.'],
+  ['Auto deleveraging takes from the winners','자동 디레버리징은 승자에게서 가져갑니다',
+   'When the backstop is not enough, ADL force closes profitable positions on the other side to balance the book. You can be right about direction, be in profit, and be closed anyway. That is the tail risk nobody prices when they size up.',
+   '백스톱이 부족하면 ADL이 반대편의 수익 포지션을 강제 청산해 장부를 맞춥니다. 방향을 맞히고 수익 상태여도 청산될 수 있습니다. 규모를 늘릴 때 아무도 반영하지 않는 테일 리스크입니다.']],
+  cmp:{ a:['Insurance fund, size not published.','보험 기금, 규모 비공개.'],
+        h:['HLP vault absorbs the shortfall, with auto deleveraging behind it. The March 2025 events hit this vault.','HLP 볼트가 부족분을 흡수하며 그 뒤에 자동 디레버리징이 있습니다. 2025년 3월 사건이 이 볼트를 타격했습니다.'],
+        l:['Public liquidity pool plus auto deleveraging, with liquidation logic proven.','공개 유동성 풀과 자동 디레버리징. 청산 로직은 증명됩니다.'] },
+  reg:['Your deposit route sets how fast you can defend a position. If topping up margin means a withdrawal from a licensed exchange plus a bridge hop, assume you cannot add collateral inside a fast move and size the position for that.','입금 경로가 포지션을 방어할 수 있는 속도를 결정합니다. 마진 추가가 인가 거래소 출금과 브릿지 단계를 거쳐야 한다면, 급변동 중에는 담보를 추가할 수 없다고 가정하고 그에 맞춰 포지션 규모를 정하세요.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'Read the backstop row as carefully as the fee row. A venue that publishes its vault, its ADL rules and its incident history is telling you what happens on the worst day. A venue that publishes none of the three is not.',
+   '수수료 항목만큼 백스톱 항목을 꼼꼼히 읽으세요. 볼트, ADL 규칙, 사고 이력을 공개하는 거래소는 최악의 날에 무슨 일이 일어나는지 알려주는 것입니다. 세 가지 모두 공개하지 않는 거래소는 그렇지 않습니다.'] },
+
+6:{ t:['The true cost of a round trip','왕복 거래의 실제 비용'], read:['6 min read','6분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'You read maker and taker rates and you know the difference. This module is about why the headline rate is the smallest of the four numbers that decide what a round trip costs you.',
+   '메이커와 테이커 이율을 읽고 그 차이를 알고 계십니다. 이 모듈은 왜 표기 이율이 왕복 거래 비용을 결정하는 네 가지 숫자 중 가장 작은 것인지를 다룹니다.'],
+  ['Depth at your size, not the top of book','최우선 호가가 아니라 본인 규모에서의 깊이',
+   'A tight spread on the first lot tells you nothing about the tenth. Price the book at the size you actually trade, on both sides, at the hour you actually trade. A zero fee venue with thin depth is an expensive venue for a large order.',
+   '첫 물량의 좁은 스프레드는 열 번째 물량에 대해 아무것도 알려주지 않습니다. 실제 거래 규모로, 양방향으로, 실제 거래 시간대에 오더북 가격을 계산하세요. 호가가 얇은 수수료 0% 거래소는 큰 주문에는 비싼 거래소입니다.'],
+  ['Slippage is paid twice','슬리피지는 두 번 지불합니다',
+   'Entry and exit both cross the spread, so a round trip pays slippage twice and fees twice. Quote everything as a round trip. A venue that looks 0.02% cheaper per side can lose that to one bad exit.',
+   '진입과 청산 모두 스프레드를 넘으므로 왕복 거래는 슬리피지와 수수료를 각각 두 번 지불합니다. 모든 것을 왕복 기준으로 계산하세요. 한 방향에서 0.02% 저렴해 보이는 거래소는 잘못된 청산 한 번으로 그 차이를 잃을 수 있습니다.'],
+  ['Gas and bridge cost belong in the number','가스와 브릿지 비용도 숫자에 포함됩니다',
+   'Trading gas may be zero inside the venue, but getting in and out is not free. Amortise the deposit and withdrawal cost over the trades you actually plan to make. For an occasional trader that line dominates everything else.',
+   '거래소 내부의 거래 가스는 0일 수 있지만 들어오고 나가는 것은 무료가 아닙니다. 입출금 비용을 실제로 계획한 거래 횟수에 분산하세요. 간헐적으로 거래하는 사람에게는 이 항목이 나머지 전부를 압도합니다.']],
+  cmp:{ a:['0% maker, 0.040% taker at VIP 1 falling to 0.016% at VIP 6. Deeper on majors than on the RWA books, so the tier you sit in matters less than where you trade.','메이커 0%, 테이커는 VIP 1에서 0.040%, VIP 6에서 0.016%. 주요 자산이 RWA 오더북보다 호가가 깊으므로, 어느 등급에 있는지보다 어디서 거래하는지가 더 중요합니다.'],
+        h:['0.015% / 0.045% base, no trading gas, the deepest book of the three.','기본 0.015% / 0.045%, 거래 가스 없음, 세 곳 중 가장 깊은 오더북.'],
+        l:['0% / 0% on the standard tier, so depth and Ethereum gas are the whole cost.','기본 등급 0% / 0%. 따라서 호가 깊이와 이더리움 가스가 비용의 전부입니다.'] },
+  reg:['Count the bridge. If your exchange withdrawal only reaches a chain the venue does not settle on, you are paying a bridge fee and taking a second failure point on every deposit and every exit, which is a real cost line for a smaller account.','브릿지를 계산에 넣으세요. 거래소 출금이 해당 거래소가 정산하지 않는 체인에만 도달한다면, 모든 입금과 출금에서 브릿지 수수료를 지불하고 두 번째 실패 지점을 감수하는 것입니다. 소액 계정에는 실질적인 비용 항목입니다.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'Build one number per venue: fees plus slippage at your size, both sides, plus amortised gas. Then apply the rebate to the fee component only. The ranking you get is usually not the ranking the fee table suggested.',
+   '거래소별로 하나의 숫자를 만드세요. 본인 규모에서 양방향 수수료와 슬리피지, 그리고 분산된 가스입니다. 그다음 수수료 부분에만 환급을 적용하세요. 그렇게 나온 순위는 보통 수수료표가 시사한 순위와 다릅니다.'] },
+
+7:{ t:['Points, airdrops and reported volume','포인트, 에어드랍, 보고된 거래량'], read:['5 min read','5분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'You use volume as a proxy for liquidity, because on a centralised exchange it mostly is one. Onchain, volume is also a scoreboard in a campaign that pays out in tokens, and that changes what the number measures.',
+   '거래량을 유동성의 대리 지표로 사용하십니다. 중앙화 거래소에서는 대체로 맞기 때문입니다. 온체인에서 거래량은 토큰으로 지급되는 캠페인의 점수판이기도 하며, 그 사실이 이 숫자가 측정하는 대상을 바꿉니다.'],
+  ['Points pay for volume','포인트는 거래량을 구매합니다',
+   'A points programme rewards activity with a claim on a future token. That is a direct subsidy for trading, so reported volume rises without depth rising with it. The campaign is doing the work you assumed liquidity was doing.',
+   '포인트 프로그램은 활동에 대해 미래 토큰에 대한 청구권을 보상합니다. 이는 거래에 대한 직접 보조금이므로, 호가 깊이는 함께 늘지 않은 채 보고된 거래량만 상승합니다. 유동성이 하고 있다고 가정했던 일을 실제로는 캠페인이 하고 있는 것입니다.'],
+  ['Self matching is cheap when fees are zero','수수료가 0이면 자전거래가 저렴합니다',
+   'On a zero fee tier the cost of trading against yourself approaches gas. Farming behaviour that would be uneconomic at 4 basis points becomes rational, and it lands in the same volume figure you are reading.',
+   '수수료 0% 등급에서는 자기 자신과 거래하는 비용이 가스 수준에 근접합니다. 4bp에서는 비경제적인 파밍 행위가 합리적으로 변하며, 그 결과가 당신이 읽고 있는 거래량 수치에 함께 반영됩니다.'],
+  ['Read the venue, not the leaderboard','리더보드가 아니라 거래소를 읽으세요',
+   'Check the book at your size instead. Then check where the campaign is in its cycle: a venue whose points programme has concluded and whose token is live is showing you post subsidy volume, which is the honest number.',
+   '대신 본인 규모에서 오더북을 확인하세요. 그다음 캠페인이 주기의 어느 지점에 있는지 확인하세요. 포인트 프로그램이 종료되고 토큰이 상장된 거래소는 보조금 이후의 거래량을 보여주며, 그것이 정직한 숫자입니다.']],
+  cmp:{ a:['Points programme active and season based, so current volume carries a subsidy.','포인트 프로그램이 시즌제로 운영 중이므로 현재 거래량에 보조금이 포함되어 있습니다.'],
+        h:['Programme concluded and HYPE is live, so reported volume is post subsidy.','프로그램이 종료되고 HYPE가 상장되었으므로 보고된 거래량은 보조금 이후 수치입니다.'],
+        l:['Points active and pre token, so expect the subsidy effect to be largest here.','포인트 운영 중이며 토큰 발행 전이므로 보조금 효과가 가장 클 것으로 예상됩니다.'] },
+  reg:['Airdrop and points income is taxed differently across jurisdictions, and in several it is taxable on receipt rather than on sale. Check your local treatment before you farm a programme, because the tax event may arrive before the liquidity does.','에어드랍과 포인트 소득의 과세 방식은 관할권마다 다르며, 일부 관할권에서는 매도가 아니라 수령 시점에 과세됩니다. 프로그램을 파밍하기 전에 현지 세무 처리를 확인하세요. 유동성보다 과세 시점이 먼저 올 수 있습니다.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'Treat volume during an active campaign as an upper bound, not a measurement. If the depth at your size holds up once you discount the subsidy, the venue is genuinely liquid. If it does not, you were reading a marketing number.',
+   '캠페인이 진행 중인 기간의 거래량은 측정값이 아니라 상한선으로 취급하세요. 보조금을 할인하고도 본인 규모에서 호가 깊이가 유지된다면 그 거래소는 실제로 유동적입니다. 그렇지 않다면 마케팅 숫자를 읽고 있었던 것입니다.'] },
+
+8:{ t:['Failure modes','실패 시나리오'], read:['7 min read','7분 분량'], secs:[
+  ['What you already know','이미 알고 계신 것',
+   'You have sat through an exchange outage, a withdrawal freeze, maybe a delisting. You know the drill: wait, read the status page, complain. The onchain versions of those failures have different mechanics and, more importantly, different recovery routes.',
+   '거래소 장애, 출금 중단, 어쩌면 상장폐지까지 겪어보셨을 것입니다. 대응도 익숙합니다. 기다리고, 상태 페이지를 읽고, 항의합니다. 온체인 버전의 실패는 메커니즘이 다르며, 더 중요하게는 회복 경로가 다릅니다.'],
+  ['A sequencer halt is not an outage','시퀀서 중단은 단순 장애가 아닙니다',
+   'When a single sequencer stops, order acknowledgement stops with it. Your position still exists and the settlement chain still works, but you cannot manage the position through the front end you have been using. Know the alternative path before you need it.',
+   '단일 시퀀서가 멈추면 주문 확인도 함께 멈춥니다. 포지션은 여전히 존재하고 정산 체인도 작동하지만, 사용하던 프런트엔드로는 포지션을 관리할 수 없습니다. 필요해지기 전에 대안 경로를 알아두세요.'],
+  ['An escape hatch is a documented promise','탈출 경로는 문서화된 약속입니다',
+   'Some venues document a forced exit: a way to withdraw against the settlement chain without the operator cooperating. Where that is documented and audited, an operator halt is an inconvenience. Where it is not, it is an open question about your funds.',
+   '일부 거래소는 강제 회수 절차를 문서화합니다. 운영자의 협조 없이 정산 체인에 대해 출금하는 방법입니다. 문서화되고 감사된 경우 운영자 중단은 불편에 그칩니다. 그렇지 않은 경우 자금에 대한 미해결 질문이 됩니다.'],
+  ['Validator intervention and bridge risk','검증자 개입과 브릿지 위험',
+   'A small validator set can vote to delist a market or settle at a chosen price, which has happened. Separately, most deposits cross a bridge, and bridges are the single most exploited component in the space. Both are trust assumptions, not bugs.',
+   '소수의 검증자 집합은 마켓 상장폐지나 특정 가격 정산을 의결할 수 있으며, 실제로 일어난 일입니다. 별개로 대부분의 입금은 브릿지를 거치며, 브릿지는 이 분야에서 가장 많이 악용된 구성 요소입니다. 둘 다 버그가 아니라 신뢰 가정입니다.']],
+  cmp:{ a:['No exit mechanism published, and the validator set is not fully published either.','자금 회수 경로가 공개되지 않았고 검증자 집합도 완전히 공개되지 않았습니다.'],
+        h:['Withdraw through the bridge. No forced exit documented if the L1 halts. Validators have intervened in a market before.','브릿지를 통한 출금. L1 정지 시 강제 회수 절차는 문서화되지 않았습니다. 검증자가 이전에 마켓에 개입한 사례가 있습니다.'],
+        l:['Escape hatch to Ethereum documented, so a sequencer halt does not trap funds.','이더리움으로의 탈출 경로가 문서화되어 시퀀서 중단이 자금을 가두지 않습니다.'] },
+  reg:['Your recovery route runs through the settlement chain, so it is only as good as your access to that chain. If you can reach Ethereum and Arbitrum directly from a licensed exchange in your market, a documented escape hatch is actually usable for you. If everything routes through one bridge, it is not.','회복 경로는 정산 체인을 거치므로, 그 체인에 대한 접근성만큼만 유효합니다. 국내 인가 거래소에서 Ethereum과 Arbitrum에 직접 도달할 수 있다면 문서화된 탈출 경로를 실제로 사용할 수 있습니다. 모든 경로가 하나의 브릿지를 거친다면 사용할 수 없습니다.'],
+  close:['What this means for choosing a DEX Venue','DEX 선택에 주는 의미',
+   'Pick on the worst case, not the normal case. Ask what you do if the front end is down for a day, and prefer the venue that has already written the answer down. An undocumented exit is the one risk on this list you cannot manage with position sizing.',
+   '정상 상황이 아니라 최악의 상황을 기준으로 선택하세요. 프런트엔드가 하루 동안 멈추면 무엇을 할지 질문하고, 그 답을 이미 문서로 써둔 거래소를 선택하세요. 문서화되지 않은 회수 경로는 이 목록에서 포지션 규모 조절로 관리할 수 없는 유일한 위험입니다.'] }
+};
+
+const GROUPS = [
+  { name:['Core Traits','핵심 항목'], desc:['Who the DEX Venue is for, how it is built, what you are handing over','누구를 위한 거래소인지, 어떻게 만들어졌는지, 무엇을 넘기는지'], rows:[
+    { label:['Best for','적합한 트레이더'],
+      a:['High leverage speculators. Equities, forex and prediction markets onchain.','초고배율 투기 트레이더. 주식, 외환, 예측 시장을 온체인에서.'],
+      h:['Serious directional and systematic traders who need depth across many markets.','여러 마켓에서 호가 깊이가 필요한 본격적인 방향성 및 시스템 트레이더.'],
+      l:['Cost sensitive active traders who want matching and liquidation proven.','매칭과 청산이 증명되기를 원하는 비용 민감형 액티브 트레이더.'] },
+    { label:['Architecture','아키텍처'],
+      a:['Multi chain plus its own L1. Order book in Pro mode, simplified high leverage mode alongside.','멀티체인과 자체 L1. Pro 모드의 오더북과 간소화된 초고배율 모드를 함께 제공.'],
+      h:['Fully onchain central limit order book on its own Layer 1. Matching inside the chain.','자체 레이어1 위의 완전 온체인 중앙지정가호가. 매칭이 체인 내부에서 실행.'],
+      l:['Application specific zk rollup settling to Ethereum, with proven matching and liquidation.','이더리움에 정산하는 애플리케이션 특화 zk 롤업. 매칭과 청산을 증명.'] },
+    { label:['Settlement chain','정산 체인'],
+      a:['BNB Chain, Arbitrum, Ethereum, Solana, plus Aster Chain.','BNB Chain, Arbitrum, Ethereum, Solana 및 Aster Chain.'],
+      h:['Hyperliquid L1. Canonical deposit route is USDC on Arbitrum.','Hyperliquid L1. 표준 입금 경로는 Arbitrum의 USDC.'],
+      l:['Ethereum. Assets held in Ethereum contracts.','Ethereum. 자산은 이더리움 컨트랙트에 보관.'] },
+    { label:['Custody model','보관 방식'],
+      a:['Self custodial by wallet. Email login generates a DEX Venue created wallet, which is a weaker custody position.','지갑 기반 자기 보관. 이메일 로그인은 거래소가 생성한 지갑을 만들며 보관 측면에서 취약.'],
+      h:['Self custodial throughout.','전 구간 자기 보관.'],
+      l:['Self custodial, assets held in Ethereum contracts.','자기 보관. 자산은 이더리움 컨트랙트에 보관.'] },
+    { label:['KYC requirement','KYC 요건'],
+      a:['Not required for standard trading. Discretionary verification clause in terms.','일반 거래에는 불필요. 약관에 재량적 인증 조항 존재.'],
+      h:['Not required for retail perp trading.','리테일 무기한 거래에는 불필요.'],
+      l:['Not required. Terms only require you are not a prohibited person.','불필요. 약관은 제한 대상자가 아닐 것만 요구.'] },
+    { label:['Login method','로그인 방식'], a:['Wallet or email.','지갑 또는 이메일.'], h:['Wallet only.','지갑만.'], l:['Wallet only.','지갑만.'] }
+  ]},
+  { name:['Fees and Rebates','수수료와 환급'], desc:['Maker, taker, trader discount, rebate route, funding interval, gas','메이커, 테이커, 할인, 환급 경로, 펀딩 주기, 가스'], rows:[
+    { label:['Maker fee','메이커 수수료'], a:['0%, all VIP tiers #','전 VIP 등급 0% #'], h:['0.015% base tier #','기본 등급 0.015% #'], l:['0% on the standard tier #','기본 등급 0% #'] },
+    { label:['Taker fee','테이커 수수료'], a:['0.040% at VIP 1 #','VIP 1에서 0.040% #'], h:['0.045% base tier #','기본 등급 0.045% #'], l:['0% on the standard tier, conditions apply #','기본 등급 0%, 조건 적용 #'] },
+    { label:['Best achievable','최저 도달 수수료'],
+      a:['0.016% taker at VIP 6 #','VIP 6에서 테이커 0.016% #'],
+      h:['0% maker at tier 4+, 0.024% taker at tier 6 #','티어4+ 메이커 0%, 티어6 테이커 0.024% #'],
+      l:['0% maker and taker, standard tier only #','기본 등급에서만 메이커·테이커 0% #'] },
+    { label:['TetherMax rebate route','TetherMax 환급 경로'],
+      a:['Referral link. Up to 30% of fees returned *','레퍼럴 링크. 수수료 최대 30% 환급 *'],
+      h:['Builder code and referral link. Up to 70% returned *','빌더 코드와 레퍼럴 링크. 최대 70% 환급 *'],
+      l:['Referral link. Up to 60% returned. Zero fee tier is not affected *','레퍼럴 링크. 최대 60% 환급. 수수료 0% 등급은 영향 없음 *'] },
+    { label:['Funding interval','펀딩 주기'], a:['Every 4 hours, clamped','4시간마다, 상한 적용'], h:['Hourly','1시간'], l:['Hourly','1시간'] },
+    { label:['Gas','가스'],
+      a:['Paid on the settlement chain used','사용한 정산 체인에서 지불'],
+      h:['None on the Hyperliquid L1','Hyperliquid L1에서 없음'],
+      l:['None inside the rollup. Ethereum gas on deposit and withdrawal','롤업 내부는 없음. 입출금 시 이더리움 가스'] }
+  ]},
+  { name:['Trading','거래'], desc:['Leverage, markets including equity and RWA perps, margin modes, order types, mobile, API','레버리지, 주식·RWA 무기한 포함 마켓, 마진 모드, 주문 유형, 모바일, API'], rows:[
+    { label:['Maximum leverage','최대 레버리지'],
+      a:['Up to 1001x on BTC in simplified mode #','간소화 모드 BTC 최대 1001배 #'],
+      h:['Up to 40x on BTC #','BTC 최대 40배 #'],
+      l:['Up to 50x on BTC #','BTC 최대 50배 #'] },
+    { label:['Markets','마켓'],
+      a:['200+ perps, spot, tokenized equities, forex, prediction markets','무기한 200+, 현물, 토큰화 주식, 외환, 예측 시장'],
+      h:['100+ perps and spot markets','무기한 및 현물 마켓 100+'],
+      l:['60+ perps','무기한 60+'] },
+    { label:['Equity and RWA perps','주식 및 RWA 무기한'],
+      a:['Offered, including tokenized equities and forex','제공. 토큰화 주식과 외환 포함'],
+      h:['Not offered','제공하지 않음'],
+      l:['Not offered','제공하지 않음'] },
+    { label:['Margin modes','마진 모드'],
+      a:['Cross and isolated, plus a hidden order mode','크로스와 격리, 히든 주문 모드'],
+      h:['Cross default, isolated on selected assets','기본 크로스, 일부 자산 격리'],
+      l:['Cross only','크로스만'] },
+    { label:['Order types','주문 유형'],
+      a:['Limit, market, stop, take profit, trailing','지정가, 시장가, 스탑, 익절, 트레일링'],
+      h:['Limit, market, reduce only, stop, take profit, scale, TWAP','지정가, 시장가, 감소전용, 스탑, 익절, 스케일, TWAP'],
+      l:['Limit, market, reduce only, stop','지정가, 시장가, 감소전용, 스탑'] },
+    { label:['Mobile and API','모바일과 API'],
+      a:['Mobile web plus app. REST and WebSocket','모바일 웹 + 앱. REST와 WebSocket'],
+      h:['App on both stores. REST, WebSocket, agent wallets, sub accounts, testnet','양대 스토어 앱. REST, WebSocket, 에이전트 지갑, 서브계정, 테스트넷'],
+      l:['Mobile web only. REST and WebSocket','모바일 웹만. REST와 WebSocket'] }
+  ]},
+  { name:['Special Traits','특수 항목'], desc:['Verifiable matching, privacy, points, token, vaults and pools, multi asset collateral','검증 가능한 매칭, 프라이버시, 포인트, 토큰, 볼트, 다중 담보'], rows:[
+    { label:['Verifiable matching','검증 가능한 매칭'],
+      a:['Settlement verifiable. Matching not separately proven','정산은 검증 가능. 매칭은 별도로 증명되지 않음'],
+      h:['Execution publicly auditable as consensus transactions. Matching not separately proven','실행은 합의 트랜잭션으로 공개 감사 가능. 매칭은 별도로 증명되지 않음'],
+      l:['Matching and liquidation proven with zk proofs verified on Ethereum','매칭과 청산을 zk 증명으로 입증하고 이더리움에서 검증'] },
+    { label:['Privacy','프라이버시'],
+      a:['Hidden order mode on selected markets','일부 마켓에서 히든 주문 모드'],
+      h:['All activity public onchain','모든 활동이 온체인에 공개'],
+      l:['Positions public, identity not linked','포지션은 공개, 신원은 연결되지 않음'] },
+    { label:['Points programme','포인트 프로그램'],
+      a:['Active, season based','운영 중, 시즌제'],
+      h:['Concluded, token distributed','종료, 토큰 배포 완료'],
+      l:['Active, pre token','운영 중, 토큰 발행 전'] },
+    { label:['Token','토큰'], a:['ASTER, live','ASTER, 상장'], h:['HYPE, live','HYPE, 상장'], l:['Not published by the DEX Venue','거래소가 공개하지 않음'] },
+    { label:['Vaults and pools','볼트와 풀'],
+      a:['Yield vaults on deposited collateral','예치 담보에 대한 수익 볼트'],
+      h:['HLP market making vault, user vaults','HLP 마켓메이킹 볼트, 사용자 볼트'],
+      l:['Public liquidity pool','공개 유동성 풀'] },
+    { label:['Multi asset collateral','다중 자산 담보'],
+      a:['USDT, USDC, and selected majors','USDT, USDC 및 일부 주요 자산'],
+      h:['USDC only','USDC만'],
+      l:['USDC only','USDC만'] }
+  ]},
+  { name:['Trust and Risk','신뢰와 위험'], desc:['Backstop, audits, incident history, operator concentration, exit, regions','백스톱, 감사, 사고 이력, 운영 집중도, 자금 회수, 지역 제한'], rows:[
+    { label:['Backstop','손실 백스톱'],
+      a:['Insurance fund, size not published','보험 기금, 규모 비공개'],
+      h:['HLP vault absorbs liquidation shortfall, plus auto deleveraging','HLP 볼트가 청산 부족분을 흡수, 자동 디레버리징 병행'],
+      l:['Public liquidity pool plus auto deleveraging','공개 유동성 풀과 자동 디레버리징'] },
+    { label:['Audits','감사'],
+      a:['Contract audits published, coverage of Aster Chain narrower','컨트랙트 감사 공개, Aster Chain 범위는 제한적'],
+      h:['Bridge contract audits published, L1 coverage narrower','브릿지 컨트랙트 감사 공개, L1 범위는 제한적'],
+      l:['Circuit and contract audits published','서킷 및 컨트랙트 감사 공개'] },
+    { label:['Known incident history','알려진 사고 이력'],
+      a:['No publicly documented incident to date','현재까지 공개적으로 문서화된 사고 없음'],
+      h:['March 2025 HLP losses from a self liquidation and the JELLY squeeze. Validator processes revised and onchain validation added for delistings','2025년 3월 자가 청산과 JELLY 스퀴즈로 HLP 손실 발생. 검증자 절차 개정 및 상장폐지 온체인 검증 추가'],
+      l:['No publicly documented incident to date','현재까지 공개적으로 문서화된 사고 없음'] },
+    { label:['Operator concentration','운영 주체 집중도'],
+      a:['Validator set not fully published','검증자 집합 완전 비공개'],
+      h:['Small validator set under HyperBFT','HyperBFT 아래 소수의 검증자 집합'],
+      l:['Single sequencer, proofs verified on Ethereum','단일 시퀀서, 증명은 이더리움에서 검증'] },
+    { label:['Exit mechanism','자금 회수 경로'],
+      a:['Not published by the DEX Venue','거래소가 공개하지 않음'],
+      h:['Withdraw through the bridge. No documented forced exit if the L1 halts','브릿지를 통한 출금. L1 정지 시 강제 회수 절차는 문서화되지 않음'],
+      l:['Escape hatch to Ethereum documented','이더리움으로의 탈출 경로 문서화'] },
+    { label:['Restricted regions','제한 지역'],
+      a:['United States, United Kingdom retail, sanctioned jurisdictions','미국, 영국 리테일, 제재 관할권'],
+      h:['United States, Ontario, sanctioned jurisdictions','미국, 온타리오, 제재 관할권'],
+      l:['United States, sanctioned jurisdictions','미국, 제재 관할권'] }
+  ]}
+
+];
+
+const STEPS = [
+  { t:['Open through the TetherMax route','TetherMax 경로로 개설'], b:['Connect your wallet using the TetherMax referral link so attribution is recorded from your first trade. There is no account creation and no KYC step.','TetherMax 레퍼럴 링크로 지갑을 연결하면 첫 거래부터 귀속이 기록됩니다. 계정 생성도, KYC 절차도 없습니다.'], a:['tethermax.io/r/hyperliquid','tethermax.io/r/hyperliquid'] },
+  { t:['Fund the wallet you connected','연결한 지갑에 자금 입금'], b:['Withdraw USDC from a licensed exchange in your market to the wallet you just connected. Travel Rule verification applies at this step.','국내 인가 거래소에서 방금 연결한 지갑으로 USDC를 출금합니다. 이 단계에서 트래블룰 인증이 적용됩니다.'], a:['Network: Arbitrum · Asset: USDC','네트워크: Arbitrum · 자산: USDC'] },
+  { t:['Deposit into Hyperliquid','Hyperliquid에 입금'], b:['Deposit through the official bridge. The balance appears on the L1 once the bridge confirms, usually within a minute.','공식 브릿지를 통해 입금합니다. 브릿지 확인이 끝나면 보통 1분 이내에 L1 잔액에 반영됩니다.'], a:['Minimum deposit: 5 USDC','최소 입금: 5 USDC'] },
+  { t:['Confirm the referral code on Hyperliquid before you size up','규모를 늘리기 전 Hyperliquid에서 레퍼럴 코드 확인'], b:['Open the referrals page in your Hyperliquid account. As a retail trader that is where the route shows: the page lists the code you were referred by, and it should read as the TetherMax code. Do not look for a builder attribution screen, that is the API and builder view, not the retail one. If the field is empty or shows another code, you were not attributed and Live Chat can rebind you before you trade size.','Hyperliquid 계정의 레퍼럴 페이지를 엽니다. 리테일 트레이더가 경로를 확인할 수 있는 곳이 여기입니다. 추천받은 코드가 표시되며, TetherMax 코드로 나와야 합니다. 빌더 귀속 화면을 찾지 마세요. 그것은 API 및 빌더용 화면이며 리테일 화면이 아닙니다. 항목이 비어 있거나 다른 코드가 보이면 귀속되지 않은 것이며, 규모를 늘리기 전에 실시간 채팅에서 재연결할 수 있습니다.'], a:['Where to look: Hyperliquid › Referrals','확인 위치: Hyperliquid › 레퍼럴'] }
+];
+
+const DETAILS = {
+  aster: {
+    name:'Aster', initial:'A', g:'linear-gradient(135deg,#0067FF,#0031C6)', rebate:'30%',
+    sub:['Decentralised perpetual exchange','탈중앙화 무기한 선물 거래소'],
+    notice:['Access notice: Aster does not accept traders resident in the United States, United Kingdom retail or sanctioned jurisdictions. This notice renders only where your jurisdiction carries an override.','접근 안내: Aster는 미국, 영국 리테일 및 제재 대상 관할권 거주자를 받지 않습니다. 이 안내는 해당 관할권에 제한 조치가 있는 경우에만 표시됩니다.'],
+    kpis:[['Taker fee, VIP 1','0.040%'],['Maker fee, all VIP tiers','0%'],['Maximum leverage, BTC','Up to 1001x'],['Markets','200+']],
+    kpisKo:[['테이커 수수료, VIP 1','0.040%'],['메이커 수수료, 전 VIP 등급','0%'],['최대 레버리지, BTC','최대 1001배'],['마켓','200+']],
+    about:['Aster has the widest surface area of the three partner DEX Venues: perps and spot alongside tokenized equities, forex and prediction markets, spread across four settlement chains plus its own Aster Chain. It also carries features the other two do not, including hidden orders and yield bearing collateral. The sections below cover what each of those actually changes for a trader.','Aster는 세 파트너 DEX 중 상품 범위가 가장 넓습니다. 무기한과 현물에 더해 토큰화 주식, 외환, 예측 시장을 제공하며, 네 개의 정산 체인과 자체 Aster Chain에 걸쳐 운영됩니다. 히든 주문과 수익 창출 담보처럼 다른 두 곳에 없는 기능도 있습니다. 아래 섹션에서 각 기능이 트레이더에게 실제로 무엇을 바꾸는지 다룹니다.'],
+    tags:[['Widest market range','Hidden order mode','Multi asset collateral'],['가장 넓은 마켓 범위','히든 주문 모드','다중 자산 담보']],
+    heroTags:[['Self custody by wallet','No KYC for standard trading','Multi chain'],['지갑 기반 자기 보관','일반 거래 KYC 불필요','멀티체인']],
+    vip:[
+      ['VIP 1','< $5M','≥ 0','0 bps','4.0 bps'],
+      ['VIP 2','≥ $5M','≥ 500','0 bps','3.5 bps'],
+      ['VIP 3','≥ $25M','≥ 2,500','0 bps','3.3 bps'],
+      ['VIP 4','≥ $100M','≥ 25,000','0 bps','2.3 bps'],
+      ['VIP 5','≥ $500M','≥ 250,000','0 bps','2.0 bps'],
+      ['VIP 6','≥ $1B','≥ 2,500,000','0 bps','1.6 bps']
+    ],
+    vipHead:[['Tier','등급'],['14 day volume, spot or perp','14일 거래량, 현물 또는 무기한'],['$ASTER held, daily avg','$ASTER 보유량, 일평균'],['Maker fee','메이커 수수료'],['Taker fee','테이커 수수료']],
+    vipNotes:[
+      ['VIP 1 is the entry tier','Everyone starts at VIP 1: under $5M of volume and no $ASTER required, at 4.0 bps taker. The ladder is what you climb from there, and the full run from VIP 1 to VIP 6 cuts the taker fee by 60%.'],
+      ['Both criteria must be met','From VIP 2 up, Aster requires the 14 day volume test and the $ASTER holding test together. Hitting $500M of volume with 2,400 $ASTER held leaves you at VIP 3, not VIP 5.'],
+      ['Assessed daily at 23:59 UTC','Status is re evaluated every day against a rolling 14 day window of spot and perps volume in USD, so a quiet fortnight moves you down as readily as a busy one moves you up.'],
+      ['Holdings are a daily average, not a snapshot','Your $ASTER balance is the combined daily average across your Spot, Perpetual and Aster Staking accounts. Hourly snapshots are taken at random times and pending orders count, so you cannot top up before the cutoff.'],
+      ['Maker is zero at every VIP level','Since February 2026 all VIP maker fees are 0 bps, so the ladder is a taker fee ladder. If you post rather than take, VIP status changes nothing about your fee.'],
+      ['RWA maker volume counts 10x','Maker volume on RWA perpetual pairs counts tenfold toward the VIP tiers, which is the cheapest route up the ladder if you are willing to make on those books.'],
+      ['It stacks with TetherMax cashback','VIP lowers the taker fee you are charged. TetherMax cashback then returns up to 30% of whatever you actually paid, so the two compound rather than compete.']
+    ],
+    vipNotesKo:[
+      ['VIP 1이 시작 등급입니다','모두 VIP 1에서 시작합니다. 거래량 500만 달러 미만, $ASTER 보유 요건 없음, 테이커 4.0 bps입니다. 여기서부터 올라가는 구조이며, VIP 1에서 VIP 6까지 가면 테이커 수수료가 60% 낮아집니다.'],
+      ['두 조건을 모두 충족해야 합니다','VIP 2부터 Aster는 14일 거래량 조건과 $ASTER 보유 조건을 함께 요구합니다. 거래량 5억 달러를 달성했어도 $ASTER를 2,400개만 보유하면 VIP 5가 아니라 VIP 3에 머무릅니다.'],
+      ['매일 23:59 UTC에 평가','상태는 현물과 무기한의 USD 거래량을 기준으로 최근 14일 구간에 대해 매일 재평가됩니다. 2주간 거래가 적으면 올라가는 속도만큼 쉽게 내려갑니다.'],
+      ['보유량은 스냅샷이 아니라 일평균','$ASTER 잔액은 현물, 무기한, Aster 스테이킹 계정을 합산한 일평균입니다. 시간별 스냅샷이 무작위 시점에 측정되고 미체결 주문도 포함되므로, 마감 직전에 채워 넣을 수 없습니다.'],
+      ['모든 VIP 등급의 메이커는 0','2026년 2월부터 모든 VIP 메이커 수수료가 0 bps입니다. 따라서 이 등급제는 테이커 수수료 등급제입니다. 지정가로 공급하는 방식이라면 VIP 등급은 수수료를 바꾸지 않습니다.'],
+      ['RWA 메이커 거래량은 10배 반영','RWA 무기한 페어의 메이커 거래량은 VIP 등급 산정에 10배로 반영됩니다. 해당 오더북에서 메이커로 공급할 의향이 있다면 가장 저렴한 등급 상승 경로입니다.'],
+      ['TetherMax 캐시백과 중첩됩니다','VIP는 청구되는 테이커 수수료를 낮춥니다. 그다음 TetherMax 캐시백이 실제 지불액의 최대 30%를 환급하므로, 둘은 경쟁하지 않고 복합적으로 작용합니다.']
+    ],
+    vipCats:[
+      ['Crypto — General','Major and established crypto pairs. Follows the base VIP taker schedule above; maker is 0 bps.'],
+      ['Crypto — Group B','A separate schedule for 20 selected pairs with a different risk profile, including MEMEUSDT, OKBUSDT and RTXUSDT.'],
+      ['RWA','Real world asset pairs. Taker is fixed at 1.25 bps across every VIP level from September 2026; maker is 0 bps.']
+    ],
+    vipCatsKo:[
+      ['Crypto — General','주요 및 확립된 암호자산 페어. 위 기본 VIP 테이커 체계를 따르며 메이커는 0 bps입니다.'],
+      ['Crypto — Group B','위험 프로필이 다른 20개 선정 페어에 적용되는 별도 체계입니다. MEMEUSDT, OKBUSDT, RTXUSDT 등이 포함됩니다.'],
+      ['RWA','실물자산 페어. 2026년 9월부터 모든 VIP 등급에서 테이커가 1.25 bps로 고정되며 메이커는 0 bps입니다.']
+    ],
+    fee:[
+      ['Maker fee, all VIP tiers','0% #','0% #',0],
+      ['Taker fee, VIP 1','0.040% #','0.040% #',0],
+      ['Best achievable taker','0.016% at VIP 6 #','0.016% at VIP 6 #',0],
+      ['Fee discount driver','14 day volume and $ASTER held, both required','14 day volume and $ASTER held, both required',0],
+      ['Funding interval','Every 4 hours, clamped','Every 4 hours, clamped',0],
+      ['Gas','Paid on the settlement chain used','Paid on the settlement chain used',0],
+      ['Cashback on fees you pay','None','Up to 30% returned *',1],
+      ['Effective taker cost, VIP 1','0.040%','0.028% after cashback',1],
+      ['What it requires','Nothing. Sign up directly.','Sign up through the TetherMax referral link',1]
+    ],
+    feeKo:[
+      ['메이커 수수료, 전 VIP 등급','0% #','0% #',0],
+      ['테이커 수수료, VIP 1','0.040% #','0.040% #',0],
+      ['최저 도달 테이커','VIP 6에서 0.016% #','VIP 6에서 0.016% #',0],
+      ['할인 기준','14일 거래량과 $ASTER 보유량, 둘 다 필요','14일 거래량과 $ASTER 보유량, 둘 다 필요',0],
+      ['펀딩 주기','4시간마다, 상한 적용','4시간마다, 상한 적용',0],
+      ['가스','사용한 정산 체인에서 지불','사용한 정산 체인에서 지불',0],
+      ['지불 수수료 캐시백','없음','최대 30% 환급 *',1],
+      ['실질 테이커 비용, VIP 1','0.040%','캐시백 반영 후 0.028%',1],
+      ['필요 조건','없음. 직접 가입.','TetherMax 레퍼럴 링크로 가입',1]
+    ],
+    feeNote:['Trading conditions are identical on both routes. Aster does not price a TetherMax account differently, and the referral link does not cost you a VIP tier or a fee discount. The only line that changes is the cashback on fees you have already paid.','거래 조건은 두 경로에서 동일합니다. Aster는 TetherMax 계정에 다른 가격을 적용하지 않으며, 레퍼럴 링크 때문에 VIP 등급이나 수수료 할인을 잃지 않습니다. 달라지는 것은 이미 지불한 수수료에 대한 캐시백 항목뿐입니다.'],
+    features:[
+      ['Aster Chain','A purpose built chain alongside the multi chain deployment, carrying the venue own matching and the hidden order mode.'],
+      ['Hidden orders','Order details are shielded on selected markets, so size and level are not broadcast to the book the way they are on a fully public venue.'],
+      ['Yield bearing collateral','Deposited collateral can sit in yield vaults rather than idle. Stablecoin and selected majors earn while they margin a position, which changes the carry maths on a held trade.'],
+      ['Tokenized equities and forex','Perps on tokenized equities and FX pairs, alongside crypto. No other partner DEX Venue offers these, and RWA pairs carry a fixed 0.0125% taker at every VIP level.'],
+      ['Prediction markets','Event contracts sit in the same account as the perps book, so a directional view and an event view share collateral.'],
+      ['Pro mode prerequisites','Pro mode is the order book, and it is not the default. You need a connected wallet rather than an email account, collateral deposited on a supported settlement chain, and you must switch the account into Pro mode explicitly. Simplified mode is what you land in otherwise, and it prices differently.'],
+      ['Simplified mode','The default surface. Up to 1001x on BTC, fewer order types, and a different fee schedule from the Pro order book.'],
+      ['Wallet or email login','Email signup generates a venue created wallet. Convenient, but a weaker custody position than a wallet you generated yourself.'],
+      ['Points, season based','An active seasonal points programme running against the live ASTER token, so current reported volume carries a subsidy.']
+    ],
+    featuresKo:[
+      ['Aster Chain','멀티체인 배포와 함께 운영되는 전용 체인으로, 거래소 자체 매칭과 히든 주문 모드를 담당합니다.'],
+      ['히든 주문','일부 마켓에서 주문 정보가 가려지므로, 완전 공개형 거래소와 달리 규모와 가격대가 오더북에 노출되지 않습니다.'],
+      ['수익 창출 담보','예치한 담보를 유휴 상태로 두지 않고 수익 볼트에 넣을 수 있습니다. 스테이블코인과 일부 주요 자산이 포지션 마진 역할을 하면서 수익을 내므로, 보유 거래의 캐리 계산이 달라집니다.'],
+      ['토큰화 주식과 외환','암호자산과 함께 토큰화 주식 및 외환 페어 무기한 상품을 제공합니다. 다른 파트너 DEX에는 없으며, RWA 페어는 모든 VIP 등급에서 테이커가 0.0125%로 고정됩니다.'],
+      ['예측 시장','이벤트 계약이 무기한 오더북과 같은 계정에 있으므로 방향성 관점과 이벤트 관점이 담보를 공유합니다.'],
+      ['Pro 모드 사전 조건','Pro 모드는 오더북이며 기본값이 아닙니다. 이메일 계정이 아닌 연결된 지갑, 지원되는 정산 체인에 예치된 담보가 필요하며, 계정을 Pro 모드로 직접 전환해야 합니다. 그렇지 않으면 간소화 모드로 진입하게 되고 가격 체계가 다릅니다.'],
+      ['간소화 모드','기본 화면입니다. BTC 최대 1001배, 더 적은 주문 유형, 그리고 Pro 오더북과 다른 수수료 체계를 적용합니다.'],
+      ['지갑 또는 이메일 로그인','이메일 가입은 거래소가 생성한 지갑을 만듭니다. 편리하지만 직접 생성한 지갑보다 보관 측면에서 취약합니다.'],
+      ['시즌제 포인트','상장된 ASTER 토큰을 기반으로 시즌제 포인트 프로그램이 운영 중이므로, 현재 보고된 거래량에는 보조금이 포함되어 있습니다.']
+    ],
+    aff:[
+      ['Route type','Referral link. Aster does not expose a builder code to retail accounts.'],
+      ['Rebate rate','Up to 30% of the trading fees you generate, returned as TetherMax cashback *'],
+      ['Where it binds','At signup. The referral code is recorded against your account the first time you connect through the TetherMax link.'],
+      ['Where to check it','Aster › Account › Referral. The code you signed up under is listed there. This is the retail view, not a builder attribution screen.'],
+      ['Partnership status','TetherMax is working on an affiliate partnership with Aster. The rate above is the current indicative rebate under that route *'],
+      ['If it did not bind','Contact TetherMax Live Chat before you size up. Rebinding after volume has accrued does not backdate the missed fees.']
+    ],
+    affKo:[
+      ['경로 유형','레퍼럴 링크. Aster는 리테일 계정에 빌더 코드를 제공하지 않습니다.'],
+      ['환급률','발생한 거래 수수료의 최대 30%를 TetherMax 캐시백으로 환급 *'],
+      ['귀속 시점','가입 시점. TetherMax 링크로 처음 연결할 때 레퍼럴 코드가 계정에 기록됩니다.'],
+      ['확인 위치','Aster › 계정 › 레퍼럴. 가입 시 사용한 코드가 표시됩니다. 빌더 귀속 화면이 아닌 리테일 화면입니다.'],
+      ['파트너십 현황','TetherMax는 Aster와 어필리에이트 파트너십을 추진하고 있습니다. 위 환급률은 해당 경로의 현재 참고 수치입니다 *'],
+      ['귀속되지 않았다면','규모를 늘리기 전에 TetherMax 실시간 채팅으로 문의하세요. 거래량이 누적된 뒤 재연결해도 놓친 수수료는 소급되지 않습니다.']
+    ],
+    affNote:['Route through TetherMax or it does not attribute','TetherMax 경로로 가입해야 귀속됩니다',
+      'The rebate is a share of the fees you personally pay, returned as cashback. It only binds if you signed up through the TetherMax referral link. A direct signup, or one under any other referral code, is not attributed and cannot be backdated.',
+      '환급은 본인이 실제로 지불한 수수료의 일부를 캐시백으로 돌려주는 것입니다. TetherMax 레퍼럴 링크로 가입한 경우에만 귀속됩니다. 직접 가입하거나 다른 레퍼럴 코드로 가입한 경우 귀속되지 않으며 소급도 불가능합니다.'],
+    profile:[['Architecture','Multi chain plus Aster Chain'],['Settlement layer','BNB Chain, Arbitrum, Ethereum, Solana'],['Launched','2024'],['Token','ASTER, live'],['Audit status','Contract audits published, Aster Chain coverage narrower'],['Restricted regions','United States, United Kingdom retail, sanctioned jurisdictions']],
+    profileKo:[['아키텍처','멀티체인 + Aster Chain'],['정산 레이어','BNB Chain, Arbitrum, Ethereum, Solana'],['출시','2024년'],['토큰','ASTER, 상장'],['감사 현황','컨트랙트 감사 공개, Aster Chain 범위는 제한적'],['제한 지역','미국, 영국 리테일, 제재 관할권']],
+    costs:[['BTC perp','0.080% + 0.9 bps slippage'],['ETH perp','0.080% + 1.2 bps slippage'],['SOL perp','0.080% + 2.0 bps slippage'],['Equity perp, RWA','0.025% + 6.5 bps slippage'],['Gold perp, RWA','0.025% + 4.1 bps slippage']],
+    costsKo:[['BTC 무기한','0.080% + 0.9 bps 슬리피지'],['ETH 무기한','0.080% + 1.2 bps 슬리피지'],['SOL 무기한','0.080% + 2.0 bps 슬리피지'],['주식 무기한, RWA','0.025% + 6.5 bps 슬리피지'],['금 무기한, RWA','0.025% + 4.1 bps 슬리피지']],
+    conditions:[['Order types','Limit, market, stop, take profit, trailing'],['Margin modes','Cross and isolated, plus a hidden order mode'],['Login method','Wallet or email'],['API','REST and WebSocket'],['Mobile app','Mobile web plus app']],
+    conditionsKo:[['주문 유형','지정가, 시장가, 스탑, 익절, 트레일링'],['마진 모드','크로스와 격리, 히든 주문 모드'],['로그인 방식','지갑 또는 이메일'],['API','REST와 WebSocket'],['모바일 앱','모바일 웹 + 앱']],
+    trust:[['Who holds your collateral','Self custodial by wallet. Email login generates a venue created wallet, which is a weaker custody position.'],['Who orders and matches your trades','Matching runs on Aster Chain. The validator set is not fully published.'],['What is proven versus what is trusted','Settlement is verifiable. Matching is not separately proven, and the degree of off chain sequencing is not published.'],['What happens if the operator stops','No exit mechanism is published by the venue.']],
+    trustKo:[['담보를 누가 보관하는가','지갑 기반 자기 보관. 이메일 로그인은 거래소가 생성한 지갑을 만들며 보관 측면에서 취약합니다.'],['주문을 누가 처리하고 체결하는가','매칭은 Aster Chain에서 실행됩니다. 검증자 집합은 완전히 공개되지 않았습니다.'],['무엇이 증명되고 무엇이 신뢰인가','정산은 검증 가능합니다. 매칭은 별도로 증명되지 않으며, 오프체인 시퀀싱 비중도 공개되지 않았습니다.'],['운영이 중단되면 어떻게 되는가','거래소가 공개한 자금 회수 경로가 없습니다.']],
+    incidents:[['To date','No publicly documented incident.'],['Audit coverage','Contract audits are published, but Aster Chain coverage is narrower than the contract layer.'],['What to watch','The terms retain a discretionary verification clause, so KYC is not structurally impossible.']],
+    incidentsKo:[['현재까지','공개적으로 문서화된 사고가 없습니다.'],['감사 범위','컨트랙트 감사는 공개되어 있으나 Aster Chain 범위는 컨트랙트 계층보다 좁습니다.'],['주의할 점','약관에 재량적 인증 조항이 남아 있어 KYC가 구조적으로 불가능한 것은 아닙니다.']],
+    r1:['Your detected jurisdiction does not appear on the Aster restricted list.','감지된 관할권은 Aster 제한 목록에 포함되어 있지 않습니다.'],
+    r2:['BNB Chain, Arbitrum, Ethereum and Solana are all accepted, so most licensed exchange withdrawals reach it without a bridge.','BNB Chain, Arbitrum, Ethereum, Solana를 모두 지원하므로 대부분의 인가 거래소 출금이 브릿지 없이 도달합니다.'],
+    r3:['Tokenized equities, forex and prediction markets are offered and may carry separate regional limits.','토큰화 주식, 외환, 예측 시장을 제공하며 별도의 지역 제한이 적용될 수 있습니다.'],
+    steps:[
+      { t:['Open through the TetherMax route','TetherMax 경로로 개설'], b:['Connect your wallet using the TetherMax referral link so attribution is recorded from your first trade. Prefer wallet connect over email login, which creates a venue held wallet.','TetherMax 레퍼럴 링크로 지갑을 연결하면 첫 거래부터 귀속이 기록됩니다. 거래소가 보관하는 지갑을 만드는 이메일 로그인보다 지갑 연결을 권장합니다.'], a:['tethermax.io/r/aster','tethermax.io/r/aster'] },
+      { t:['Fund the wallet you connected','연결한 지갑에 자금 입금'], b:['Withdraw USDT or USDC from a licensed exchange in your market. Travel Rule verification applies at this step.','국내 인가 거래소에서 USDT 또는 USDC를 출금합니다. 이 단계에서 트래블룰 인증이 적용됩니다.'], a:['Networks: BNB Chain, Arbitrum, Ethereum, Solana','네트워크: BNB Chain, Arbitrum, Ethereum, Solana'] },
+      { t:['Deposit and switch into Pro mode','입금 후 Pro 모드로 전환'], b:['Deposit, then switch the account into Pro mode for the order book. Simplified mode is the default and prices differently, so make the switch before your first trade.','입금 후 오더북을 사용하려면 계정을 Pro 모드로 전환합니다. 기본값은 간소화 모드이며 가격 체계가 다르므로 첫 거래 전에 전환하세요.'], a:['Pro mode for the order book','오더북은 Pro 모드'] },
+      { t:['Confirm the referral code on Aster before you size up','규모를 늘리기 전 Aster에서 레퍼럴 코드 확인'], b:['Open the referral section of your Aster account. As a retail trader that is where the route shows: the invite or referral code you signed up under is listed, and it should read as the TetherMax code. Do not look for a builder attribution screen, that is not the retail view. If the field is empty or shows another code, you were not attributed and Live Chat can rebind you before you trade size.','Aster 계정의 레퍼럴 섹션을 엽니다. 리테일 트레이더가 경로를 확인할 수 있는 곳이 여기입니다. 가입 시 사용한 초대 또는 레퍼럴 코드가 표시되며, TetherMax 코드로 나와야 합니다. 빌더 귀속 화면을 찾지 마세요. 리테일 화면이 아닙니다. 항목이 비어 있거나 다른 코드가 보이면 귀속되지 않은 것이며, 규모를 늘리기 전에 실시간 채팅에서 재연결할 수 있습니다.'], a:['Where to look: Aster › Account › Referral','확인 위치: Aster › 계정 › 레퍼럴'] }
+    ]
+  },
+  hyperliquid: {
+    name:'Hyperliquid', initial:'H', g:'linear-gradient(135deg,#22D3A6,#0E9E7C)', rebate:'70%',
+    sub:['Decentralised perpetual exchange','탈중앙화 무기한 선물 거래소'],
+    fee:[
+      ['Maker fee, base tier','0.015% #','0.015% #',0],
+      ['Taker fee, base tier','0.045% #','0.045% #',0],
+      ['Best achievable','0% maker at tier 4+, 0.024% taker at tier 6 #','0% maker at tier 4+, 0.024% taker at tier 6 #',0],
+      ['Fee discount driver','Staked HYPE and rolling 14 day volume, applied multiplicatively','Staked HYPE and rolling 14 day volume, applied multiplicatively',0],
+      ['Funding interval','Hourly','Hourly',0],
+      ['Gas','None on the Hyperliquid L1','None on the Hyperliquid L1',0],
+      ['Cashback on fees you pay','None','Up to 70% returned *',1],
+      ['Effective taker cost','0.045%','0.0135% after cashback',1],
+      ['What it requires','Nothing. Connect your wallet directly.','Connect through the TetherMax link or builder code',1]
+    ],
+    feeKo:[
+      ['메이커 수수료, 기본 등급','0.015% #','0.015% #',0],
+      ['테이커 수수료, 기본 등급','0.045% #','0.045% #',0],
+      ['최저 도달','티어4+ 메이커 0%, 티어6 테이커 0.024% #','티어4+ 메이커 0%, 티어6 테이커 0.024% #',0],
+      ['할인 기준','스테이킹한 HYPE와 14일 누적 거래량, 곱셈 적용','스테이킹한 HYPE와 14일 누적 거래량, 곱셈 적용',0],
+      ['펀딩 주기','1시간','1시간',0],
+      ['가스','Hyperliquid L1에서 없음','Hyperliquid L1에서 없음',0],
+      ['지불 수수료 캐시백','없음','최대 70% 환급 *',1],
+      ['실질 테이커 비용','0.045%','캐시백 반영 후 0.0135%',1],
+      ['필요 조건','없음. 지갑을 직접 연결.','TetherMax 링크 또는 빌더 코드로 연결',1]
+    ],
+    feeNote:['Trading conditions are identical on both routes. The TetherMax route does not require you to leave a zero fee tier, and it does not affect your staking or volume discount. The only line that changes is the cashback on fees you have already paid.','거래 조건은 두 경로에서 동일합니다. TetherMax 경로는 수수료 0% 등급을 포기하도록 요구하지 않으며, 스테이킹이나 거래량 할인에도 영향을 주지 않습니다. 달라지는 것은 이미 지불한 수수료에 대한 캐시백 항목뿐입니다.'],
+    features:[
+      ['Onchain order book','Every order, cancel and fill is a consensus transaction on the Hyperliquid L1, so execution is publicly auditable rather than taken on trust.'],
+      ['HyperCore and HyperEVM','Two coupled execution environments under HyperBFT: the exchange state machine, and a general contract layer beside it.'],
+      ['HLP vault','A market making vault that absorbs liquidation shortfall. Depositors earn for carrying that risk, and the March 2025 events landed here.'],
+      ['User vaults','Anyone can run a vault others deposit into, so strategies are copyable without handing over custody.'],
+      ['Deep book, many markets','100+ perp and spot markets and the deepest liquidity of the three partner DEX Venues.'],
+      ['Full API surface','REST, WebSocket, agent wallets, sub accounts and a testnet, so systematic trading is a first class path rather than an afterthought.']
+    ],
+    featuresKo:[
+      ['온체인 오더북','모든 주문, 취소, 체결이 Hyperliquid L1의 합의 트랜잭션이므로 실행은 신뢰가 아니라 공개 감사의 대상입니다.'],
+      ['HyperCore와 HyperEVM','HyperBFT 아래 결합된 두 실행 환경. 거래소 상태 머신과 그 옆의 범용 컨트랙트 계층입니다.'],
+      ['HLP 볼트','청산 부족분을 흡수하는 마켓메이킹 볼트입니다. 예치자는 그 위험을 감수한 대가를 받으며, 2025년 3월 사건이 여기에 발생했습니다.'],
+      ['사용자 볼트','누구나 다른 사람이 예치할 수 있는 볼트를 운영할 수 있어, 보관을 넘기지 않고 전략을 복제할 수 있습니다.'],
+      ['깊은 오더북, 많은 마켓','무기한 및 현물 마켓 100개 이상, 세 파트너 DEX 중 가장 깊은 유동성.'],
+      ['완전한 API','REST, WebSocket, 에이전트 지갑, 서브계정, 테스트넷을 제공하므로 시스템 트레이딩이 부가 기능이 아닌 일급 경로입니다.']
+    ],
+    aff:[
+      ['Route type','Builder code and referral link. Both are supported.'],
+      ['Rebate rate','Up to 70% of the trading fees you generate, returned as TetherMax cashback *'],
+      ['Where it binds','At wallet connect. You sign a builder code approval, which is the one part of the route visible on the DEX itself.'],
+      ['Where to check it','Hyperliquid › Referrals lists the code you were referred by. The builder screen is the API and builder view, not the retail one.'],
+      ['Partnership status','Live. TetherMax is an established rebate route on Hyperliquid via builder code and referral link *'],
+      ['If it did not bind','Contact TetherMax Live Chat before you size up. Rebinding does not backdate fees already paid.']
+    ],
+    affKo:[
+      ['경로 유형','빌더 코드와 레퍼럴 링크. 둘 다 지원됩니다.'],
+      ['환급률','발생한 거래 수수료의 최대 70%를 TetherMax 캐시백으로 환급 *'],
+      ['귀속 시점','지갑 연결 시점. 빌더 코드 승인에 서명하며, 이것이 DEX에서 직접 보이는 경로의 유일한 부분입니다.'],
+      ['확인 위치','Hyperliquid › 레퍼럴에서 추천받은 코드를 확인할 수 있습니다. 빌더 화면은 API 및 빌더용이며 리테일 화면이 아닙니다.'],
+      ['파트너십 현황','운영 중. TetherMax는 빌더 코드와 레퍼럴 링크를 통해 Hyperliquid에서 확립된 환급 경로입니다 *'],
+      ['귀속되지 않았다면','규모를 늘리기 전에 TetherMax 실시간 채팅으로 문의하세요. 재연결해도 이미 지불한 수수료는 소급되지 않습니다.']
+    ],
+    affNote:['Route through TetherMax or it does not attribute','TetherMax 경로로 가입해야 귀속됩니다',
+      'The rebate is a share of the fees you personally pay, returned as cashback. It only binds if you connected through the TetherMax link or builder code. A direct signup, or one under any other referral code, is not attributed and cannot be backdated.',
+      '환급은 본인이 실제로 지불한 수수료의 일부를 캐시백으로 돌려주는 것입니다. TetherMax 링크 또는 빌더 코드로 연결한 경우에만 귀속됩니다. 직접 가입하거나 다른 레퍼럴 코드로 가입한 경우 귀속되지 않으며 소급도 불가능합니다.'],
+    notice:['Access notice: Hyperliquid does not accept traders resident in the United States, Ontario or sanctioned jurisdictions. This notice renders only where your jurisdiction carries an override.','접근 안내: Hyperliquid는 미국, 온타리오주 및 제재 대상 관할권 거주자를 받지 않습니다. 이 안내는 해당 관할권에 제한 조치가 있는 경우에만 표시됩니다.'],
+    kpis:[['Maker and taker, base tier','0.015% / 0.045%'],['Maximum leverage, BTC','Up to 40x'],['Settlement','Hyperliquid L1'],['Perps and spot markets','100+']],
+    kpisKo:[['메이커 / 테이커, 기본 등급','0.015% / 0.045%'],['최대 레버리지, BTC','최대 40배'],['정산','Hyperliquid L1'],['무기한 및 현물 마켓','100+']],
+    about:['Hyperliquid runs a fully onchain central limit order book on its own Layer 1. Two coupled execution environments, HyperCore for the exchange state machine and HyperEVM for general contracts, sit under HyperBFT consensus. Every order, cancel and fill is a consensus transaction, so execution is publicly auditable rather than taken on trust.','Hyperliquid는 자체 레이어1 위에서 완전 온체인 중앙지정가호가(CLOB)를 운영합니다. 거래소 상태 머신인 HyperCore와 범용 컨트랙트를 위한 HyperEVM 두 실행 환경이 HyperBFT 합의 아래 결합되어 있습니다. 모든 주문, 취소, 체결이 합의 트랜잭션이므로 실행은 신뢰가 아니라 공개 감사의 대상입니다.'],
+    tags:[['Deep liquidity','Onchain CLOB','Permissionless markets'],['깊은 유동성','온체인 CLOB','퍼미션리스 마켓']],
+    heroTags:[['Self custody','No KYC','Onchain order book'],['자기 보관','KYC 불필요','온체인 오더북']],
+    profile:[['Architecture','Own Layer 1, onchain CLOB'],['Settlement layer','Hyperliquid L1'],['Launched','2023, token from Nov 2024'],['Token','HYPE, live'],['Audit status','Bridge contract audits published, L1 coverage narrower'],['Restricted regions','United States, Ontario, sanctioned jurisdictions']],
+    profileKo:[['아키텍처','자체 레이어1, 온체인 CLOB'],['정산 레이어','Hyperliquid L1'],['출시','2023년, 토큰 2024년 11월'],['토큰','HYPE, 상장'],['감사 현황','브릿지 컨트랙트 감사 공개, L1 범위는 제한적'],['제한 지역','미국, 온타리오, 제재 관할권']],
+    tier1:[['TetherMax rebate','70% *'],['Maker fee','0.015% #'],['Taker fee','0.045% #'],['Best achievable','0% maker at tier 4+, 0.024% taker at tier 6 #'],['Funding interval','Hourly'],['Gas','None on the Hyperliquid L1']],
+    tier1Ko:[['TetherMax 환급','70% *'],['메이커 수수료','0.015% #'],['테이커 수수료','0.045% #'],['최저 도달','티어4+ 메이커 0%, 티어6 테이커 0.024% #'],['펀딩 주기','1시간'],['가스','Hyperliquid L1에서 없음']],
+    tier2Sub:['HYPE staking plus 14 day volume tiers, applied multiplicatively','HYPE 스테이킹과 14일 거래량 등급이 곱셈 방식으로 적용됩니다'],
+    tier2Cond:['Condition: the discount depends on staked HYPE and rolling 14 day volume. The TetherMax rebate route does not require you to leave a zero fee tier.','조건: 할인율은 스테이킹한 HYPE와 14일 누적 거래량에 따라 달라집니다. TetherMax 환급 경로는 수수료 0% 등급을 포기하도록 요구하지 않습니다.'],
+    tier2:[['TetherMax rebate','70% *'],['Maker fee','Down to 0% by staking tier #'],['Taker fee','0.024% – 0.039% #'],['Maximum leverage','Up to 40x on BTC #'],['Margin modes','Cross default, isolated on selected assets'],['Gas','None on the Hyperliquid L1']],
+    tier2Ko:[['TetherMax 환급','70% *'],['메이커 수수료','스테이킹 등급 기준 최저 0% #'],['테이커 수수료','0.024% – 0.039% #'],['최대 레버리지','BTC 최대 40배 #'],['마진 모드','기본 크로스, 일부 자산 격리'],['가스','Hyperliquid L1에서 없음']],
+    costs:[['BTC perp','0.060% + 0.4 bps slippage'],['ETH perp','0.060% + 0.6 bps slippage'],['SOL perp','0.060% + 1.1 bps slippage'],['Equity perp','Not offered'],['Gold perp','0.060% + 2.4 bps slippage']],
+    costsKo:[['BTC 무기한','0.060% + 0.4 bps 슬리피지'],['ETH 무기한','0.060% + 0.6 bps 슬리피지'],['SOL 무기한','0.060% + 1.1 bps 슬리피지'],['주식 무기한','제공하지 않음'],['금 무기한','0.060% + 2.4 bps 슬리피지']],
+    conditions:[['Order types','Limit, market, reduce only, stop, take profit, scale, TWAP'],['Margin modes','Cross default, isolated on selected assets'],['Self trade prevention','Supported per order, cancel and requeue by default'],['API','REST and WebSocket, agent wallets, sub accounts, testnet'],['Mobile app','Apps on iOS and Android. Order type coverage is partial']],
+    conditionsKo:[['주문 유형','지정가, 시장가, 감소전용, 스탑, 익절, 스케일, TWAP'],['마진 모드','기본 크로스, 일부 자산 격리'],['자전거래 방지','주문 단위로 지원, 기본 취소·재등록'],['API','REST와 WebSocket, 에이전트 지갑, 서브계정, 테스트넷'],['모바일 앱','iOS와 안드로이드 앱 제공. 주문 유형은 일부만 지원']],
+    trust:[['Who holds your collateral','Self custodial throughout. Assets sit in contracts you can exit from.'],['Who orders and matches your trades','A small validator set under HyperBFT consensus. Every order is a consensus transaction.'],['What is proven versus what is trusted','Execution is publicly auditable onchain. Matching correctness is not separately proven the way a zk rollup proves it.'],['What happens if the operator stops','No forced exit mechanism is documented if the L1 halts. Withdrawal assumes the bridge is operating.']],
+    trustKo:[['담보를 누가 보관하는가','전 구간 자기 보관. 자산은 직접 회수 가능한 컨트랙트에 있습니다.'],['주문을 누가 처리하고 체결하는가','HyperBFT 합의 아래 소수의 검증자 집합. 모든 주문이 합의 트랜잭션입니다.'],['무엇이 증명되고 무엇이 신뢰인가','실행은 온체인에서 공개 감사 가능합니다. 매칭의 정확성은 zk 롤업처럼 별도로 증명되지는 않습니다.'],['운영이 중단되면 어떻게 되는가','L1이 정지한 경우의 강제 회수 절차는 문서화되어 있지 않습니다. 자금 회수는 브릿지 가동을 전제로 합니다.']],
+    incidents:[['March 2025','An outsized ETH position was deliberately self liquidated, costing the HLP vault roughly 4 million USD.'],['March 2025','The JELLY squeeze cost HLP roughly 13 million USD unrealised. The validator set voted to delist the market mid squeeze and settle at a favourable price, and non flagged users were made whole.'],['What changed','Validator processes were revised and onchain validation was added for delisting decisions.']],
+    incidentsKo:[['2025년 3월','대규모 ETH 포지션이 의도적으로 자가 청산되어 HLP 볼트에 약 400만 달러 손실이 발생했습니다.'],['2025년 3월','JELLY 스퀴즈로 HLP에 약 1,300만 달러의 미실현 손실이 발생했습니다. 검증자 집합이 스퀴즈 도중 해당 마켓 상장폐지와 유리한 가격 정산을 의결했고, 플래그되지 않은 사용자는 전액 보전되었습니다.'],['이후 변경 사항','검증자 절차가 개정되었고 상장폐지 결정에 온체인 검증이 추가되었습니다.']],
+    r1:['Your detected jurisdiction does not appear on the Hyperliquid restricted list.','감지된 관할권은 Hyperliquid 제한 목록에 포함되어 있지 않습니다.'],
+    r2:['USDC on Arbitrum is reachable directly from a licensed exchange withdrawal in your market.','Arbitrum의 USDC는 국내 인가 거래소 출금으로 바로 도달할 수 있습니다.'],
+    r3:['Non crypto perp markets are not offered.','비암호자산 무기한 마켓은 제공하지 않습니다.'],
+    steps:[
+      { t:['Open through the TetherMax route','TetherMax 경로로 개설'], b:['Connect your wallet using the TetherMax referral link so attribution is recorded from your first trade. There is no account creation and no KYC step.','TetherMax 레퍼럴 링크로 지갑을 연결하면 첫 거래부터 귀속이 기록됩니다. 계정 생성도, KYC 절차도 없습니다.'], a:['tethermax.io/r/hyperliquid','tethermax.io/r/hyperliquid'] },
+      { t:['Fund the wallet you connected','연결한 지갑에 자금 입금'], b:['Withdraw USDC from a licensed exchange in your market to the wallet you just connected. Travel Rule verification applies at this step.','국내 인가 거래소에서 방금 연결한 지갑으로 USDC를 출금합니다. 이 단계에서 트래블룰 인증이 적용됩니다.'], a:['Network: Arbitrum · Asset: USDC','네트워크: Arbitrum · 자산: USDC'] },
+      { t:['Deposit into Hyperliquid','Hyperliquid에 입금'], b:['Deposit through the official bridge. The balance appears on the L1 once the bridge confirms, usually within a minute.','공식 브릿지를 통해 입금합니다. 브릿지 확인이 끝나면 보통 1분 이내에 L1 잔액에 반영됩니다.'], a:['Minimum deposit: 5 USDC','최소 입금: 5 USDC'] },
+      { t:['Confirm the referral code on Hyperliquid before you size up','규모를 늘리기 전 Hyperliquid에서 레퍼럴 코드 확인'], b:['Open the referrals page in your Hyperliquid account. As a retail trader that is where the route shows: the page lists the code you were referred by, and it should read as the TetherMax code. Do not look for a builder attribution screen, that is the API and builder view, not the retail one. If the field is empty or shows another code, you were not attributed and Live Chat can rebind you before you trade size.','Hyperliquid 계정의 레퍼럴 페이지를 엽니다. 리테일 트레이더가 경로를 확인할 수 있는 곳이 여기입니다. 추천받은 코드가 표시되며, TetherMax 코드로 나와야 합니다. 빌더 귀속 화면을 찾지 마세요. 그것은 API 및 빌더용 화면이며 리테일 화면이 아닙니다. 항목이 비어 있거나 다른 코드가 보이면 귀속되지 않은 것이며, 규모를 늘리기 전에 실시간 채팅에서 재연결할 수 있습니다.'], a:['Where to look: Hyperliquid › Referrals','확인 위치: Hyperliquid › 레퍼럴'] }
+    ]
+  },
+  lighter: {
+    name:'Lighter', initial:'L', g:'linear-gradient(135deg,#8B5CF6,#5B21B6)', rebate:'60%',
+    sub:['Decentralised perpetual exchange','탈중앙화 무기한 선물 거래소'],
+    fee:[
+      ['Maker fee, standard tier','0% #','0% #',0],
+      ['Taker fee, standard tier','0% #','0% #',0],
+      ['Higher tier fees','0% – 0.010% maker, 0.020% – 0.030% taker #','0% – 0.010% maker, 0.020% – 0.030% taker #',0],
+      ['Fee discount driver','Tier limits on size and request rate','Tier limits on size and request rate',0],
+      ['Funding interval','Hourly','Hourly',0],
+      ['Gas','None inside the rollup. Ethereum gas on deposit and withdrawal','None inside the rollup. Ethereum gas on deposit and withdrawal',0],
+      ['Cashback on fees you pay','None','Up to 60% returned *',1],
+      ['Effective taker cost, standard tier','0%','0%. No fees paid means nothing to rebate',1],
+      ['What it requires','Nothing. Connect your wallet directly.','Sign up through the TetherMax referral link',1]
+    ],
+    feeKo:[
+      ['메이커 수수료, 기본 등급','0% #','0% #',0],
+      ['테이커 수수료, 기본 등급','0% #','0% #',0],
+      ['상위 등급 수수료','메이커 0% – 0.010%, 테이커 0.020% – 0.030% #','메이커 0% – 0.010%, 테이커 0.020% – 0.030% #',0],
+      ['할인 기준','등급별 규모 및 요청 한도','등급별 규모 및 요청 한도',0],
+      ['펀딩 주기','1시간','1시간',0],
+      ['가스','롤업 내부는 없음. 입출금 시 이더리움 가스','롤업 내부는 없음. 입출금 시 이더리움 가스',0],
+      ['지불 수수료 캐시백','없음','최대 60% 환급 *',1],
+      ['실질 테이커 비용, 기본 등급','0%','0%. 지불 수수료가 없으면 환급할 것도 없음',1],
+      ['필요 조건','없음. 지갑을 직접 연결.','TetherMax 레퍼럴 링크로 가입',1]
+    ],
+    feeNote:['Trading conditions are identical on both routes. On the zero fee standard tier there is nothing to rebate, so route through TetherMax anyway: attribution binds at signup and starts paying the moment your tier carries fees.','거래 조건은 두 경로에서 동일합니다. 수수료 0%인 기본 등급에서는 환급할 것이 없지만, 그래도 TetherMax 경로로 가입하세요. 귀속은 가입 시점에 이루어지고 등급에 수수료가 발생하는 순간부터 지급이 시작됩니다.'],
+    features:[
+      ['Proven matching','Matching and liquidation run as zk proofs verified on Ethereum, so correctness is proven rather than promised.'],
+      ['Escape hatch','A documented route to exit to Ethereum without the sequencer cooperating, which is the one thing neither other partner DEX Venue publishes.'],
+      ['Zero fee standard tier','0% maker and 0% taker on the standard tier, subject to size and rate limits, so depth and Ethereum gas are the whole cost.'],
+      ['Public liquidity pool','A single public pool backstops liquidation, with auto deleveraging behind it.'],
+      ['Ethereum settlement','Assets are held in Ethereum contracts, and no gas is charged inside the rollup.'],
+      ['Points, pre token','An active points programme with no token published yet, so expect the subsidy effect on reported volume to be largest here.']
+    ],
+    featuresKo:[
+      ['증명된 매칭','매칭과 청산이 zk 증명으로 실행되어 이더리움에서 검증되므로, 정확성이 약속이 아니라 증명됩니다.'],
+      ['탈출 경로','시퀀서의 협조 없이 이더리움으로 회수하는 절차가 문서화되어 있습니다. 다른 두 파트너 DEX는 공개하지 않는 유일한 항목입니다.'],
+      ['기본 등급 수수료 0%','기본 등급에서 메이커 0%, 테이커 0%이며 규모 및 요청 한도가 적용됩니다. 따라서 호가 깊이와 이더리움 가스가 비용의 전부입니다.'],
+      ['공개 유동성 풀','단일 공개 풀이 청산을 뒷받침하고 그 뒤에 자동 디레버리징이 있습니다.'],
+      ['이더리움 정산','자산은 이더리움 컨트랙트에 보관되며 롤업 내부에서는 가스가 청구되지 않습니다.'],
+      ['토큰 발행 전 포인트','아직 토큰이 공개되지 않은 포인트 프로그램이 운영 중이므로, 보고된 거래량에 대한 보조금 효과가 가장 클 것으로 예상됩니다.']
+    ],
+    aff:[
+      ['Route type','Referral link. No builder code is exposed to retail accounts.'],
+      ['Rebate rate','Up to 60% of the trading fees you generate, returned as TetherMax cashback *'],
+      ['Where it binds','At signup, the first time you connect through the TetherMax link.'],
+      ['Where to check it','Lighter › Account › Referral lists the code you signed up under.'],
+      ['Zero fee caveat','On the standard tier there are no fees to rebate, so cashback only accrues once you are paying fees on a higher tier.'],
+      ['If it did not bind','Contact TetherMax Live Chat before you size up.']
+    ],
+    affKo:[
+      ['경로 유형','레퍼럴 링크. 리테일 계정에 빌더 코드는 제공되지 않습니다.'],
+      ['환급률','발생한 거래 수수료의 최대 60%를 TetherMax 캐시백으로 환급 *'],
+      ['귀속 시점','가입 시점. TetherMax 링크로 처음 연결할 때 기록됩니다.'],
+      ['확인 위치','Lighter › 계정 › 레퍼럴에서 가입 시 사용한 코드를 확인할 수 있습니다.'],
+      ['수수료 0% 주의사항','기본 등급에서는 환급할 수수료가 없으므로, 상위 등급에서 수수료를 지불하기 시작한 뒤부터 캐시백이 누적됩니다.'],
+      ['귀속되지 않았다면','규모를 늘리기 전에 TetherMax 실시간 채팅으로 문의하세요.']
+    ],
+    affNote:['The zero fee tier changes the maths','수수료 0% 등급은 계산을 바꿉니다',
+      'A rebate is a share of fees you paid. On the standard tier you pay none, so there is nothing to return. The TetherMax route still binds at signup and starts paying the moment your tier carries fees, so route through it even if you plan to stay at zero.',
+      '환급은 지불한 수수료의 일부입니다. 기본 등급에서는 지불액이 없으므로 돌려줄 것도 없습니다. 그래도 TetherMax 경로는 가입 시 귀속되며 등급에 수수료가 발생하는 순간부터 지급이 시작되므로, 0% 등급에 머물 계획이라도 이 경로로 가입하세요.'],
+    notice:['Access notice: Lighter does not accept traders resident in the United States or sanctioned jurisdictions. This notice renders only where your jurisdiction carries an override.','접근 안내: Lighter는 미국 및 제재 대상 관할권 거주자를 받지 않습니다. 이 안내는 해당 관할권에 제한 조치가 있는 경우에만 표시됩니다.'],
+    kpis:[['Maker and taker, standard tier','0% / 0%'],['Maximum leverage, BTC','Up to 50x'],['Settlement','Ethereum'],['Perp markets','60+']],
+    kpisKo:[['메이커 / 테이커, 기본 등급','0% / 0%'],['최대 레버리지, BTC','최대 50배'],['정산','Ethereum'],['무기한 마켓','60+']],
+    about:['Lighter is an application specific zk rollup settling to Ethereum. Matching and liquidation are proven with zk proofs verified onchain, so you are not trusting the operator to have run the book honestly, only to keep publishing proofs. A documented escape hatch lets you exit to Ethereum if the sequencer stops.','Lighter는 이더리움에 정산하는 애플리케이션 특화 zk 롤업입니다. 매칭과 청산을 zk 증명으로 입증하고 온체인에서 검증하므로, 운영자가 정직하게 오더북을 운영했다고 신뢰할 필요 없이 증명을 계속 게시한다는 점만 신뢰하면 됩니다. 시퀀서가 멈춘 경우 이더리움으로 탈출할 수 있는 절차가 문서화되어 있습니다.'],
+    tags:[['Proven matching','Zero fee standard tier','Escape hatch documented'],['증명된 매칭','기본 등급 수수료 0%','탈출 경로 문서화']],
+    heroTags:[['Self custody','No KYC','zk proven matching'],['자기 보관','KYC 불필요','zk 증명 매칭']],
+    profile:[['Architecture','Application specific zk rollup'],['Settlement layer','Ethereum'],['Launched','2024'],['Token','Not published by the venue'],['Audit status','Circuit and contract audits published'],['Restricted regions','United States, sanctioned jurisdictions']],
+    profileKo:[['아키텍처','애플리케이션 특화 zk 롤업'],['정산 레이어','Ethereum'],['출시','2024년'],['토큰','거래소가 공개하지 않음'],['감사 현황','서킷 및 컨트랙트 감사 공개'],['제한 지역','미국, 제재 관할권']],
+    tier1:[['TetherMax rebate','60% *'],['Maker fee','0% #'],['Taker fee','0% #'],['Best achievable','0% maker and taker, standard tier only #'],['Funding interval','Hourly'],['Gas','None inside the rollup. Ethereum gas on deposit and withdrawal']],
+    tier1Ko:[['TetherMax 환급','60% *'],['메이커 수수료','0% #'],['테이커 수수료','0% #'],['최저 도달','기본 등급에서만 메이커·테이커 0% #'],['펀딩 주기','1시간'],['가스','롤업 내부는 없음. 입출금 시 이더리움 가스']],
+    tier2Sub:['Higher tiers trade fees for priority and size limits','상위 등급은 수수료를 지불하고 우선순위와 한도를 얻습니다'],
+    tier2Cond:['Condition: the zero fee standard tier carries size and rate limits. The TetherMax rebate applies to fees you actually pay, so it does not affect a zero fee tier.','조건: 수수료 0%인 기본 등급에는 규모 및 요청 한도가 있습니다. TetherMax 환급은 실제로 지불한 수수료에 적용되므로 수수료 0% 등급에는 영향이 없습니다.'],
+    tier2:[['TetherMax rebate','60% *'],['Maker fee','0% – 0.010% #'],['Taker fee','0.020% – 0.030% #'],['Maximum leverage','Up to 50x on BTC #'],['Margin modes','Cross only'],['Gas','None inside the rollup']],
+    tier2Ko:[['TetherMax 환급','60% *'],['메이커 수수료','0% – 0.010% #'],['테이커 수수료','0.020% – 0.030% #'],['최대 레버리지','BTC 최대 50배 #'],['마진 모드','크로스만'],['가스','롤업 내부는 없음']],
+    costs:[['BTC perp','0.000% + 1.1 bps slippage'],['ETH perp','0.000% + 1.4 bps slippage'],['SOL perp','0.000% + 2.6 bps slippage'],['Equity perp','Not offered'],['Gold perp','Not offered']],
+    costsKo:[['BTC 무기한','0.000% + 1.1 bps 슬리피지'],['ETH 무기한','0.000% + 1.4 bps 슬리피지'],['SOL 무기한','0.000% + 2.6 bps 슬리피지'],['주식 무기한','제공하지 않음'],['금 무기한','제공하지 않음']],
+    conditions:[['Order types','Limit, market, reduce only, stop'],['Margin modes','Cross only'],['Collateral','USDC only'],['API','REST and WebSocket'],['Mobile app','Mobile web only']],
+    conditionsKo:[['주문 유형','지정가, 시장가, 감소전용, 스탑'],['마진 모드','크로스만'],['담보','USDC만'],['API','REST와 WebSocket'],['모바일 앱','모바일 웹만']],
+    trust:[['Who holds your collateral','Self custodial. Assets are held in Ethereum contracts.'],['Who orders and matches your trades','A single sequencer orders your trades, with proofs verified on Ethereum.'],['What is proven versus what is trusted','Matching and liquidation are proven with zk proofs. You trust the sequencer for ordering and liveness, not for correctness.'],['What happens if the operator stops','An escape hatch to Ethereum is documented, so you can exit without the sequencer.']],
+    trustKo:[['담보를 누가 보관하는가','자기 보관. 자산은 이더리움 컨트랙트에 보관됩니다.'],['주문을 누가 처리하고 체결하는가','단일 시퀀서가 주문 순서를 정하고, 증명은 이더리움에서 검증됩니다.'],['무엇이 증명되고 무엇이 신뢰인가','매칭과 청산은 zk 증명으로 입증됩니다. 시퀀서는 순서와 가동성만 신뢰하며 정확성은 신뢰 대상이 아닙니다.'],['운영이 중단되면 어떻게 되는가','이더리움으로의 탈출 경로가 문서화되어 있어 시퀀서 없이도 회수할 수 있습니다.']],
+    incidents:[['To date','No publicly documented incident.'],['Audit coverage','Both the proving circuits and the Ethereum contracts have published audits.'],['What to watch','A single sequencer remains a liveness dependency even though correctness is proven.']],
+    incidentsKo:[['현재까지','공개적으로 문서화된 사고가 없습니다.'],['감사 범위','증명 서킷과 이더리움 컨트랙트 모두 감사가 공개되어 있습니다.'],['주의할 점','정확성은 증명되지만 단일 시퀀서는 여전히 가동성 의존 요소로 남습니다.']],
+    r1:['Your detected jurisdiction does not appear on the Lighter restricted list.','감지된 관할권은 Lighter 제한 목록에 포함되어 있지 않습니다.'],
+    r2:['Ethereum settlement is reachable directly from a licensed exchange withdrawal in your market.','이더리움 정산은 국내 인가 거래소 출금으로 바로 도달할 수 있습니다.'],
+    r3:['Non crypto perp markets are not offered.','비암호자산 무기한 마켓은 제공하지 않습니다.'],
+    steps:[
+      { t:['Open through the TetherMax route','TetherMax 경로로 개설'], b:['Connect your wallet using the TetherMax referral link so attribution is recorded from your first trade. There is no account creation and no KYC step.','TetherMax 레퍼럴 링크로 지갑을 연결하면 첫 거래부터 귀속이 기록됩니다. 계정 생성도, KYC 절차도 없습니다.'], a:['tethermax.io/r/lighter','tethermax.io/r/lighter'] },
+      { t:['Fund the wallet you connected','연결한 지갑에 자금 입금'], b:['Withdraw USDC on Ethereum from a licensed exchange in your market. Travel Rule verification applies at this step.','국내 인가 거래소에서 이더리움 USDC를 출금합니다. 이 단계에서 트래블룰 인증이 적용됩니다.'], a:['Network: Ethereum · Asset: USDC','네트워크: Ethereum · 자산: USDC'] },
+      { t:['Deposit into the rollup','롤업에 입금'], b:['Deposit through the Ethereum contract. Ethereum gas applies on the way in and on the way out, but not inside the rollup.','이더리움 컨트랙트를 통해 입금합니다. 입출금 시에는 이더리움 가스가 발생하지만 롤업 내부에서는 발생하지 않습니다.'], a:['Ethereum gas applies on deposit','입금 시 이더리움 가스 발생'] },
+      { t:['Confirm the referral code on Lighter before you size up','규모를 늘리기 전 Lighter에서 레퍼럴 코드 확인'], b:['Open the referral panel in your Lighter account. As a retail trader that is where the route shows: the code you signed up under is listed, and it should read as the TetherMax code. Note that on the zero fee standard tier there are no fees to rebate, so cashback only accrues once you are paying fees. If the field is empty or shows another code, Live Chat can rebind you before you trade size.','Lighter 계정의 레퍼럴 패널을 엽니다. 리테일 트레이더가 경로를 확인할 수 있는 곳이 여기입니다. 가입 시 사용한 코드가 표시되며, TetherMax 코드로 나와야 합니다. 수수료 0%인 기본 등급에서는 환급할 수수료가 없으므로 수수료를 지불하기 시작한 뒤부터 캐시백이 누적됩니다. 항목이 비어 있거나 다른 코드가 보이면 규모를 늘리기 전에 실시간 채팅에서 재연결할 수 있습니다.'], a:['Where to look: Lighter › Account › Referral','확인 위치: Lighter › 계정 › 레퍼럴'] }
+    ]
+  }
+};
+
+const VENUES = [
+  { id:'aster', name:'Aster', initial:'A', g:'linear-gradient(135deg,#0067FF,#0031C6)',
+    blurb:'Widest surface area. Very high leverage, tokenized equities, forex, prediction markets.',
+    blurbKo:'가장 넓은 상품 범위. 초고배율 레버리지, 토큰화 주식, 외환, 예측 시장.',
+    status:'Watch', statusKo:'주의', statusColor:'warning' },
+  { id:'hyperliquid', name:'Hyperliquid', initial:'H', g:'linear-gradient(135deg,#22D3A6,#0E9E7C)',
+    blurb:'Fully onchain order book on its own L1. Deepest liquidity, most markets.',
+    blurbKo:'자체 L1 위의 완전 온체인 오더북. 가장 깊은 유동성과 가장 많은 마켓.',
+    status:'Available', statusKo:'이용 가능', statusColor:'success' },
+  { id:'lighter', name:'Lighter', initial:'L', g:'linear-gradient(135deg,#8B5CF6,#5B21B6)',
+    blurb:'zk rollup on Ethereum. Proves matching and liquidation. Zero fee standard tier.',
+    blurbKo:'이더리움 기반 zk 롤업. 체결과 청산을 증명합니다. 기본 등급 수수료 0%.',
+    status:'Available', statusKo:'이용 가능', statusColor:'success' }
+];
+
+const RISKS = [
+  { t:'Leverage still cuts both ways', b:'Nothing about self custody changes what 40x does to a position when the mark moves against you.',
+    tKo:'레버리지는 여전히 양날의 검입니다', bKo:'자기 보관이라고 해서 마크 가격이 반대로 움직일 때 40배 레버리지가 하는 일이 달라지지는 않습니다.' },
+  { t:'Operator concentration is real', b:'A small validator set or a single sequencer is still a small number of parties deciding what happens to your order.',
+    tKo:'운영 주체 집중 위험은 실제입니다', bKo:'소수의 검증자 집합이나 단일 시퀀서는 결국 소수의 주체가 주문의 운명을 결정한다는 뜻입니다.' },
+  { t:'Smart contract and bridge risk', b:'Funds move through contracts and bridges. Audit coverage varies, and audited code has still failed.',
+    tKo:'스마트 컨트랙트 및 브릿지 위험', bKo:'자금은 컨트랙트와 브릿지를 거칩니다. 감사 범위는 제각각이며, 감사받은 코드도 실패한 사례가 있습니다.' },
+  { t:'There is no recovery', b:'Lose the key, sign the wrong transaction, send to the wrong network, and there is no desk that can reverse it.',
+    tKo:'복구는 불가능합니다', bKo:'키를 분실하거나 잘못된 트랜잭션에 서명하거나 잘못된 네트워크로 전송하면, 되돌려 줄 창구가 없습니다.' },
+  { t:'Volume is not always what it looks like', b:'Points and airdrop campaigns inflate reported volume. Depth at the size you trade is the number that matters.',
+    tKo:'거래량은 보이는 것과 다를 수 있습니다', bKo:'포인트와 에어드랍 캠페인은 보고된 거래량을 부풀립니다. 중요한 것은 본인 주문 규모에서의 호가 깊이입니다.' }
+];
+
+const FAQS = [
+  { q:'I already trade perps on Binance. What is actually different here?', a:'The instrument is the same. What changes is custody, where matching runs, and who you are trusting when something breaks. There is no account, no KYC gate and no support desk that can reverse a fill.',
+    qKo:'이미 바이낸스에서 무기한 선물을 거래합니다. 여기서 실제로 무엇이 다른가요?', aKo:'상품 자체는 동일합니다. 달라지는 것은 보관 주체, 체결이 실행되는 위치, 그리고 문제가 생겼을 때 누구를 신뢰하는가입니다. 계정도, KYC 관문도, 체결을 되돌려 줄 고객지원도 없습니다.' },
+  { q:'Do I need to pass KYC on these DEX Venues?', a:'Not for standard trading on any of the three. Aster keeps a discretionary verification clause in its terms. That is not the same as no verification ever.',
+    qKo:'이 DEX들에서 KYC를 통과해야 하나요?', aKo:'세 곳 모두 일반 거래에는 필요하지 않습니다. 다만 Aster는 약관에 재량적 인증 조항을 두고 있습니다. 이는 인증이 절대 없다는 뜻은 아닙니다.' },
+  { q:'Can I use these DEX Venues from where I live?', a:'It depends on your jurisdiction and each DEX Venue own restricted list. Access status resolves against your detected jurisdiction and is shown as a status chip on every card, table column and detail page.',
+    qKo:'제가 거주하는 지역에서 이용할 수 있나요?', aKo:'관할권과 각 DEX의 제한 국가 목록에 따라 다릅니다. 접근 상태는 감지된 관할권 기준으로 판정되어 모든 카드, 비교표 열, 상세 페이지에 상태 칩으로 표시됩니다.' },
+  { q:'How does the TetherMax rebate work on a DEX?', a:'You open through the TetherMax route, which carries a referral link or a builder code. Attribution is recorded from your first trade and the rebate is paid on the fees you actually generate.',
+    qKo:'DEX에서 TetherMax 환급은 어떻게 작동하나요?', aKo:'레퍼럴 링크 또는 빌더 코드가 포함된 TetherMax 경로로 계정을 개설합니다. 첫 거래부터 귀속이 기록되며, 실제 발생한 수수료를 기준으로 환급됩니다.' },
+  { q:'What happens to my funds if the DEX Venue goes offline?', a:'That depends on the documented exit mechanism, which differs at each DEX Venue. Where none is documented, the detail page says so plainly rather than leaving the row blank.',
+    qKo:'DEX가 중단되면 제 자금은 어떻게 되나요?', aKo:'문서화된 자금 회수 메커니즘에 따라 다르며, DEX마다 다릅니다. 문서화된 절차가 없는 경우 상세 페이지는 빈칸으로 두지 않고 그 사실을 명시합니다.' },
+  { q:'Which DEX Venue should I choose?', a:'TetherMax does not rank them. The compare page puts thirty dated traits side by side so you can rule two out on the rows that matter to how you trade.',
+    qKo:'어떤 DEX를 선택해야 하나요?', aKo:'TetherMax는 순위를 매기지 않습니다. 비교 페이지는 날짜가 명시된 30개 항목을 나란히 보여주므로, 본인의 거래 방식에 중요한 항목을 기준으로 두 곳을 배제할 수 있습니다.' }
+];
+
+class Component extends DCLogic {
+  state = { page:'hub', venue:'hyperliquid', module:2, lang:null, faq:0, anchor:'dx-changes', done:[1,2,3], group:0, step:0, toc:'a1' };
+
+  componentDidMount(){ this.applyLang(); }
+  componentDidUpdate(){ this.applyLang(); }
+
+  applyLang(){
+    const ko = (this.state.lang || this.props.startLang || 'en') === 'ko';
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      if (el.dataset.enCache === undefined) el.dataset.enCache = el.innerHTML;
+      const t = KO[el.dataset.i18n];
+      const next = ko && t ? t : el.dataset.enCache;
+      if (el.innerHTML !== next) el.innerHTML = next;
+    });
+    document.documentElement.lang = ko ? 'ko' : 'en';
+    document.body.style.fontFamily = ko ? 'Pretendard, var(--font-body)' : '';
+  }
+
+  go(page, venue){ const n = { page }; if (venue) { n.venue = venue; n.step = 0; } this.setState(n); window.scrollTo(0,0); }
+
+  openModule(n){ this.setState({ page:'article', module:n, toc:'a1' }); window.scrollTo(0,0); }
+  scrollTo(id){ const el = document.getElementById(id); if (el) window.scrollTo({ top: el.offsetTop - 112, behavior:'smooth' }); this.setState({ anchor:id }); }
+
+  nextUnread(){ for (let i = 1; i <= 8; i++) if (this.state.done.indexOf(i) < 0) return i; return 8; }
+
+  statusOf(id){
+    const p = this.props;
+    const raw = (id === 'aster' ? p.asterStatus : id === 'hyperliquid' ? p.hyperliquidStatus : p.lighterStatus) || 'Available';
+    const map = {
+      Available: { ko:'이용 가능', color:'success' },
+      Watch: { ko:'주의', color:'warning' },
+      Restricted: { ko:'이용 제한', color:'error' }
+    };
+    const m = map[raw] || map.Available;
+    return { en: raw, ko: m.ko, color: m.color };
+  }
+
+  renderVals(){
+    const ko = (this.state.lang || this.props.startLang || 'en') === 'ko';
+    const d = DETAILS[this.state.venue] || DETAILS.hyperliquid;
+    const m = this.state.module;
+    const md = MOD[m];
+    const pill = on => 'font:600 11.5px/1 var(--font-body);padding:7px 11px;border-radius:999px;cursor:pointer;white-space:nowrap;'
+      + (on ? 'background:var(--color-primary);color:#fff' : 'color:var(--text-secondary)');
+
+    const anchorDefs = [
+      ['dx-changes', ko?'무엇이 달라지나':'The Difference'],
+      ['dx-how', ko?'작동 방식':'How It Works'],
+      ['dx-funding', ko?'입금 경로':'Funding Path'],
+      ['learn', ko?'러닝 트랙':'Learn Track']
+    ];
+
+    return {
+      pageHub: this.state.page === 'hub',
+      pageLearn: this.state.page === 'learn',
+      pageArticle: this.state.page === 'article',
+      pageCompare: this.state.page === 'compare',
+      pageDetail: this.state.page === 'detail',
+      goHub: () => this.go('hub'),
+      goLearn: () => this.go('learn'),
+      goCompare: () => this.go('compare'),
+      goDetail: () => this.go('detail','hyperliquid'),
+      setEn: () => this.setState({ lang:'en' }),
+      setKo: () => this.setState({ lang:'ko' }),
+      enPillStyle: pill(!ko),
+      koPillStyle: pill(ko),
+      anchors: anchorDefs.map(([id,label]) => ({
+        id, label,
+        go: () => id === 'learn' ? this.go('learn') : this.scrollTo(id),
+        style: 'font:600 13.5px/1 var(--font-body);padding:16px 16px;cursor:pointer;white-space:nowrap;border-bottom:2px solid '
+          + (this.state.anchor === id ? 'var(--color-primary);color:var(--color-primary)' : 'transparent;color:var(--text-secondary)')
+      })),
+      venues: VENUES.map(v => ({
+        name: v.name, initial: v.initial, blurb: ko ? v.blurbKo : v.blurb,
+        status: ko ? this.statusOf(v.id).ko : this.statusOf(v.id).en, statusColor: this.statusOf(v.id).color,
+        markStyle: 'width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:#fff;font:700 14px var(--font-display);background:' + v.g,
+        go: () => this.go('detail', v.id)
+      })),
+      risks: RISKS.map(r => ({ t: ko ? r.tKo : r.t, b: ko ? r.bKo : r.b })),
+      faqs: FAQS.map((f,i) => ({
+        q: ko ? f.qKo : f.q, a: ko ? f.aKo : f.a,
+        sign: this.state.faq === i ? '−' : '+',
+        toggle: () => this.setState({ faq: this.state.faq === i ? -1 : i }),
+        bodyStyle: this.state.faq === i ? 'display:block' : 'display:none'
+      })),
+
+      showNotice: this.props.showAccessNotice !== false,
+      goArticle: () => this.openModule(this.nextUnread()),
+      goFunding: () => { this.setState({ page:'hub' }); setTimeout(() => this.scrollTo('dx-funding'), 60); },
+      whiteBtn: 'background:#fff;color:var(--color-primary)',
+      ghostBtn: 'background:rgba(255,255,255,.16);color:#fff;border-color:rgba(255,255,255,.34);backdrop-filter:blur(6px)',
+
+      modules: MODULES.map((m,i) => {
+        const n = i + 1, done = this.state.done.indexOf(n) > -1;
+        return {
+          num: n, title: ko ? m[1] : m[0],
+          meta: done ? (ko ? '완료' : 'Done') : (ko ? '6분 분량' : '6 min read'),
+          open: () => this.openModule(n),
+          rowStyle: 'display:grid;grid-template-columns:44px minmax(0,1fr) 120px;gap:20px;align-items:center;padding:20px 0;border-top:1px solid var(--border-subtle);cursor:pointer',
+          numStyle: 'width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font:700 13px var(--font-body);'
+            + (done ? 'background:var(--color-primary);color:#fff' : 'background:var(--surface-sunken,#EEF1F5);color:var(--text-secondary)'),
+          titleStyle: 'font:600 16.5px/1.45 var(--font-body);margin:0;color:' + (done ? 'var(--text-secondary)' : 'var(--text-primary)'),
+          metaStyle: 'font:600 12.5px/1 var(--font-body);text-align:right;color:' + (done ? 'var(--tm-success)' : 'var(--text-secondary)')
+        };
+      }),
+      continueLabel: (ko ? ('모듈 ' + this.nextUnread() + ' 이어서 학습') : ('Continue module ' + this.nextUnread())),
+      progressLabel: (ko ? this.state.done.length + ' / 8 완료' : this.state.done.length + ' of 8 complete'),
+      progressBarStyle: 'height:100%;border-radius:999px;background:var(--color-primary);width:' + (this.state.done.length / 8 * 100) + '%',
+
+      artChip: (ko ? ('모듈 ' + m + ' / 8') : ('Module ' + m + ' of 8')),
+      artCrumb: (ko ? ('모듈 ' + m) : ('Module ' + m)),
+      artRead: md.read[ko?1:0],
+      artTitle: md.t[ko?1:0],
+      sections: md.secs.map((sec,i) => ({
+        id: 'a' + (i + 1),
+        h: sec[ko?1:0],
+        b: sec[ko?3:2],
+        hStyle: 'font:700 26px/1.3 var(--font-display);margin:' + (i === 0 ? '0' : '38px') + ' 0 14px'
+      })),
+      artCmp: [
+        { name:'Aster', v: md.cmp.a[ko?1:0] },
+        { name:'Hyperliquid', v: md.cmp.h[ko?1:0] },
+        { name:'Lighter', v: md.cmp.l[ko?1:0] }
+      ],
+      artRegional: md.reg[ko?1:0],
+      artCloseH: md.close[ko?1:0],
+      artCloseB: md.close[ko?3:2],
+      toc: md.secs.map((sec,i) => ['a' + (i+1), sec[ko?1:0]])
+        .concat([['a5', ko ? '세 DEX는 어떻게 다른가' : 'How the three DEX Venues compare'],
+                 ['a6', ko ? '지역 안내' : 'Regional note'],
+                 ['a7', md.close[ko?1:0]]])
+        .map(t => ({
+          label: t[1],
+          go: () => { const el = document.getElementById(t[0]); if (el) window.scrollTo({ top: el.offsetTop - 96, behavior:'smooth' }); this.setState({ toc:t[0] }); },
+          style: 'font:500 13px/1.45 var(--font-body);padding:8px 0 8px 14px;cursor:pointer;margin-left:-2px;border-left:2px solid '
+            + (this.state.toc === t[0] ? 'var(--color-primary);color:var(--color-primary);font-weight:600' : 'transparent;color:var(--text-secondary)')
+        })),
+      prevLabel: m > 1 ? ((ko ? '← 이전: 모듈 ' : '← Previous: Module ') + (m - 1)) : (ko ? '← 러닝 트랙으로' : '← Back to the Learn track'),
+      nextLabel: m < 8 ? ((ko ? '다음: 모듈 ' : 'Next: Module ') + (m + 1) + ' →') : (ko ? '러닝 트랙 완료 →' : 'Finish the Learn track →'),
+      prevStyle: 'font:600 14px/1.4 var(--font-body);color:var(--color-primary);cursor:pointer',
+      nextStyle: 'font:600 14px/1.4 var(--font-body);color:var(--color-primary);cursor:pointer;text-align:right',
+      goPrev: () => m > 1 ? this.openModule(m - 1) : this.go('learn'),
+      goNext: () => m < 8 ? this.openModule(m + 1) : this.go('learn'),
+      doneLabel: this.state.done.indexOf(m) > -1 ? (ko ? '완료 취소' : 'Completed ✓') : (ko ? '완료로 표시' : 'Mark as complete'),
+      toggleDone: () => {
+        const d = this.state.done.slice(), i = d.indexOf(m);
+        if (i > -1) d.splice(i,1); else d.push(m);
+        this.setState({ done:d });
+      },
+
+      venueBar: VENUES.map(v => ({
+        name: v.name, initial: v.initial,
+        signup: ko ? '가입' : 'Sign Up', details: ko ? '상세' : 'Details',
+        markStyle: 'width:26px;height:26px;border-radius:7px;display:grid;place-items:center;color:#fff;font:700 12px var(--font-display);background:' + v.g,
+        go: () => this.go('detail', v.id)
+      })),
+      venueCards: VENUES.map(v => ({
+        name: v.name, initial: v.initial, status: ko ? this.statusOf(v.id).ko : this.statusOf(v.id).en, statusColor: this.statusOf(v.id).color,
+        signup: ko ? '가입하기' : 'Sign Up', details: ko ? '자세히' : 'View Details',
+        markStyle: 'width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:#fff;font:700 14px var(--font-display);background:' + v.g,
+        go: () => this.go('detail', v.id)
+      })),
+      groups: GROUPS.map((g,i) => ({
+        name: ko ? g.name[1] : g.name[0],
+        desc: ko ? g.desc[1] : g.desc[0],
+        count: ko ? '6개 항목' : '6 traits',
+        sign: (this.props.expandAllTraits || this.state.group === i) ? '−' : '+',
+        toggle: () => this.setState({ group: this.state.group === i ? -1 : i }),
+        bodyStyle: (this.props.expandAllTraits || this.state.group === i) ? 'display:block' : 'display:none',
+        rows: g.rows.map(r => ({ label: r.label[ko?1:0], a: r.a[ko?1:0], h: r.h[ko?1:0], l: r.l[ko?1:0] }))
+      })),
+
+      tagCustody: d.heroTags[ko?1:0][0],
+      tagKyc: d.heroTags[ko?1:0][1],
+      tagBook: d.heroTags[ko?1:0][2],
+      tagDepth: d.tags[ko?1:0][0],
+      tagClob: d.tags[ko?1:0][1],
+      tagPerm: d.tags[ko?1:0][2],
+      dName: d.name,
+      dInitial: d.initial,
+      dMarkStyle: 'width:56px;height:56px;border-radius:14px;display:grid;place-items:center;color:#fff;font:700 24px var(--font-display);background:' + d.g,
+      dRebate: d.rebate,
+      dNotice: d.notice[ko?1:0],
+      dAboutTitle: ko ? (d.name + ' 소개') : ('About ' + d.name),
+      dAbout: d.about[ko?1:0],
+      dR1: d.r1[ko?1:0], dR2: d.r2[ko?1:0], dR3: d.r3[ko?1:0],
+      dFeaturesTitle: ko ? (d.name + ' 주요 기능') : (d.name + ' features'),
+      dFeaturesLede: ko ? '이 거래소가 다른 곳과 다른 지점, 그리고 그것이 거래에 어떤 영향을 주는지.' : 'What this DEX Venue does that the others do not, and what each of those changes for a trader.',
+      features: (ko ? d.featuresKo : d.features).map(p => ({ k:p[0], v:p[1] })),
+      hasVip: !!d.vip,
+      dVipTitle: ko ? 'VIP 등급' : 'VIP tiers',
+      dVipLede: ko ? '6개 VIP 등급이 테이커 수수료를 0.040%에서 0.016%까지 낮춥니다. 등급은 매일 23:59 UTC에 평가되며, 14일 거래량과 $ASTER 일평균 보유량 두 조건을 모두 충족해야 합니다. 아래 수치는 General Perpetuals 기준입니다.' : 'Six VIP tiers take your taker fee from 0.040% down to 0.016%. Status is assessed daily at 23:59 UTC and both criteria must be met: rolling 14 day volume and your daily average $ASTER holding. Figures below are the General Perpetuals schedule.',
+      dVipCatsTitle: ko ? '페어 카테고리별 수수료' : 'Fees by pair category',
+      dVipCatsLede: ko ? '모든 무기한 페어는 세 카테고리로 분류되며, 카테고리마다 테이커 수수료 체계가 다릅니다.' : 'Every perpetual pair falls into one of three categories, and each carries its own taker schedule.',
+      dVipHowTitle: ko ? '등급 판정 방식' : 'How the tier is decided',
+      vipCats: ((ko ? d.vipCatsKo : d.vipCats) || []).map(p => ({ k:p[0], v:p[1] })),
+      vipHead: (d.vipHead || []).map(h => ({ v: h[ko?1:0] })),
+      vipRows: (d.vip || []).map((r,i) => ({
+        tier:r[0], vol:r[1], hold:r[2], maker:r[3], taker:r[4],
+        rowStyle: 'display:grid;grid-template-columns:110px repeat(4,minmax(0,1fr));gap:20px;padding:15px 26px;border-bottom:1px solid var(--border-subtle);'
+          + (i === (d.vip || []).length - 1 ? 'background:var(--tm-blue-50,#E8F1FF)' : ''),
+        tierStyle: 'font:700 13.5px/1.5 var(--font-body);color:var(--color-primary)'
+      })),
+      vipNotes: ((ko ? d.vipNotesKo : d.vipNotes) || []).map(p => ({ k:p[0], v:p[1] })),
+      dAffTitle: ko ? '어필리에이트 및 레퍼럴 프로그램' : 'Affiliate and referral programme',
+      dAffLede: ko ? 'TetherMax 환급이 이 거래소에서 어떻게 귀속되는지, 그리고 무엇이 필요한지.' : 'How the TetherMax rebate binds on this DEX Venue, and what it requires.',
+      affiliate: (ko ? d.affKo : d.aff).map(p => ({ k:p[0], v:p[1] })),
+      dAffNoteTitle: d.affNote[ko?1:0],
+      dAffNote: d.affNote[ko?3:2],
+      dCtaTitle: ko ? (d.name + '에서 캐시백 받기') : ('Start earning cashback on ' + d.name),
+      kpis: (ko ? d.kpisKo : d.kpis).map(p => ({ k:p[0], v:p[1] })),
+      profile: (ko ? d.profileKo : d.profile).map(p => ({ k:p[0], v:p[1] })),
+      dFeesLede: ko ? '거래 조건은 어느 경로로 가입해도 동일합니다. 달라지는 것은 이미 지불한 수수료를 돌려받는지 여부입니다.' : 'Trading conditions are the same whichever route you sign up through. What changes is whether the fees you have already paid come back to you.',
+      feeColAttr: ko ? '항목' : 'Condition',
+      feeColDirect: ko ? '일반 가입' : 'Direct signup',
+      feeColTm: ko ? 'TetherMax 레퍼럴 가입' : 'With TetherMax referral',
+      feeRows: (ko ? d.feeKo : d.fee).map(p => ({
+        k:p[0], direct:p[1], tm:p[2],
+        rowStyle: 'display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:24px;padding:16px 26px;border-bottom:1px solid var(--border-subtle);'
+          + (p[3] ? 'background:var(--tm-blue-50,#E8F1FF)' : ''),
+        tmStyle: 'font:' + (p[3] ? '700' : '600') + ' 13.5px/1.55 var(--font-body);color:' + (p[3] ? 'var(--color-primary)' : 'var(--text-primary)')
+      })),
+      feeNote: d.feeNote[ko?1:0],
+      costs: (ko ? d.costsKo : d.costs).map(p => ({ k:p[0], v:p[1] })),
+      conditions: (ko ? d.conditionsKo : d.conditions).map(p => ({ k:p[0], v:p[1] })),
+      trust: (ko ? d.trustKo : d.trust).map(p => ({ k:p[0], v:p[1] })),
+      incidents: (ko ? d.incidentsKo : d.incidents).map(p => ({ k:p[0], v:p[1] })),
+      steps: d.steps.map((st,i) => ({
+        n: i + 1,
+        aria: (ko ? '단계 ' : 'Step ') + (i + 1) + ': ' + st.t[ko?1:0],
+        go: () => this.setState({ step:i }),
+        style: 'width:40px;height:40px;border-radius:12px;display:grid;place-items:center;cursor:pointer;font:700 15px var(--font-display);outline-offset:3px;'
+          + (this.state.step === i ? 'background:var(--color-primary);color:#fff' : 'background:#fff;color:var(--text-secondary);border:1px solid var(--border-subtle)')
+      })),
+      stepTitle: (ko ? '단계 ' : 'Step ') + (this.state.step + 1) + ': ' + d.steps[this.state.step].t[ko?1:0],
+      stepBody: d.steps[this.state.step].b[ko?1:0],
+      stepAside: d.steps[this.state.step].a[ko?1:0]
+    };
+  }
+}
+
+</script>
+</body>
+</html>

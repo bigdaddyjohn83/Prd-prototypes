@@ -1,0 +1,82 @@
+/* ============================================================
+   TetherMax — Color tokens
+   Crypto-exchange cashback platform. Vivid royal-blue brand,
+   MUI-derived neutral + semantic palette on a near-white canvas.
+   Base palette → semantic aliases. Use the aliases in components.
+   ============================================================ */
+
+:root {
+  /* ---- Brand blue ramp ---- */
+  --tm-blue-50:  #E9F3FF;   /* tint wash, selected rows */
+  --tm-blue-100: #C7D6FF;   /* soft fills */
+  --tm-blue-300: #7F9FFF;   /* hover tint, illustrations */
+  --tm-blue-500: #2453F0;   /* secondary action */
+  --tm-blue:     #0067FF;   /* PRIMARY — logo, CTAs, links */
+  --tm-blue-bright: #007BFF;/* bright button gradient stop */
+  --tm-blue-deep: #0031C6;  /* hero card / deep gradient */
+  --tm-blue-darker: #1F47CD;/* pressed deep */
+  --tm-blue-900: #171836;   /* darkest brand navy */
+
+  /* ---- Neutrals ---- */
+  --tm-white:    #FFFFFF;
+  --tm-ink:      #121721;   /* near-black headings (bluegrey-900) */
+  --tm-grey-900: #1C1C1E;
+  --tm-grey-700: #303036;
+  --tm-grey-600: #5D6067;   /* secondary text */
+  --tm-grey-500: #787887;
+  --tm-grey-400: #BBBBC3;   /* tertiary / placeholder */
+  --tm-grey-300: #D3D3D3;   /* borders strong */
+  --tm-grey-200: #E6E7E9;   /* divider / hairline */
+  --tm-grey-100: #F2F2F5;   /* chip / track fill */
+  --tm-grey-50:  #F8FAFC;   /* page canvas */
+  --tm-off-white:#F9F9F9;
+
+  /* ---- Semantic status ---- */
+  --tm-error:   #D32F2F;
+  --tm-error-bg:#FDECEA;
+  --tm-success: #2E7D32;
+  --tm-success-accent: #66BB6A;
+  --tm-success-bg: #EDF7ED;
+  --tm-warning: #EF6C00;
+  --tm-warning-bg: #FFF4E5;
+  --tm-info:    #0288D1;
+  --tm-info-bg: #E5F6FD;
+
+  /* ---- Black/white alpha (MUI action layers) ---- */
+  --tm-action-hover:    rgba(0,0,0,0.04);
+  --tm-action-selected: rgba(0,0,0,0.08);
+  --tm-action-focus:    rgba(0,0,0,0.12);
+  --tm-action-disabled: rgba(0,0,0,0.26);
+  --tm-overlay:         rgba(0,0,0,0.50);
+
+  /* ============================================================
+     SEMANTIC ALIASES — reference these in components
+     ============================================================ */
+  --color-primary:        var(--tm-blue);
+  --color-primary-deep:    var(--tm-blue-deep);
+  --color-primary-hover:   #0059DB;
+  --color-primary-press:   #004BC0;
+  --color-on-primary:      var(--tm-white);
+
+  --text-primary:   rgba(0,0,0,0.87);
+  --text-secondary: var(--tm-grey-600);
+  --text-tertiary:  var(--tm-grey-400);
+  --text-disabled:  rgba(0,0,0,0.38);
+  --text-on-dark:   var(--tm-white);
+  --text-link:      var(--tm-blue);
+
+  --surface-canvas: var(--tm-grey-50);
+  --surface-card:   var(--tm-white);
+  --surface-sunken: var(--tm-grey-100);
+  --surface-inverse:var(--tm-blue-deep);
+
+  --border-subtle:  var(--tm-grey-200);
+  --border-strong:  var(--tm-grey-300);
+  --divider:        rgba(0,0,0,0.12);
+
+  --focus-ring:     rgba(0,103,255,0.40);
+
+  /* Hero gradient used on reward / landing cards */
+  --gradient-hero:  linear-gradient(135deg, #0067FF 0%, #0031C6 100%); /* @kind color */
+  --gradient-brand-3d: linear-gradient(135deg, #4B6BFF 0%, #7B4BFF 100%); /* @kind color */
+}

@@ -1,0 +1,10 @@
+/* Standalone-export entry point: same manifest as the design system's styles.css,
+   with the nine static Pretendard weights swapped for the single variable file so
+   the inlined bundle stays under the upload limit. */
+@import './fonts-standalone.css';
+@import '../_ds/tethermax-design-system-ad5bd206-f113-4e77-b981-f89dd89c0a2f/tokens/colors.css';
+@import '../_ds/tethermax-design-system-ad5bd206-f113-4e77-b981-f89dd89c0a2f/tokens/typography.css';
+@import '../_ds/tethermax-design-system-ad5bd206-f113-4e77-b981-f89dd89c0a2f/tokens/spacing.css';
+@import '../_ds/tethermax-design-system-ad5bd206-f113-4e77-b981-f89dd89c0a2f/tokens/fig-tokens.css';
+@import '../_ds/tethermax-design-system-ad5bd206-f113-4e77-b981-f89dd89c0a2f/assets/3d/fig-assets.css';
+@import '../_ds/tethermax-design-system-ad5bd206-f113-4e77-b981-f89dd89c0a2f/tokens/base.css';

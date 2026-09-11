@@ -1,0 +1,5 @@
+/* Standalone-export fonts: same families as the design system, but Pretendard
+   comes in as the single variable file instead of nine static weights, which
+   keeps the inlined bundle under the upload limit. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css');

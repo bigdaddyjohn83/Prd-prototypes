@@ -1,0 +1,21 @@
+/* ============================================================
+   TetherMax Design System — global entry point
+   Consumers link THIS file. It is an @import manifest only.
+   ============================================================ */
+
+/* Fonts (Inter, Plus Jakarta Sans, Pretendard) */
+@import './tokens/fonts.css';
+
+/* Foundation tokens */
+@import './tokens/colors.css';
+@import './tokens/typography.css';
+@import './tokens/spacing.css';
+
+/* Raw Figma Variables (full 926-token set, all theme modes) */
+@import './tokens/fig-tokens.css';
+
+/* 3D-icon bitmap classes */
+@import './assets/3d/fig-assets.css';
+
+/* Light base reset */
+@import './tokens/base.css';
